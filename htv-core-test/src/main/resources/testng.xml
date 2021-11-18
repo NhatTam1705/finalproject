@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestAll">
+    <test name="case1">
+        <classes>
+            <class name="com.project.core.test.RolesTest"/>
+            <class name="com.project.core.test.UsersTest"/>
+            <class name="com.project.core.test.ManuFacterTest"/>
+            <class name="com.project.core.test.ProductTypeTest"/>
+            <class name="com.project.core.test.DiscountTest"/>
+            <class name="com.project.core.test.PaymentDetailsTest"/>
+            <class name="com.project.core.test.ProductTest"/>
+        </classes>
+    </test>
+</suite>

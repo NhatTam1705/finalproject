@@ -1,0 +1,11 @@
+com\project\core\dao\ProductDao.class
+com\project\core\dao\RolesDao.class
+com\project\core\dao\ShoppingSessionDao.class
+com\project\core\dao\DiscountDao.class
+com\project\core\dao\OrderDetailsDao.class
+com\project\core\dao\PaymentDetailsDao.class
+com\project\core\dao\ManuFacterDao.class
+com\project\core\dao\ProductTypeDao.class
+com\project\core\dao\CartItemDao.class
+com\project\core\dao\OrderItemsDao.class
+com\project\core\dao\UsersDao.class

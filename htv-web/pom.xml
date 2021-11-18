@@ -16,5 +16,11 @@
             <artifactId>htv-web-logic</artifactId>
             <version>1.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.project</groupId>
+            <artifactId>htv-core-persistence-data</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 </project>
