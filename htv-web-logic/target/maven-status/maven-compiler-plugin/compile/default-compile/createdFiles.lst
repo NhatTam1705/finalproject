@@ -1,9 +1,0 @@
-com\project\controller\login\ChangePhoneController.class
-com\project\controller\web\HomeController.class
-com\project\command\UsersCommand.class
-com\project\controller\login\RegisterPhoneController.class
-com\project\controller\login\RegisterEmailController.class
-com\project\controller\admin\AdminController.class
-com\project\controller\login\ChangeEmailController.class
-com\project\controller\login\ForgotController.class
-com\project\controller\login\LoginController.class
