@@ -13,6 +13,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="<c:url value='/template/img/icon-logo.ico'/>" />
 	<link href="<c:url value='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'/>" rel="stylesheet" id="bootstrap-css" />
 	<link rel="stylesheet" href="<c:url value='/template/web/css/home.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>" />

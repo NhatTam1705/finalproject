@@ -10,6 +10,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="<c:url value='/template/img/icon-logo.ico'/>" />
     <title><dec:title default="TV-Company"/></title>
     <link rel="stylesheet" href="<c:url value='/template/admin/css/style.css'/>">
     <link href="<c:url value='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'/>" rel='stylesheet'>
