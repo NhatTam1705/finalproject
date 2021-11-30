@@ -1,3 +1,6 @@
+<c:url value="/admin-users-list.html" var="userListUrl">
+    <c:param name="urlType" value="url_list"/>
+</c:url>
 <div class="sidebar">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus icon'></i>
@@ -11,18 +14,18 @@
             <span class="tooltip">Search</span>
         </li>
         <li>
-            <a href="#">
+            <a href="<c:url value='/admin-product.html'/>">
                 <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">Product</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip">Product</span>
         </li>
         <li>
-            <a href="#">
+            <a href="${userListUrl}">
                 <i class='bx bx-user' ></i>
-                <span class="links_name">User</span>
+                <span class="links_name">User Management</span>
             </a>
-            <span class="tooltip">User</span>
+            <span class="tooltip">User Management</span>
         </li>
         <li>
             <a href="#">

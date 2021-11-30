@@ -36,21 +36,18 @@ public class OrderDetailsEntity {
     private Integer orderId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private UsersEntity users;
 
     @Column (name = "total")
     private BigDecimal total = BigDecimal.ZERO;
 
     @ManyToOne
-    @JoinColumn(name = "payment_id", nullable = false)
+    @JoinColumn(name = "payment_id")
     private PaymentDetailsEntity paymentDetails;
 
     @Column (name = "create_date")
     private Timestamp createDate;
-
-    @Column (name = "modified_date")
-    private Timestamp modifiedDate;
 
     @OneToMany (mappedBy = "orderDetails", fetch = FetchType.LAZY)
     private List<OrderItemsEntity> orderItemsEntityList;
@@ -93,14 +90,6 @@ public class OrderDetailsEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 
     public List<OrderItemsEntity> getOrderItemsEntityList() {

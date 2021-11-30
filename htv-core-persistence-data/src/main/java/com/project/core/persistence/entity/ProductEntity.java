@@ -35,7 +35,7 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
 
-    @Column(name = "product_name", nullable = false)
+    @Column(name = "product_name")
     private String productName;
 
     @Column(name = "description")
@@ -45,21 +45,18 @@ public class ProductEntity {
     private Integer quantityLeft;
 
     @ManyToOne
-    @JoinColumn(name = "product_type_id", nullable = false)
+    @JoinColumn(name = "product_type_id")
     private ProductTypeEntity productType;
 
     @Column(name = "price")
     private BigDecimal price = BigDecimal.ZERO;
 
     @ManyToOne
-    @JoinColumn(name = "discount_id", nullable = false)
+    @JoinColumn(name = "discount_id")
     private DiscountEntity discount;
 
     @Column(name = "create_date")
     private Timestamp createDate;
-
-    @Column(name = "modified_date")
-    private Timestamp modifiedDate;
 
     @Column(name = "image")
     private String image;
@@ -132,14 +129,6 @@ public class ProductEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 
     public String getImage() {

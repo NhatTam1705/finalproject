@@ -23,7 +23,6 @@ public class UsersDTO implements Serializable {
     private String email;
     private RolesDTO rolesDTO;
     private Timestamp createDate;
-    private Timestamp modifiedDate;
 
     public Integer getUserId() {
         return userId;
@@ -96,14 +95,4 @@ public class UsersDTO implements Serializable {
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
     }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-    
-    
 }

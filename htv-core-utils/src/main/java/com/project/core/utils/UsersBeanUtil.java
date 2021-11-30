@@ -24,7 +24,6 @@ public class UsersBeanUtil {
         dto.setEmail(entity.getEmail());
         dto.setRolesDTO(RolesBeanUtil.entityToDto(entity.getRoles()));
         dto.setCreateDate(entity.getCreateDate());
-        dto.setModifiedDate(entity.getModifiedDate());
         return dto;
     }
 
@@ -39,7 +38,6 @@ public class UsersBeanUtil {
         entity.setEmail(dto.getEmail());
         entity.setRoles(RolesBeanUtil.dtoToEntity(dto.getRolesDTO()));
         entity.setCreateDate(dto.getCreateDate());
-        entity.setModifiedDate(dto.getModifiedDate());
         return entity;
     }
 }

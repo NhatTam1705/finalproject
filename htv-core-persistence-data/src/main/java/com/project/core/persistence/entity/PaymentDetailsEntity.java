@@ -45,9 +45,6 @@ public class PaymentDetailsEntity {
     @Column(name = "create_date")
     private Timestamp createDate;
 
-    @Column(name = "modified_date")
-    private Timestamp modifiedDate;
-
     @OneToMany (mappedBy = "paymentDetails", fetch = FetchType.LAZY)
     private List<OrderDetailsEntity> orderDetailsEntityList;
 
@@ -89,14 +86,6 @@ public class PaymentDetailsEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 
     public List<OrderDetailsEntity> getOrderDetailsEntityList() {

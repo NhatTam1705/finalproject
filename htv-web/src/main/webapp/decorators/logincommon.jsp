@@ -17,14 +17,6 @@
         <link rel="stylesheet" href="<c:url value='/template/login/css/SCommon.css'/>">
         <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
         <script src="<c:url value='/template/login/js/app.js'/>"></script>
-        <!--    <script src="https://code.jquery.com/jquery-3.3.1.js"
-                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-                </script>
-            <script>
-                $(function () {
-                    $("#header").load("../../views/login/header.html");
-                });
-            </script>-->
     </head>
 
     <body>

@@ -28,7 +28,7 @@ public class ManuFacterEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer manufacterId;
 
-    @Column(name = "manufacter_name", nullable = false)
+    @Column(name = "manufacter_name")
     private String manufacterName;
 
     @OneToMany(mappedBy = "manufacter", fetch = FetchType.LAZY)

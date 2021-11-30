@@ -13,9 +13,22 @@
     <link rel="icon" type="image/x-icon" href="<c:url value='/template/img/icon-logo.ico'/>" />
     <title><dec:title default="TV-Company"/></title>
     <link rel="stylesheet" href="<c:url value='/template/admin/css/style.css'/>">
+    <%--  --%>
+    <%-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> --%>
+    <link rel="stylesheet" href="<c:url value='/template/admin/assets/css/bootstrap.min.css' />" />
+    <%-- <link rel="stylesheet" href="<c:url value='/template/admin/font-awesome/4.5.0/css/font-awesome.min.css' />" /> --%>
+    <%-- <link rel="stylesheet" href="<c:url value='/template/admin/assets/css/ace.min.css' />" class="ace-main-stylesheet" id="main-ace-style" /> --%>
     <link href="<c:url value='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'/>" rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type='text/javascript' src='<c:url value="/template/admin/js/jquery-2.2.3.min.js" />'></script>
+    <script src="<c:url value='/template/admin/assets/js/jquery.2.1.1.min.js' />"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<c:url value='/template/admin/css/global_admin_style.css'/>">
+    <script type="text/javascript" src="<c:url value='/template/admin/js/global_admin_script.js'/>"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 <body>
             <%-- begin header --%>
             <%@include file="/common/admin/menu.jsp"%>
@@ -31,7 +44,7 @@
                 <%-- end footer --%>
             </section>
 
-           
+    
         <script src="<c:url value='/template/admin/js/script.js'/>"></script>
 
 </body>

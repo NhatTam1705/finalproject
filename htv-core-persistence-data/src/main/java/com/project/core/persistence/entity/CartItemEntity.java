@@ -32,11 +32,11 @@ public class CartItemEntity {
     private Integer cartId;
 
     @ManyToOne
-    @JoinColumn(name = "session_id", nullable = false)
+    @JoinColumn(name = "session_id")
     private ShoppingSessionEntity shoppingSession;
 
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id")
     private ProductEntity product;
 
     @Column(name = "quantity")
@@ -45,8 +45,6 @@ public class CartItemEntity {
     @Column (name = "create_date")
     private Timestamp createDate;
 
-    @Column (name = "modified_date")
-    private Timestamp modifiedDate;
 
     public Integer getCartId() {
         return cartId;
@@ -86,13 +84,5 @@ public class CartItemEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 }

@@ -32,7 +32,7 @@ public class UsersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
     
-    @Column (name = "password", nullable = false)
+    @Column (name = "password")
     private String password;
 
     @Column (name = "first_name")
@@ -51,14 +51,11 @@ public class UsersEntity {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id")
     private RolesEntity roles;
 
     @Column (name = "create_date")
     private Timestamp createDate;
-
-    @Column (name = "modified_date")
-    private Timestamp modifiedDate;
 
     @OneToMany (mappedBy = "users", fetch = FetchType.LAZY)
     private List<OrderDetailsEntity> orderDetailsEntityList;
@@ -128,14 +125,6 @@ public class UsersEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 
     public RolesEntity getRoles() {

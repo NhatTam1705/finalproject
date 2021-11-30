@@ -32,18 +32,15 @@ public class OrderItemsEntity {
     private Integer orderItemId;
 
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id")
     private OrderDetailsEntity orderDetails;
 
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id")
     private ProductEntity product;
 
     @Column (name = "create_date")
     private Timestamp createDate;
-
-    @Column (name = "modified_date")
-    private Timestamp modifiedDate;
 
     public Integer getOrderItemId() {
         return orderItemId;
@@ -75,13 +72,5 @@ public class OrderItemsEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 }

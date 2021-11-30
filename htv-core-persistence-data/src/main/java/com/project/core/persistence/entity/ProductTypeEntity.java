@@ -30,11 +30,11 @@ public class ProductTypeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productTypeId;
 
-    @Column(name = "product_type_name", nullable = false)
+    @Column(name = "product_type_name")
     private String productTypeName;
 
     @ManyToOne
-    @JoinColumn(name = "manufacter_id", nullable = false)
+    @JoinColumn(name = "manufacter_id")
     private ManuFacterEntity manufacter;
 
     @OneToMany(mappedBy = "productType", fetch = FetchType.LAZY)

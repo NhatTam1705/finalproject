@@ -33,7 +33,7 @@ public class DiscountEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer discountId;
 
-    @Column(name = "discount_name", nullable = false)
+    @Column(name = "discount_name")
     private String discountName;
 
     @Column(name = "description")
@@ -44,9 +44,6 @@ public class DiscountEntity {
 
     @Column (name = "create_date")
     private Timestamp createDate;
-
-    @Column (name = "modified_date")
-    private Timestamp modifiedDate;
 
     @OneToMany (mappedBy = "discount", fetch = FetchType.LAZY)
     private List<ProductEntity> productEntityList;
@@ -89,14 +86,6 @@ public class DiscountEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 
     public List<ProductEntity> getProductEntityList() {

@@ -16,9 +16,9 @@ import org.testng.annotations.Test;
  * @author 19110
  */
 public class ProductTest {
-    @Test
-    public void checkFindAll() {
-        ProductDao productDao = new ProductDaoImpl();
-        List<ProductEntity> list = productDao.findAll();
-    }
+//    @Test
+//    public void checkFindAll() {
+//        ProductDao productDao = new ProductDaoImpl();
+//        List<ProductEntity> list = productDao.findAll();
+//    }
 }

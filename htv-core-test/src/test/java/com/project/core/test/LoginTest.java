@@ -17,17 +17,17 @@ import org.testng.annotations.Test;
  * @author 19110
  */
 public class LoginTest {
-    private final Logger log = Logger.getLogger(this.getClass());
-    @Test
-    public void checkIsUserExist() {
-//        UsersDao usersDao = new UsersDaoImpl();
-//        String email = "19110283@student.hcmute.edu.vn";
-//        String password = "17052001";
-//        UsersEntity entity = usersDao.isUserExist(email, null, password);
-//        if(entity != null) {
-//            log.error("Login Success");
-//        } else {
-//            log.error("Login Fail");
-//        }
-    }   
+//    private final Logger log = Logger.getLogger(this.getClass());
+//    @Test
+//    public void checkIsUserExist() {
+////        UsersDao usersDao = new UsersDaoImpl();
+////        String email = "19110283@student.hcmute.edu.vn";
+////        String password = "17052001";
+////        UsersEntity entity = usersDao.isUserExist(email, null, password);
+////        if(entity != null) {
+////            log.error("Login Success");
+////        } else {
+////            log.error("Login Fail");
+////        }
+//    }   
 }

@@ -36,7 +36,7 @@ public class ShoppingSessionEntity {
     private Integer sessionId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private UsersEntity users;
 
     @Column(name = "total")
@@ -44,9 +44,6 @@ public class ShoppingSessionEntity {
 
     @Column(name = "create_date")
     private Timestamp createDate;
-
-    @Column(name = "modified_date")
-    private Timestamp modifiedDate;
 
     @OneToMany(mappedBy = "shoppingSession", fetch = FetchType.LAZY)
     private List<CartItemEntity> cartItemEntityList;
@@ -81,14 +78,6 @@ public class ShoppingSessionEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
-    }
-
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
     }
 
     public List<CartItemEntity> getCartItemEntityList() {

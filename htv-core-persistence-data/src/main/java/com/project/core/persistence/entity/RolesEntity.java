@@ -26,7 +26,7 @@ public class RolesEntity {
     @Column(name = "role_id")
     private Integer roleId;
 
-    @Column(name = "role_name", nullable = false)
+    @Column(name = "role_name")
     private String roleName;
 
     @OneToMany(mappedBy = "roles", fetch = FetchType.LAZY)
