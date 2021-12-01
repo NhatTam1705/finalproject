@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-<c:url var="editUserUrl" value="/ajax-admin-user-edit.html">
+<c:url var="editUserUrl" value="/ajax-admin-users-edit.html">
     <c:param name="urlType" value="url_edit"/>
 </c:url>
 <c:choose>
@@ -31,14 +31,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="text" placeholder="First Name" class="form-control" value="${item.pojo.firstName}" name="pojo.name" required/>
+                                    <input type="text" placeholder="First Name" class="form-control" value="${item.pojo.firstName}" name="pojo.firstName"/>
                                 </div>
                             </div>
                             <br/>
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="text" placeholder="Last Name" class="form-control" value="${item.pojo.lastName}" name="pojo.fullName"/>
+                                    <input type="text" placeholder="Last Name" class="form-control" value="${item.pojo.lastName}" name="pojo.lastName"/>
                                 </div>
                             </div>
                             <br/>
@@ -52,21 +52,21 @@
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="email" placeholder="Email" class="form-control" value="${item.pojo.email}" id="email" required name="pojo.password"/>
+                                    <input type="email" placeholder="Email" class="form-control" value="${item.pojo.email}" id="email" required name="pojo.email"/>
                                 </div>
                             </div>
                             <br/>
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="number" placeholder="Phone" class="form-control" value="${item.pojo.telephone}" id="phone" required name="pojo.password"/>
+                                    <input type="number" placeholder="Phone" class="form-control" value="${item.pojo.telephone}" id="phone" required name="pojo.telephone"/>
                                 </div>
                             </div>
                             <br/>
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="text" placeholder="Address" class="form-control" value="${item.pojo.address}" required name="pojo.password"/>
+                                    <input type="text" placeholder="Address" class="form-control" value="${item.pojo.address}" required name="pojo.address"/>
                                 </div>
                             </div>
                             <br/>

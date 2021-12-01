@@ -16,7 +16,12 @@ import com.project.core.web.command.AbstractCommand;
  * @author 19110
  */
 public class UsersCommand extends AbstractCommand<UsersDTO>{
+    public UsersCommand() {
+        this.pojo = new UsersDTO();
+    }
+
     private List<RolesDTO> roles;
+    private Integer roleId;
 
     public List<RolesDTO> getRoles() {
         return roles;
@@ -26,9 +31,11 @@ public class UsersCommand extends AbstractCommand<UsersDTO>{
         this.roles = roles;
     }
 
-    public UsersCommand() {
-        this.pojo = new UsersDTO();
+    public Integer getRoleId() {
+        return roleId;
     }
-
     
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
 }

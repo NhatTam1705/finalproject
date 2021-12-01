@@ -13,6 +13,5 @@ import com.project.core.persistence.entity.UsersEntity;
  * @author 19110
  */
 public interface UsersDao extends GenericDao<Integer, UsersEntity> {
-    UsersEntity isUserExist(String email, String telephone, String password);
-    UsersEntity findRoleByUser(String email, String telephone, String password);
+    Object[] checkLogin(String email, String telephone, String password);
 }
