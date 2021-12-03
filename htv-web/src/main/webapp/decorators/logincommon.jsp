@@ -16,13 +16,16 @@
         <title><dec:title default="Welcome to our website"/></title>
         <link rel="stylesheet" href="<c:url value='/template/login/css/SCommon.css'/>">
         <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <script type="text/javascript" src="https://livejs.com/live.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="<c:url value='/template/login/js/app.js'/>"></script>
     </head>
 
     <body>
         <div id="main">
 
-            <!--begin header-->
+            <!--begin header--> 
             <%@include file="/common/login/header.jsp" %>
             <!--end header-->
 

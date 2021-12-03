@@ -22,6 +22,8 @@
 	<script src="<c:url value='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'/>"></script>
 	<link rel="stylesheet" href="<c:url value='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'/>" />
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script type="text/javascript" src="https://livejs.com/live.js"></script>
 	<title><dec:title default="TV-Company"/></title>
 </head>
     <body>
@@ -33,7 +35,7 @@
         <%-- begin body --%>
         <dec:body/>
         <%-- end body --%>
-
+        
         <%-- begin footer --%>
         <%@include file="/common/web/footer.jsp"%>
         <%-- end footer --%>    
