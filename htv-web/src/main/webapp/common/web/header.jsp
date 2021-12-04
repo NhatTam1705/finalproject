@@ -4,10 +4,28 @@
 					<div class="top-nav-height">
 						<div class="container-header">
 							<div class="pull-right">
-								<a href="<c:url value='/logincommon-home.html'/>">
+								<%-- <a href="<c:url value='/logincommon-home.html'/>">
 									<span class="icon-login ti-user"></span>
 									<span class="text-login">Log in</span>
-								</a>
+								</a> --%>
+								<c:if test="${not empty login_name}">
+									<span class="icon-login">Welcome ${login_name}</span>
+                                    <c:url var="logoutUrl" value="/logout.html">
+                                        <c:param name="action" value="logout"/>
+                                    </c:url>
+                                    <a href="${logoutUrl}">
+										<span class="text-login">Log out</span>
+									</a>
+                                </c:if>
+                                <c:if test="${empty login_name}">
+                                    <c:url var="loginUrl" value="/logincommon-home.html">
+                                        <c:param name="action" value="login"/>
+                                    </c:url>
+									<a href="${loginUrl}">
+										<span class="icon-login ti-user"></span>
+										<span class="text-login">Log in</span>
+									</a>
+                                </c:if>
 							</div>
 						</div>
 					</div>

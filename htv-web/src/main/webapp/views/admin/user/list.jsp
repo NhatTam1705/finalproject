@@ -72,18 +72,20 @@
                             <div class="table-btn-controls">
                                 <div class="pull-right tableTools-container">
                                     <div class="dt-buttons btn-overlap btn-group">
-                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" onclick="update(this)">
+                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" onclick="update(this)"
+                                        data-toggle="tooltip" title="Add User">
                                                 <span>
                                                     <i class="fa fa-plus-circle bigger-110 purple"></i>
                                                 </span>
                                         </a>
-                                        <button type="button" class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" id="deleteAll" disabled
+                                        <button type="button" class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" id="deleteAll" disabled onclick="warningBeforeDelete()"
                                             data-toggle="tooltip" title="Delete All">
                                                 <span>
                                                     <i class="fa fa-trash-o bigger-110 pink"></i>
                                                 </span>
                                         </button>
-                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" href="${importUrl}">
+                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" href="${importUrl}"
+                                        data-toggle="tooltip" title="Import User">
                                                 <span>
                                                     <i class="fa fa-file" aria-hidden="true"></i>
                                                 </span>
@@ -116,7 +118,6 @@
                                         <c:param name="pojo.userId" value="${tableList.userId}"/>
                                     </c:url>
                                     <a class="btn btn-sm btn-primary btn-edit" sc-url="${editUrl}" onclick="update(this)" data-toggle="tooltip" title="Edit User"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a class="btn btn-sm btn-danger btn-cancel" data-toggle="tooltip" title="Delete User"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </display:column>
                             </display:table>
                     </div>
@@ -205,6 +206,14 @@
                     console.log(res);
                 }
             });
+        });
+    }
+
+    function warningBeforeDelete() {
+        showAlertBeforeDelete(function () {
+            $('#crudaction').val('redirect_delete');
+            $('#urlType').val('url_list');
+            $('#formUrl').submit();
         });
     }
         </script>

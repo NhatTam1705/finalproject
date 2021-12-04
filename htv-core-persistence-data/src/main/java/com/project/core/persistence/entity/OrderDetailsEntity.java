@@ -40,7 +40,7 @@ public class OrderDetailsEntity {
     private UsersEntity users;
 
     @Column (name = "total")
-    private BigDecimal total = BigDecimal.ZERO;
+    private String total;
 
     @Column (name = "created_date")
     private Timestamp createdDate;
@@ -64,11 +64,11 @@ public class OrderDetailsEntity {
         this.users = users;
     }
 
-    public BigDecimal getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 

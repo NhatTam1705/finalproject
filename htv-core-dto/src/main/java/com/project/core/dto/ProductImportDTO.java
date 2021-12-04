@@ -7,35 +7,23 @@ package com.project.core.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 
 /**
  *
  * @author 19110
  */
-public class ProductDTO implements Serializable {
-    private Integer productId;
+public class ProductImportDTO implements Serializable {
     private String productName;
     private String description;
     private String quantityLeft;
-    private ManuFacterDTO manuFacterDTO;
+    private String manuFacter;
     private String price;
     private String style;
     private String rom;
     private String ram;
-    private DiscountDTO discountDTO;
-    private Timestamp createdDate;
-    private Timestamp modifiedDate;
-    private String image;
-    private ProductImportDTO productImportDTO;
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
+    private String discount;
+    private boolean valid = true;
+    private String error;
 
     public String getProductName() {
         return productName;
@@ -93,52 +81,36 @@ public class ProductDTO implements Serializable {
         this.ram = ram;
     }
 
-    public DiscountDTO getDiscountDTO() {
-        return discountDTO;
+    public String getDiscount() {
+        return discount;
     }
 
-    public void setDiscountDTO(DiscountDTO discountDTO) {
-        this.discountDTO = discountDTO;
+    public void setDiscount(String discount) {
+        this.discount = discount;
     }
 
-    public Timestamp getCreatedDate() {
-        return createdDate;
+    public boolean isValid() {
+        return valid;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = createdDate;
+    public void setValid(boolean valid) {
+        this.valid = valid;
     }
 
-    public Timestamp getModifiedDate() {
-        return modifiedDate;
+    public String getError() {
+        return error;
     }
 
-    public void setModifiedDate(Timestamp modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public ProductImportDTO getProductImportDTO() {
-        return productImportDTO;
-    }
-
-    public void setProductImportDTO(ProductImportDTO productImportDTO) {
-        this.productImportDTO = productImportDTO;
+    public void setError(String error) {
+        this.error = error;
     }
     
-    public ManuFacterDTO getManuFacterDTO() {
-        return manuFacterDTO;
+    public String getManuFacter() {
+        return manuFacter;
     }
 
-    public void setManuFacterDTO(ManuFacterDTO manuFacterDTO) {
-        this.manuFacterDTO = manuFacterDTO;
+    public void setManuFacter(String manuFacter) {
+        this.manuFacter = manuFacter;
     }
     
 }

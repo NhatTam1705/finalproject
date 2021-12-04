@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.core.dao;
+package com.project.core.service.impl;
 
-import com.project.core.data.dao.GenericDao;
-import com.project.core.persistence.entity.ProductTypeEntity;
+import com.project.core.service.OrderItemsService;
 
 /**
  *
  * @author 19110
  */
-public interface ProductTypeDao extends GenericDao<Integer, ProductTypeEntity> {
+public class OrderItemsServiceImpl implements OrderItemsService{
     
 }

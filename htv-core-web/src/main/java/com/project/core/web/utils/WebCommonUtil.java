@@ -28,6 +28,9 @@ public class WebCommonUtil {
         } else if (StringUtils.isNotBlank(crudaction) && crudaction.equals(WebConstant.REDIRECT_DELETE)) {
             request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_SUCCESS);
             request.setAttribute(WebConstant.MESSAGE_RESPONSE, mapMessage.get(WebConstant.REDIRECT_DELETE));
+        } else if (StringUtils.isNotBlank(crudaction) && crudaction.equals(WebConstant.REDIRECT_IMPORT)) {
+            request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_SUCCESS);
+            request.setAttribute(WebConstant.MESSAGE_RESPONSE, mapMessage.get(WebConstant.REDIRECT_IMPORT));
         } else if (StringUtils.isNotBlank(crudaction) && crudaction.equals(WebConstant.REDIRECT_ERROR)) {
             request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_ERROR);
             request.setAttribute(WebConstant.MESSAGE_RESPONSE, mapMessage.get(WebConstant.REDIRECT_ERROR));

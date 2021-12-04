@@ -31,6 +31,9 @@
 <!--    <script src="<c:url value='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js' />"></script>
     <script src="<c:url value='https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js' />"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type='text/javascript' src='<c:url value="/template/admin/sweetalert/sweetalert2.min.js"/>'></script>
+    <link rel="stylesheet" href="<c:url value='/template/admin/sweetalert/sweetalert2.min.css'/>">
     </head>
 <body>
             <%-- begin header --%>
@@ -49,6 +52,23 @@
 
     
         <script src="<c:url value='/template/admin/js/script.js'/>"></script>
-
+<script type="text/javascript">
+    function showAlertBeforeDelete(callback) {
+        swal({
+            title: "Delete confirmation",
+            text: "Are you sure you want to delete?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Ok",
+            cancelButtonText: "Cancel",
+            confirmButtonClass: "btn btn-success",
+            cancelButtonClass: "btn btn-danger"
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                callback();
+            }
+        });
+    }
+</script>
 </body>
 </html>

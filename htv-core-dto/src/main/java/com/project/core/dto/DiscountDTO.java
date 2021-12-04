@@ -3,50 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.core.persistence.entity;
+package com.project.core.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  *
  * @author 19110
  */
-@Entity
-@Table(name = "discount")
-public class DiscountEntity {
-    @Id
-    @Column (name = "discount_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DiscountDTO implements Serializable {
     private Integer discountId;
-
-    @Column(name = "discount_name")
     private String discountName;
-
-    @Column(name = "description")
     private String description;
-
-    @Column (name = "discount_percent")
     private String discountPercent;
-
-    @Column (name = "created_date")
     private Timestamp createdDate;
-
-    @OneToMany (mappedBy = "discount", fetch = FetchType.LAZY)
-    private List<ProductEntity> productEntityList;
 
     public Integer getDiscountId() {
         return discountId;
@@ -54,7 +26,7 @@ public class DiscountEntity {
 
     public void setDiscountId(Integer discountId) {
         this.discountId = discountId;
-    }   
+    }
 
     public String getDiscountName() {
         return discountName;
@@ -87,14 +59,5 @@ public class DiscountEntity {
     public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
-
-    public List<ProductEntity> getProductEntityList() {
-        return productEntityList;
-    }
-
-    public void setProductEntityList(List<ProductEntity> productEntityList) {
-        this.productEntityList = productEntityList;
-    }
-
     
 }

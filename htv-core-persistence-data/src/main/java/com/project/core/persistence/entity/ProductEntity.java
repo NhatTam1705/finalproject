@@ -42,14 +42,14 @@ public class ProductEntity {
     private String description;
 
     @Column(name = "quantity_left")
-    private Integer quantityLeft;
+    private String quantityLeft;
 
     @ManyToOne
-    @JoinColumn(name = "product_type_id")
-    private ProductTypeEntity productType;
+    @JoinColumn(name = "manufacter_id")
+    private ManuFacterEntity manufacter;
 
     @Column(name = "price")
-    private BigDecimal price = BigDecimal.ZERO;
+    private String price;
 
     @Column(name = "style")
     private String style;
@@ -100,27 +100,19 @@ public class ProductEntity {
         this.description = description;
     }
 
-    public Integer getQuantityLeft() {
+    public String getQuantityLeft() {
         return quantityLeft;
     }
 
-    public void setQuantityLeft(Integer quantityLeft) {
+    public void setQuantityLeft(String quantityLeft) {
         this.quantityLeft = quantityLeft;
     }
 
-    public ProductTypeEntity getProductType() {
-        return productType;
-    }
-
-    public void setProductType(ProductTypeEntity productType) {
-        this.productType = productType;
-    }
-
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -187,4 +179,13 @@ public class ProductEntity {
     public void setRam(String ram) {
         this.ram = ram;
     }
+
+    public ManuFacterEntity getManufacter() {
+        return manufacter;
+    }
+
+    public void setManufacter(ManuFacterEntity manufacter) {
+        this.manufacter = manufacter;
+    }
+    
 }

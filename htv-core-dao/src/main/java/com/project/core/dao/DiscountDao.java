@@ -5,6 +5,8 @@
  */
 package com.project.core.dao;
 
+import java.util.List;
+
 import com.project.core.data.dao.GenericDao;
 import com.project.core.persistence.entity.DiscountEntity;
 
@@ -13,5 +15,5 @@ import com.project.core.persistence.entity.DiscountEntity;
  * @author 19110
  */
 public interface DiscountDao extends GenericDao<Integer, DiscountEntity> {
-    
+    List<DiscountEntity> findByDiscounts(List<String> discounts);
 }

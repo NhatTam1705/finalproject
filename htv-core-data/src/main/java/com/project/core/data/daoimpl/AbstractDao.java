@@ -131,7 +131,7 @@ public class AbstractDao<ID extends Serializable, T> implements GenericDao<ID, T
                     if (j > 0) {
                         sql1.append(" and ");
                     }
-                    sql1.append(params[j]).append(" = :").append(params[j]);
+                    sql1.append("LOWER("+params[j]+") LIKE '%' || :"+params[j]+" || '%'");
                 }
             }
             if (sortExpression != null && sortDirection != null) {
@@ -159,7 +159,7 @@ public class AbstractDao<ID extends Serializable, T> implements GenericDao<ID, T
                     if (j > 0) {
                         sql2.append(" and ");
                     }
-                    sql2.append(params[j]).append(" = :").append(params[j]);
+                    sql2.append("LOWER("+params[j]+") LIKE '%' || :"+params[j]+" || '%'");
                 }
             }
             Query query2 = session.createQuery(sql2.toString());

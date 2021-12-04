@@ -32,7 +32,7 @@ public class ManuFacterEntity {
     private String manufacterName;
 
     @OneToMany(mappedBy = "manufacter", fetch = FetchType.LAZY)
-    private List<ProductTypeEntity> productTypeEntityList;
+    private List<ProductEntity> productEntityList;
 
     public Integer getManufacterId() {
         return manufacterId;
@@ -50,12 +50,12 @@ public class ManuFacterEntity {
         this.manufacterName = manufacterName;
     }
 
-    public List<ProductTypeEntity> getProductTypeEntityList() {
-        return productTypeEntityList;
+    public List<ProductEntity> getProductEntityList() {
+        return productEntityList;
     }
 
-    public void setProductTypeEntityList(List<ProductTypeEntity> productTypeEntityList) {
-        this.productTypeEntityList = productTypeEntityList;
+    public void setProductEntityList(List<ProductEntity> productEntityList) {
+        this.productEntityList = productEntityList;
     }
 
     

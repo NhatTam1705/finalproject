@@ -10,7 +10,6 @@ import com.project.core.daoimpl.ManuFacterDaoImpl;
 import com.project.core.daoimpl.OrderDetailsDaoImpl;
 import com.project.core.daoimpl.OrderItemsDaoImpl;
 import com.project.core.daoimpl.ProductDaoImpl;
-import com.project.core.daoimpl.ProductTypeDaoImpl;
 import com.project.core.daoimpl.RolesDaoImpl;
 import com.project.core.daoimpl.UsersDaoImpl;
 
@@ -25,7 +24,6 @@ public class SingletonDaoUtil {
     public static OrderDetailsDaoImpl orderDetailsDTOImpl = null;
     public static OrderItemsDaoImpl orserItemDaoImpl = null;
     public static ProductDaoImpl productDTOImpl = null;
-    public static ProductTypeDaoImpl productTypeDTOImpl = null;
     public static RolesDaoImpl rolesDTOImpl = null;
 
     public static UsersDaoImpl getUsersDaoInstance() {
@@ -68,13 +66,6 @@ public class SingletonDaoUtil {
             productDTOImpl = new ProductDaoImpl();
         }
         return productDTOImpl;
-    }
-
-    public static ProductTypeDaoImpl getProductTypeDaoInstance() {
-        if (productTypeDTOImpl == null) {
-            productTypeDTOImpl = new ProductTypeDaoImpl();
-        }
-        return productTypeDTOImpl;
     }
 
     public static RolesDaoImpl getRolesDaoInstance() {

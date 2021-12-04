@@ -6,10 +6,13 @@
 package com.project.controller.login;
 
 import com.project.command.UsersCommand;
+import com.project.core.common.utils.SessionUtil;
 import com.project.core.dto.CheckLogin;
 import com.project.core.dto.UsersDTO;
+import com.project.core.persistence.entity.UsersEntity;
 import com.project.core.service.UsersService;
 import com.project.core.service.impl.UsersServiceImpl;
+import com.project.core.service.util.SingletonDaoUtil;
 import com.project.core.web.common.WebConstant;
 import com.project.core.web.utils.FormUtil;
 import com.project.core.web.utils.SingletonServiceUtil;
@@ -28,15 +31,21 @@ import org.apache.log4j.Logger;
  *
  * @author 19110
  */
-@WebServlet(urlPatterns = {"/logincommon-home.html"})
+@WebServlet(urlPatterns = {"/logincommon-home.html","/logout.html"})
 public class LoginController extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/views/login/home.jsp");
-        rd.forward(request, response);
+        String action = request.getParameter("action");
+        if (action.equals(WebConstant.LOGIN)) {
+            RequestDispatcher rd = request.getRequestDispatcher("/views/login/home.jsp");
+            rd.forward(request, response);
+        } else if(action.equals(WebConstant.LOGOUT)) {
+            SessionUtil.getInstance().remove(request, WebConstant.LOGIN_NAME);
+            response.sendRedirect("/htv-web/home.html");
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -46,7 +55,16 @@ public class LoginController extends HttpServlet {
         if (pojo != null) {
             CheckLogin login = SingletonServiceUtil.getUsersServiceInstance().checkLogin(pojo.getEmail(), pojo.getTelephone(), pojo.getPassword());
             if (login.isUserExist()) {
-                // SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, pojo.getName());
+                UsersEntity user = new UsersEntity();
+                if(pojo.getEmail() != null)
+                {
+                    user = SingletonDaoUtil.getUsersDaoInstance().findEqualUnique("email", pojo.getEmail());
+                }
+                if(pojo.getTelephone() != null)
+                {
+                    user = SingletonDaoUtil.getUsersDaoInstance().findEqualUnique("telephone", pojo.getTelephone());
+                }
+                SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, user.getLastName());
                 if (login.getRoleName().equals(WebConstant.ROLE_ADMIN)) {
                     response.sendRedirect("/htv-web/admin-home.html"); 
                 } else if (login.getRoleName().equals(WebConstant.ROLE_USER)) {

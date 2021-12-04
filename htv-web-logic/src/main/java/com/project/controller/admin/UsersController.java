@@ -72,11 +72,11 @@ public class UsersController extends HttpServlet {
                 }
             }
             executeSearchUser(request, command);
-            request.setAttribute(WebConstant.LIST_ITEMS, command);
             if (command.getCrudaction() != null) {
                 Map<String, String> mapMessage = buidMapRedirectMessage();
                 WebCommonUtil.addRedirectMessage(request, command.getCrudaction(), mapMessage);
             }
+            request.setAttribute(WebConstant.LIST_ITEMS, command);
             RequestDispatcher rd = request.getRequestDispatcher("/views/admin/user/list.jsp");
             rd.forward(request, response);
         } else if (command.getUrlType() != null && command.getUrlType().equals(WebConstant.URL_EDIT)) {
@@ -138,6 +138,7 @@ public class UsersController extends HttpServlet {
         mapMessage.put(WebConstant.REDIRECT_INSERT, "Add User Success");
         mapMessage.put(WebConstant.REDIRECT_UPDATE, "Update User Success");
         mapMessage.put(WebConstant.REDIRECT_DELETE, "Delete User Success");
+        mapMessage.put(WebConstant.REDIRECT_IMPORT, "Import User Success");
         mapMessage.put(WebConstant.REDIRECT_ERROR, "An error occurred");
         return mapMessage;
     }
@@ -188,9 +189,8 @@ public class UsersController extends HttpServlet {
                 List<UserImportDTO> userImportDTOS = (List<UserImportDTO>) SessionUtil.getInstance().getValue(request, LIST_USER_IMPORT);
                 SingletonServiceUtil.getUsersServiceInstance().saveUserImport(userImportDTOS);
                 SessionUtil.getInstance().remove(request, LIST_USER_IMPORT);
-                // request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_SUCCESS);
-                // request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Import User Success");
                 response.sendRedirect("/htv-web/admin-user-list.html?urlType=url_list");               
+                request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_IMPORT);
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
