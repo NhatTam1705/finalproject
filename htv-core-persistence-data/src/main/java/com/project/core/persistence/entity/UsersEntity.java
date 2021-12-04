@@ -54,14 +54,14 @@ public class UsersEntity {
     @JoinColumn(name = "role_id")
     private RolesEntity roles;
 
-    @Column (name = "create_date")
-    private Timestamp createDate;
+    @Column (name = "created_date")
+    private Timestamp createdDate;
+
+    @Column (name = "modified_date")
+    private Timestamp modifiedDate;
 
     @OneToMany (mappedBy = "users", fetch = FetchType.LAZY)
     private List<OrderDetailsEntity> orderDetailsEntityList;
-
-    @OneToMany (mappedBy = "users", fetch = FetchType.LAZY)
-    private List<ShoppingSessionEntity> shoppingSessionEntityList;
     
     public Integer getUserId() {
         return userId;
@@ -119,14 +119,6 @@ public class UsersEntity {
         this.email = email;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
-    }
-
     public RolesEntity getRoles() {
         return roles;
     }
@@ -143,11 +135,19 @@ public class UsersEntity {
         this.orderDetailsEntityList = orderDetailsEntityList;
     }
 
-    public List<ShoppingSessionEntity> getShoppingSessionEntityList() {
-        return shoppingSessionEntityList;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setShoppingSessionEntityList(List<ShoppingSessionEntity> shoppingSessionEntityList) {
-        this.shoppingSessionEntityList = shoppingSessionEntityList;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Timestamp getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(Timestamp modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 }

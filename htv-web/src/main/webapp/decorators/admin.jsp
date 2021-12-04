@@ -27,6 +27,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<c:url value='/template/admin/css/global_admin_style.css'/>">
     <script type="text/javascript" src="<c:url value='/template/admin/js/global_admin_script.js'/>"></script>
+    <%-- <script src="<c:url value='/template/admin/assets/js/jquery.validate.min.js' />"></script> --%>
+<!--    <script src="<c:url value='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js' />"></script>
+    <script src="<c:url value='https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js' />"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 <body>

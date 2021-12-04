@@ -51,21 +51,30 @@ public class ProductEntity {
     @Column(name = "price")
     private BigDecimal price = BigDecimal.ZERO;
 
+    @Column(name = "style")
+    private String style;
+
+    @Column(name = "rom")
+    private String rom;
+
+    @Column(name = "ram")
+    private String ram;
+
     @ManyToOne
     @JoinColumn(name = "discount_id")
     private DiscountEntity discount;
 
-    @Column(name = "create_date")
-    private Timestamp createDate;
+    @Column(name = "created_date")
+    private Timestamp createdDate;
+
+    @Column (name = "modified_date")
+    private Timestamp modifiedDate;
 
     @Column(name = "image")
     private String image;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<OrderItemsEntity> orderItemsEntityList;
-
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    private List<CartItemEntity> cartItemEntityList;
 
     public Integer getProductId() {
         return productId;
@@ -123,12 +132,12 @@ public class ProductEntity {
         this.discount = discount;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getImage() {
@@ -147,11 +156,35 @@ public class ProductEntity {
         this.orderItemsEntityList = orderItemsEntityList;
     }
 
-    public List<CartItemEntity> getCartItemEntityList() {
-        return cartItemEntityList;
+    public Timestamp getModifiedDate() {
+        return modifiedDate;
     }
 
-    public void setCartItemEntityList(List<CartItemEntity> cartItemEntityList) {
-        this.cartItemEntityList = cartItemEntityList;
+    public void setModifiedDate(Timestamp modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
+    public String getRom() {
+        return rom;
+    }
+
+    public void setRom(String rom) {
+        this.rom = rom;
+    }
+
+    public String getRam() {
+        return ram;
+    }
+
+    public void setRam(String ram) {
+        this.ram = ram;
     }
 }

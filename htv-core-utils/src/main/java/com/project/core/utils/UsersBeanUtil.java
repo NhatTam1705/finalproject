@@ -23,7 +23,8 @@ public class UsersBeanUtil {
         dto.setTelephone(entity.getTelephone());
         dto.setEmail(entity.getEmail());
         dto.setRolesDTO(RolesBeanUtil.entityToDto(entity.getRoles()));
-        dto.setCreateDate(entity.getCreateDate());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setModifiedDate(entity.getModifiedDate());
         return dto;
     }
 
@@ -37,7 +38,8 @@ public class UsersBeanUtil {
         entity.setTelephone(dto.getTelephone());
         entity.setEmail(dto.getEmail());
         entity.setRoles(RolesBeanUtil.dtoToEntity(dto.getRolesDTO()));
-        entity.setCreateDate(dto.getCreateDate());
+        entity.setCreatedDate(dto.getCreatedDate());
+        entity.setModifiedDate(dto.getModifiedDate());
         return entity;
     }
 }

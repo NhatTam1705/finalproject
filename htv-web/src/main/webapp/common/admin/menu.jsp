@@ -1,4 +1,4 @@
-<c:url value="/admin-users-list.html" var="userListUrl">
+<c:url value="/admin-user-list.html" var="userListUrl">
     <c:param name="urlType" value="url_list"/>
 </c:url>
 <div class="sidebar">

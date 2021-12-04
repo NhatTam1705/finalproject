@@ -39,8 +39,11 @@ public class OrderItemsEntity {
     @JoinColumn(name = "product_id")
     private ProductEntity product;
 
-    @Column (name = "create_date")
-    private Timestamp createDate;
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @Column (name = "created_date")
+    private Timestamp createdDate;
 
     public Integer getOrderItemId() {
         return orderItemId;
@@ -66,11 +69,19 @@ public class OrderItemsEntity {
         this.product = product;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }

@@ -6,21 +6,18 @@
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">11042001</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/htv_test?autoReconnect=true&amp;characterEncoding=utf-8&amp;useUnicode=true&amp;connectionCollation=utf8_unicode_ci&amp;characterSetResults=utf8</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tv_test?autoReconnect=true&amp;characterEncoding=utf-8&amp;useUnicode=true&amp;connectionCollation=utf8_unicode_ci&amp;characterSetResults=utf8</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
 
         <mapping class="com.project.core.persistence.entity.RolesEntity" />
         <mapping class="com.project.core.persistence.entity.UsersEntity" />
-        <mapping class="com.project.core.persistence.entity.CartItemEntity" />
         <mapping class="com.project.core.persistence.entity.DiscountEntity" />
         <mapping class="com.project.core.persistence.entity.ManuFacterEntity" />
         <mapping class="com.project.core.persistence.entity.OrderDetailsEntity" />
         <mapping class="com.project.core.persistence.entity.OrderItemsEntity" />
-        <mapping class="com.project.core.persistence.entity.PaymentDetailsEntity" />
         <mapping class="com.project.core.persistence.entity.ProductEntity" />
         <mapping class="com.project.core.persistence.entity.ProductTypeEntity" />
-        <mapping class="com.project.core.persistence.entity.ShoppingSessionEntity" />
     </session-factory>
 </hibernate-configuration>

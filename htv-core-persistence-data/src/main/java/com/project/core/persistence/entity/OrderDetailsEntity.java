@@ -42,12 +42,8 @@ public class OrderDetailsEntity {
     @Column (name = "total")
     private BigDecimal total = BigDecimal.ZERO;
 
-    @ManyToOne
-    @JoinColumn(name = "payment_id")
-    private PaymentDetailsEntity paymentDetails;
-
-    @Column (name = "create_date")
-    private Timestamp createDate;
+    @Column (name = "created_date")
+    private Timestamp createdDate;
 
     @OneToMany (mappedBy = "orderDetails", fetch = FetchType.LAZY)
     private List<OrderItemsEntity> orderItemsEntityList;
@@ -76,20 +72,12 @@ public class OrderDetailsEntity {
         this.total = total;
     }
 
-    public PaymentDetailsEntity getPayment() {
-        return paymentDetails;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setPayment(PaymentDetailsEntity paymentDetails) {
-        this.paymentDetails = paymentDetails;
-    }
-
-    public Timestamp getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public List<OrderItemsEntity> getOrderItemsEntityList() {

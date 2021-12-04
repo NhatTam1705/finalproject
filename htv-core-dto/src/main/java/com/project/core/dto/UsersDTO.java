@@ -22,7 +22,9 @@ public class UsersDTO implements Serializable {
     private String telephone;
     private String email;
     private RolesDTO rolesDTO;
-    private Timestamp createDate;
+    private Timestamp createdDate;
+    private Timestamp modifiedDate;
+    private UserImportDTO userImportDTO;
 
     public Integer getUserId() {
         return userId;
@@ -88,11 +90,27 @@ public class UsersDTO implements Serializable {
         this.rolesDTO = rolesDTO;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public UserImportDTO getUserImportDTO() {
+        return userImportDTO;
+    }
+
+    public void setUserImportDTO(UserImportDTO userImportDTO) {
+        this.userImportDTO = userImportDTO;
+    }
+
+    public Timestamp getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(Timestamp modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 }

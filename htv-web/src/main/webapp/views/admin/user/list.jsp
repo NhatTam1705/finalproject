@@ -6,12 +6,14 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-<c:url var="requestUrl" value="/admin-users-list.html" />
-<c:url var="editUserUrl" value="/ajax-admin-users-edit.html" >
+<c:url var="editUserUrl" value="/ajax-admin-user-edit.html" >
     <c:param name="urlType" value="url_edit" />
 </c:url>
-<c:url var="listUserUrl" value="/admin-users-list.html">
+<c:url var="listUserUrl" value="/admin-user-list.html">
     <c:param name="urlType" value="url_list"/>
+</c:url>
+<c:url var="importUrl" value="/admin-user-import.html">
+    <c:param name="urlType" value="show_import_user"/>
 </c:url>
 <!DOCTYPE html>
 <html>
@@ -34,6 +36,39 @@
                     <form action="${listUserUrl}" method="get" id="formUrl">
                     <div class="row">
                         <div class="col-xs-12">
+                            <div class="widget-box table-filter">
+                                <div class="widget-header">
+                                    <h4 class="widget-title">Search</h4>
+                                    <div class="widget-toolbar">
+                                        <a href="#" data-action="collapse">
+                                            <i class="ace-icon fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Last Name</label>
+                                                <div class="col-sm-8">
+                                                    <div class="fg-line">
+                                                        <input type="text" value="${items.pojo.lastName}" class="form-control input-sm" name="pojo.lastName"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label"></label>
+                                                <div class="col-sm-8">
+                                                    <button id="btnSearch" class="btn btn-sm btn-success">
+                                                        Search Now
+                                                        <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                     
                             <div class="table-btn-controls">
                                 <div class="pull-right tableTools-container">
                                     <div class="dt-buttons btn-overlap btn-group">
@@ -72,8 +107,11 @@
                                 </display:column>
                                 <display:column property="firstName" titleKey="First Name" sortable="true" sortName="firstName"/>
                                 <display:column property="lastName" titleKey="Last Name" sortable="true" sortName="lastName"/>
+                                <display:column property="address" titleKey="Address" sortable="true" sortName="address"/>
+                                <display:column property="telephone" titleKey="Phone" sortable="true" sortName="telephone"/>
+                                <display:column property="email" titleKey="Email" sortable="true" sortName="email"/>
                                 <display:column headerClass="col-actions" titleKey="Operation">
-                                    <c:url var="editUrl" value="/ajax-admin-users-edit.html">
+                                    <c:url var="editUrl" value="/ajax-admin-user-edit.html">
                                         <c:param name="urlType" value="url_edit"/>
                                         <c:param name="pojo.userId" value="${tableList.userId}"/>
                                     </c:url>
@@ -92,7 +130,39 @@
         <div class="modal fade" id="myModal" role="dialog"></div>
         <script type="text/javascript">
             $(document).ready(function () {
-                    
+                $('#btnSearch').click(function () {
+                    $('#crudaction').val('redirect_search');
+                    $('#urlType').val('url_list');
+                    $('#formUrl').submit();
+                });
+                // $('#editUserForm').validate({
+                //     rules: [],
+                //     messages: []
+                // });
+                // $("#password").rules( "add", {
+                //     required: true,
+                //     messages: {
+                //         required: "Please enter password."
+                //     }
+                // });
+                // $("#email").rules( "add", {
+                //     required: true,
+                //     messages: {
+                //         required: "Please enter email."
+                //     }
+                // });
+                // $("#phone").rules( "add", {
+                //     required: true,
+                //     messages: {
+                //         required: "Please enter phone."
+                //     }
+                // });
+                // $("#role").rules( "add", {
+                //     required: true,
+                //     messages: {
+                //         required: "Please enter role."
+                //     }
+                // });
             }); 
             function update(btn) {
         var editUrl = $(btn).attr('sc-url');

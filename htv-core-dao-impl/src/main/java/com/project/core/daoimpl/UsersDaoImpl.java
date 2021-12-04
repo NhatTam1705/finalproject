@@ -5,6 +5,9 @@
  */
 package com.project.core.daoimpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.project.core.common.utils.HibernateUtil;
 import com.project.core.dao.UsersDao;
 import com.project.core.data.daoimpl.AbstractDao;
@@ -53,5 +56,34 @@ public class UsersDaoImpl extends AbstractDao<Integer, UsersEntity> implements U
             session.close();
         }
         return new Object[] {isUserExist, roleName};
+    }
+
+    public List<UsersEntity> findByUsers(List<String> phones, List<String> emails) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        List<UsersEntity> userEntities = new ArrayList<UsersEntity>();
+        try {
+            StringBuilder sql = new StringBuilder(" FROM UsersEntity ue WHERE ");
+            if (phones != null) {
+                sql.append("ue.telephone IN(:phones) ");
+            }
+            if (emails != null) {
+                sql.append("ue.email IN(:emails) ");
+            }
+            Query query = session.createQuery(sql.toString());
+            if (phones != null) {
+                query.setParameterList("phones", phones);
+            }
+            if (emails != null) {
+                query.setParameterList("emails", emails);
+            }
+            userEntities = query.list();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return userEntities;
     }
 }

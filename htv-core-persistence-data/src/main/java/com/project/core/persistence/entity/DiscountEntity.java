@@ -42,8 +42,8 @@ public class DiscountEntity {
     @Column (name = "discount_percent")
     private BigDecimal discountPercent = BigDecimal.ZERO;
 
-    @Column (name = "create_date")
-    private Timestamp createDate;
+    @Column (name = "created_date")
+    private Timestamp createdDate;
 
     @OneToMany (mappedBy = "discount", fetch = FetchType.LAZY)
     private List<ProductEntity> productEntityList;
@@ -80,12 +80,12 @@ public class DiscountEntity {
         this.discountPercent = discountPercent;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public List<ProductEntity> getProductEntityList() {

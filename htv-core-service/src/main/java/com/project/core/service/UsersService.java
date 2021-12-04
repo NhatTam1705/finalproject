@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.project.core.dto.CheckLogin;
+import com.project.core.dto.UserImportDTO;
 import com.project.core.dto.UsersDTO;
 
 /**
@@ -21,4 +22,7 @@ public interface UsersService {
     void saveUser(UsersDTO usersDTO);
     UsersDTO updateUser(UsersDTO userDTO);
     CheckLogin checkLogin(String email, String telephone, String password);
+    void validateImportUser(List<UserImportDTO> userImportDTOS);
+    void saveUserImport(List<UserImportDTO> userImportDTOS);
+    Integer delete(List<Integer> ids);
 }

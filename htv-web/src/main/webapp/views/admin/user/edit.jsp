@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-<c:url var="editUserUrl" value="/ajax-admin-users-edit.html">
+<c:url var="editUserUrl" value="/ajax-admin-user-edit.html">
     <c:param name="urlType" value="url_edit"/>
 </c:url>
 <c:choose>
@@ -59,7 +59,7 @@
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="number" placeholder="Phone" class="form-control" value="${item.pojo.telephone}" id="phone" required name="pojo.telephone"/>
+                                    <input type="tel" placeholder="Phone" class="form-control" value="${item.pojo.telephone}" id="phone" required name="pojo.telephone"/>
                                 </div>
                             </div>
                             <br/>

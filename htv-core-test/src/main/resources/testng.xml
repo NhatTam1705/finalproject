@@ -7,7 +7,6 @@
             <class name="com.project.core.test.ManuFacterTest"/>
             <class name="com.project.core.test.ProductTypeTest"/>
             <class name="com.project.core.test.DiscountTest"/>
-            <class name="com.project.core.test.PaymentDetailsTest"/>
             <class name="com.project.core.test.ProductTest"/>
         </classes>
     </test>
