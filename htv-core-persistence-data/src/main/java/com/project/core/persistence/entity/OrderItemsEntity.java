@@ -40,7 +40,7 @@ public class OrderItemsEntity {
     private ProductEntity product;
 
     @Column(name = "quantity")
-    private String quantity;
+    private Integer quantity;
 
     @Column (name = "created_date")
     private Timestamp createdDate;
@@ -77,11 +77,11 @@ public class OrderItemsEntity {
         this.createdDate = createdDate;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

@@ -30,6 +30,7 @@ import com.project.core.web.utils.FormUtil;
 import com.project.core.web.utils.RequestUtil;
 import com.project.core.web.utils.SingletonServiceUtil;
 import com.project.core.web.utils.WebCommonUtil;
+import java.math.BigDecimal;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -155,15 +156,15 @@ public class ProductController extends HttpServlet {
             } else if (item.getKey().equals("pojo.description")) {
                 dto.setDescription(item.getValue());
             } else if (item.getKey().equals("pojo.quantityLeft")) {
-                dto.setQuantityLeft(item.getValue());
+                dto.setQuantityLeft(Integer.parseInt(item.getValue().toString()));
             } else if (item.getKey().equals("pojo.price")) {
-                dto.setPrice(item.getValue());
+                dto.setPrice(BigDecimal.valueOf(Double.parseDouble(item.getValue().toString())));
             } else if (item.getKey().equals("pojo.style")) {
                 dto.setStyle(item.getValue());
             } else if (item.getKey().equals("pojo.rom")) {
-                dto.setRom(item.getValue());
+                dto.setRom(Integer.parseInt(item.getValue().toString()));
             } else if (item.getKey().equals("pojo.ram")) {
-                dto.setRam(item.getValue());
+                dto.setRam(Integer.parseInt(item.getValue().toString()));
             } else if (item.getKey().equals("discountId")) {
                 DiscountDTO discountDTO = SingletonServiceUtil.getDiscountServiceInstance().findById(Integer.parseInt(item.getValue().toString()));
                 dto.setDiscountDTO(discountDTO);

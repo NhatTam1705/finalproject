@@ -40,7 +40,7 @@ public class DiscountEntity {
     private String description;
 
     @Column (name = "discount_percent")
-    private String discountPercent;
+    private BigDecimal discountPercent;
 
     @Column (name = "created_date")
     private Timestamp createdDate;
@@ -72,11 +72,11 @@ public class DiscountEntity {
         this.description = description;
     }
 
-    public String getDiscountPercent() {
+    public BigDecimal getDiscountPercent() {
         return discountPercent;
     }
 
-    public void setDiscountPercent(String discountPercent) {
+    public void setDiscountPercent(BigDecimal discountPercent) {
         this.discountPercent = discountPercent;
     }
 

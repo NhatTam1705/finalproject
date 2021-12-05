@@ -17,7 +17,7 @@ public class DiscountDTO implements Serializable {
     private Integer discountId;
     private String discountName;
     private String description;
-    private String discountPercent;
+    private BigDecimal discountPercent;
     private Timestamp createdDate;
 
     public Integer getDiscountId() {
@@ -44,11 +44,11 @@ public class DiscountDTO implements Serializable {
         this.description = description;
     }
 
-    public String getDiscountPercent() {
+    public BigDecimal getDiscountPercent() {
         return discountPercent;
     }
 
-    public void setDiscountPercent(String discountPercent) {
+    public void setDiscountPercent(BigDecimal discountPercent) {
         this.discountPercent = discountPercent;
     }
 
