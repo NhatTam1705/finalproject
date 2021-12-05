@@ -148,6 +148,9 @@ public class ProductController extends HttpServlet {
         try {
             ProductCommand command = FormUtil.populate(ProductCommand.class, request);
             ProductDTO pojo = command.getPojo();
+            Set<String> valueTitle = buildSetValueListenGuideline();
+            Object[] object = uploadUtil.writeOrUpdateFile(request, valueTitle, "img");
+            boolean checkStatusUploadImage = (Boolean) object[0];
             if (command.getUrlType() != null && command.getUrlType().equals(WebConstant.URL_EDIT)) {
                 if (command.getCrudaction() != null && command.getCrudaction().equals(WebConstant.INSERT_UPDATE)) {
                     DiscountDTO discountDTO = new DiscountDTO();
@@ -156,7 +159,7 @@ public class ProductController extends HttpServlet {
                     ManuFacterDTO manuFacterDTO = new ManuFacterDTO();
                     manuFacterDTO.setManufacterId(command.getManuFacterId());
                     pojo.setManuFacterDTO(manuFacterDTO);
-                    if (pojo != null && pojo.getProductId() != null) {
+                    if (pojo != null && pojo.getProductId() != null && !checkStatusUploadImage ) {
                         SingletonServiceUtil.getProductServiceInstance().updateProduct(pojo);
                         request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_UPDATE);
                     } else {
@@ -266,5 +269,11 @@ public class ProductController extends HttpServlet {
             item.setValid(false);
         }
         item.setError(message);
+    }
+
+    private Set<String> buildSetValueListenGuideline() {
+        Set<String> returnValue = new HashSet<String>();
+        returnValue.add("pojo.productName");
+        return returnValue;
     }
 }

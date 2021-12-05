@@ -80,6 +80,13 @@
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
+                                    <input type="file" placeholder="Image" class="form-control" value="${item.pojo.image}" name="pojo.image"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="col-md-12">
+                                <div class="md-form">
                                     <c:choose>
                                         <c:when test="${not empty item.pojo.productId}">
                                             <select id="discount" name="discountId">

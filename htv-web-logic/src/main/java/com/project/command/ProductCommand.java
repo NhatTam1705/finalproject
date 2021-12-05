@@ -25,7 +25,7 @@ public class ProductCommand extends AbstractCommand<ProductDTO>{
     private List<DiscountDTO> discounts;
     private Integer discountId;
     private List<ManuFacterDTO> manuFacters;
-    private Integer manuFacterId;
+    private Integer manufacterId;
     private List<ProductImportDTO> productImportDTOS;
 
     public List<DiscountDTO> getDiscounts() {
@@ -53,11 +53,11 @@ public class ProductCommand extends AbstractCommand<ProductDTO>{
     }
 
     public Integer getManuFacterId() {
-        return manuFacterId;
+        return manufacterId;
     }
 
-    public void setManuFacterId(Integer manuFacterId) {
-        this.manuFacterId = manuFacterId;
+    public void setManuFacterId(Integer manufacterId) {
+        this.manufacterId = manufacterId;
     }
 
     public List<ProductImportDTO> getProductImportDTOS() {
