@@ -184,8 +184,7 @@ a {
   min-height: 14px;
   font-family: PingFangSC-Regular;
   text-decoration: none;
-  padding-top: 34px;
-  padding-bottom: 6px;
+  padding: 10px 0;
   word-wrap: break-word;
 }
 #content .login-main .login-box .captcha {
@@ -275,4 +274,3 @@ footer .title {
   font-weight: 500;
 }
 
-/*# sourceMappingURL=style.css.map */

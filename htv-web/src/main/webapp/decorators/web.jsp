@@ -22,8 +22,9 @@
 	<script src="<c:url value='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'/>"></script>
 	<link rel="stylesheet" href="<c:url value='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'/>" />
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<c:url value='/template/web/css/product.css'/>" type="text/css" />
+        <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <link rel="stylesheet" href="<c:url value='/template/web/css/product.css'/>" type="text/css" />
+        <link rel="stylesheet" href="https://livejs.com/live.js"/>
 	<title><dec:title default="TV-Company"/></title>
 </head>
     <body>

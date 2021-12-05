@@ -14,7 +14,7 @@
     </head>
     <body>
         <section class="banner margin">
-            <img src="../../styles/img/bannner/iphone-13.jpg" class="banner-img" alt="">
+            <img src="<c:url value='template/img/bannner/iphone-13.jpg'/>" class="banner-img" alt="">
         </section>
         <section class="filter">
             <div class="filter-box">
@@ -176,22 +176,22 @@
             <div class="brand">
                 <div class="brand-lst">
                     <a href="" class="brand-lst-item rd-52">
-                        <img src="../../styles/img/brand/iphone.png" alt="" class="brand-lst-img">
+                        <img src="<c:url value='template/img/brand/iphone.png'/>" alt="" class="brand-lst-img">
                     </a>
                     <a href="" class="brand-lst-item rd-52">
-                        <img src="../../styles/img/brand/oppo.jpg" alt="" class="brand-lst-img">
+                        <img src="<c:url value='template/img/brand/oppo.jpg'/>" alt="" class="brand-lst-img">
                     </a>
                     <a href="" class="brand-lst-item rd-52">
-                        <img src="../../styles/img/brand/realme.png" alt="" class="brand-lst-img">
+                        <img src="<c:url value='template/img/brand/realme.png'/>" alt="" class="brand-lst-img">
                     </a>
                     <a href="" class="brand-lst-item rd-52">
-                        <img src="../../styles/img/brand/samsung.png" alt="" class="brand-lst-img">
+                        <img src="<c:url value='template/img/brand/samsung.png'/>" alt="" class="brand-lst-img">
                     </a>
                     <a href="" class="brand-lst-item rd-52">
-                        <img src="../../styles/img/brand/vivo.jpg" alt="" class="brand-lst-img">
+                        <img src="<c:url value='template/img/brand/vivo.jpg'/>" alt="" class="brand-lst-img">
                     </a>
                     <a href="" class="brand-lst-item rd-52">
-                        <img src="../../styles/img/brand/xiaomi.png" alt="" class="brand-lst-img">
+                        <img src="<c:url value='template/img/brand/xiaomi.png'/>" alt="" class="brand-lst-img">
                     </a>
                 </div>
             </div>

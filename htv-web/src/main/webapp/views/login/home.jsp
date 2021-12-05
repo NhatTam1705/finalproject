@@ -38,25 +38,26 @@
                 <form name="loginForm" id="form-id-email" action="${formUrl}" method="post">
                     <div class="login-main">
                         <div class="login-box">
-                            <c:if test="${not empty messageResponse}">
-                                <div class="alert alert-block alert-${alert}">
-                                    <button type="button" class="close" data-dismiss="alert">
-                                        <i class="ace-icon fa fa-times"></i>
-                                    </button>
-                                    ${messageResponse}
-                                </div>
-                            </c:if>
                             <p></p>
-                            <div id="errormessage" class="errormessage"></div>
+                            <div id="errormessage" class="errormessage">
+                                <c:if test="${not empty messageResponse}">
+                                    <div class="alert alert-block alert-${alert}">
+                                        <!--                                        <button type="button" class="close" data-dismiss="alert">-->
+                                        <i class="fas fa-times"></i>
+                                        <!--</button>-->
+                                        ${messageResponse}
+                                    </div>
+                                </c:if>
+                            </div>
                             <div class="pt-24">
                                 <input id="textbox-user" type="email" required size="20" tabindex="1"
-                                    class="user textbox-input " placeholder="Email" name="pojo.email">
+                                       class="user textbox-input " placeholder="Email" name="pojo.email">
                             </div>
                             <div class="pt-24 pwd-input">
                                 <input type="password" required size="20" tabindex="2"
-                                    class="pass textbox-input" placeholder="Password" name="pojo.password">
+                                       class="pass textbox-input" placeholder="Password" name="pojo.password">
                                 <img class="psw-show-f1" src="<c:url value='/template/img/pictureContent/icon-show-pass.png'/>"
-                                    style="visibility: hidden;">
+                                     style="visibility: hidden;">
                                 <img class="psw-hide-f1" src="<c:url value='/template/img/pictureContent/icon-hide-pass.png'/>">
                             </div>
                             <div>
@@ -73,25 +74,26 @@
                 <form name="loginForm" id="form-mobile" class="hide-form" action="${formUrl}" method="post">
                     <div class="login-main">
                         <div class="login-box">
-                            <c:if test="${not empty messageResponse}">
-                                <div class="alert alert-block alert-${alert}">
-                                    <button type="button" class="close" data-dismiss="alert">
-                                        <i class="ace-icon fa fa-times"></i>
-                                    </button>
-                                    ${messageResponse}
-                                </div>
-                            </c:if>
                             <p></p>
-                            <div id="errormessage" class="errormessage"></div>
+                            <div id="errormessage" class="errormessage">
+                                <c:if test="${not empty messageResponse}">
+                                    <div class="alert alert-block alert-${alert}">
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        ${messageResponse}
+                                    </div>
+                                </c:if>
+                            </div>
                             <div class="pt-24">
                                 <input id="textbox-phone" type="tel" pattern="[+]{0}[0-9]{10}" required 
-                                    size="20" tabindex="1" class="phone textbox-input " placeholder="+84" name="pojo.telephone">
+                                       size="20" tabindex="1" class="phone textbox-input " placeholder="+84" name="pojo.telephone">
                             </div>
                             <div class="pt-24 pwd-input">
                                 <input type="password" required size="20" tabindex="2"
-                                    class="pass textbox-input" placeholder="Password" name="pojo.password">
+                                       class="pass textbox-input" placeholder="Password" name="pojo.password">
                                 <img class="psw-show-f2" src="<c:url value='/template/img/pictureContent/icon-show-pass.png'/>"
-                                    style="visibility: hidden;">
+                                     style="visibility: hidden;">
                                 <img class="psw-hide-f2" src="<c:url value='/template/img/pictureContent/icon-hide-pass.png'/>">
                             </div>
                             <div>

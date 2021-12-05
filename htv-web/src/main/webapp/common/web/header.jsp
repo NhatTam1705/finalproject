@@ -5,23 +5,23 @@
                 <div class="container-header">
                     <div class="pull-right">
                         <c:if test="${not empty login_name}">
-                                    <span class="pull-right-icon-login">Welcome ${login_name}</span>
-                                    <c:url var="logoutUrl" value="/logout.html">
-                                        <c:param name="action" value="logout"/>
-                                    </c:url>
-                                    <a href="${logoutUrl}">
-                                        <span class="pull-right-text-login">Log out</span>
-                                    </a>
-                                </c:if>
-                                <c:if test="${empty login_name}">
-                                    <c:url var="loginUrl" value="/logincommon-home.html">
-                                        <c:param name="action" value="login"/>
-                                    </c:url>
-                                    <a href="${loginUrl}">
-                                        <span class="pull-right-icon-login ti-user"></span>
-                                        <span class="pull-right-text-login">Log in</span>
-                                    </a>
-                                </c:if>
+                            <span class="pull-right-icon-login">Welcome ${login_name}</span>
+                            <c:url var="logoutUrl" value="/logout.html">
+                                <c:param name="action" value="logout"/>
+                            </c:url>
+                            <a href="${logoutUrl}" class="pull-right-login">
+                                <span class="pull-right-text-login">Log out</span>
+                            </a>
+                        </c:if>
+                        <c:if test="${empty login_name}">
+                            <c:url var="loginUrl" value="/logincommon-home.html">
+                                <c:param name="action" value="login"/>
+                            </c:url>
+                            <a href="${loginUrl}" class="pull-right-login">
+                                <span class="pull-right-icon-login ti-user"></span>
+                                <span class="pull-right-text-login">Log in</span>
+                            </a>
+                        </c:if>
                     </div>
                 </div>
             </div>
@@ -36,22 +36,22 @@
                 <nav id="htv-navbar" class="js-htv-navbar">
                     <ul id="nav">
                         <li class="nav-item nav-item__hide">
-                            <a href="<c:url value='/home-phone.html'/>">
+                            <a href="<c:url value='/home.html'/>">
                                 <span class="text">Home</span>
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">
-                            <a href="../../views/product/laptops.html">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <span class="text">Product</span>
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">
-                            <a href="../../views/product/tablets.html">
+                            <a href="<c:url value='/home-contact.html'/>">
                                 <span class="text">Contact</span>
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">
-                            <a href="../../views/product/wearables.html">
+                            <a href="<c:url value='/home-support.html'/>">
                                 <span class="text">Support</span>
                             </a>
                         </li>
