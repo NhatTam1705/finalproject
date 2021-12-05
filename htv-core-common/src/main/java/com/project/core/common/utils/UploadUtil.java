@@ -63,8 +63,8 @@ public class UploadUtil {
                 if (!item.isFormField()) {
                     name = item.getName();
                     if (StringUtils.isNotBlank(name)) {
-                        File uploadedFile = new File(address + File.separator + path + File.separator+ name);
-                        fileLocation = address + File.separator + path + File.separator+ name;
+                        File uploadedFile = new File(address + "/" + path + "/"+ name);
+                        fileLocation = address + "/" + path + "/"+ name;
                         boolean isExist = uploadedFile.exists();
                         try {
                             if (isExist) {
@@ -99,7 +99,7 @@ public class UploadUtil {
         }
         String fileName = "";
         if (StringUtils.isNotBlank(name)) {
-            fileName = path + File.separator + name;
+            fileName = path + "/" + name;
         }
         return new Object[]{check, fileLocation, fileName, mapReturnValue};
     }
@@ -109,7 +109,7 @@ public class UploadUtil {
         if (!folderRoot.exists()) {
             folderRoot.mkdirs();
         }
-        File folderChild = new File(address + File.separator + path);
+        File folderChild = new File(address + "/" + path);
         if (!folderChild.exists()) {
             folderChild.mkdirs();
         }

@@ -15,4 +15,5 @@ import com.project.core.dto.DiscountDTO;
  */
 public interface DiscountService {
     List<DiscountDTO> findAll();
+    DiscountDTO findById(Integer discountId);
 }

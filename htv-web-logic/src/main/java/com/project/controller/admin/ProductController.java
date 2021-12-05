@@ -25,7 +25,6 @@ import com.project.core.common.utils.UploadUtil;
 import com.project.core.dto.DiscountDTO;
 import com.project.core.dto.ManuFacterDTO;
 import com.project.core.dto.ProductDTO;
-import com.project.core.dto.ProductImportDTO;
 import com.project.core.web.common.WebConstant;
 import com.project.core.web.utils.FormUtil;
 import com.project.core.web.utils.RequestUtil;
@@ -37,20 +36,15 @@ import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.hibernate.exception.ConstraintViolationException;
 
 /**
  *
  * @author 19110
  */
-@WebServlet(urlPatterns = {"/admin-product-list.html", "/ajax-admin-product-edit.html", "/admin-product-import.html",
-                                "/admin-product-import-validate.html"})
+@WebServlet(urlPatterns = {"/admin-product-list.html", "/admin-product-edit.html"})
 public class ProductController extends HttpServlet {
     private final Logger log = Logger.getLogger(this.getClass());
-    private final String SHOW_IMPORT_PRODUCT = "show_import_product";
-    private final String READ_EXCEL = "read_excel";
-    private final String VALIDATE_IMPORT = "validate_import";
-    private final String LIST_PRODUCT_IMPORT = "list_product_import";
-    private final String IMPORT_DATA = "import_data";
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductCommand command = FormUtil.populate(ProductCommand.class, request);
@@ -83,15 +77,6 @@ public class ProductController extends HttpServlet {
             request.setAttribute(WebConstant.FORM_ITEM, command);
             RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/edit.jsp");
             rd.forward(request, response);
-        } else if (command.getUrlType() != null && command.getUrlType().equals(SHOW_IMPORT_PRODUCT)) {
-            RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/importproduct.jsp");
-            rd.forward(request, response);
-        } else if (command.getUrlType() != null && command.getUrlType().equals(VALIDATE_IMPORT)) {
-            List<ProductImportDTO> productImportDTOS = (List<ProductImportDTO>) SessionUtil.getInstance().getValue(request, LIST_PRODUCT_IMPORT);
-            command.setProductImportDTOS(returnListProductImport(command, productImportDTOS, request));
-            request.setAttribute(WebConstant.LIST_ITEMS, command);
-            RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/importproduct.jsp");
-            rd.forward(request, response);
         }
     }
 
@@ -111,24 +96,6 @@ public class ProductController extends HttpServlet {
         return properties;
     }
 
-    private List<ProductImportDTO> returnListProductImport(ProductCommand command, List<ProductImportDTO> productImportDTOS, HttpServletRequest request) {
-        command.setMaxPageItems(3);
-    RequestUtil.initSearchBean(request, command);
-    command.setTotalItems(productImportDTOS.size());
-    int fromIndex = command.getFirstItem();
-    if (fromIndex > command.getTotalItems()) {
-        fromIndex = 0;
-        command.setFirstItem(0);
-    }
-    int toIndex = command.getFirstItem() + command.getMaxPageItems();
-    if (productImportDTOS.size() > 0) {
-        if (toIndex > productImportDTOS.size()) {
-            toIndex = productImportDTOS.size();
-        }
-    }
-    return productImportDTOS.subList(fromIndex, toIndex);
-}
-
     private Map<String, String> buidMapRedirectMessage() {
         Map<String, String> mapMessage = new HashMap<String, String>();
         mapMessage.put(WebConstant.REDIRECT_INSERT, "Add Product Success");
@@ -141,139 +108,86 @@ public class ProductController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UploadUtil uploadUtil = new UploadUtil();
-        Set<String> value = new HashSet<String>();
-        value.add("urlType");
-        Object[] objects = uploadUtil.writeOrUpdateFile(request, value, "excel");
-        try {
-            ProductCommand command = FormUtil.populate(ProductCommand.class, request);
-            ProductDTO pojo = command.getPojo();
-            Set<String> valueTitle = buildSetValueListenGuideline();
-            Object[] object = uploadUtil.writeOrUpdateFile(request, valueTitle, "img");
-            boolean checkStatusUploadImage = (Boolean) object[0];
-            if (command.getUrlType() != null && command.getUrlType().equals(WebConstant.URL_EDIT)) {
-                if (command.getCrudaction() != null && command.getCrudaction().equals(WebConstant.INSERT_UPDATE)) {
-                    DiscountDTO discountDTO = new DiscountDTO();
-                    discountDTO.setDiscountId(command.getDiscountId());
-                    pojo.setDiscountDTO(discountDTO);
-                    ManuFacterDTO manuFacterDTO = new ManuFacterDTO();
-                    manuFacterDTO.setManufacterId(command.getManuFacterId());
-                    pojo.setManuFacterDTO(manuFacterDTO);
-                    if (pojo != null && pojo.getProductId() != null && !checkStatusUploadImage ) {
-                        SingletonServiceUtil.getProductServiceInstance().updateProduct(pojo);
-                        request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_UPDATE);
-                    } else {
-                        SingletonServiceUtil.getProductServiceInstance().saveProduct(pojo);
-                        request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_INSERT);
+                ProductCommand command = new ProductCommand();
+                UploadUtil uploadUtil = new UploadUtil();
+                Set<String> valueTitle = buildSetValueProduct();
+                Object[] objects = uploadUtil.writeOrUpdateFile(request, valueTitle, "img");
+                boolean checkStatusUploadImage = (Boolean) objects[0];
+                if (!checkStatusUploadImage) {
+                    response.sendRedirect("/htv-web/admin-admin-list.html?urlType=url_list&&crudaction=redirect_error");
+                } else {
+                    ProductDTO dto = command.getPojo();
+                    if (StringUtils.isNotBlank(objects[2].toString())) {
+                        dto.setImage(objects[2].toString());
+                    }
+                    Map<String, String> mapValue = (Map<String, String>) objects[3];
+                    dto = returnValueOfDTO(dto, mapValue);
+                    if (dto != null) {
+                        if (dto.getProductId() != null) {
+                            ProductDTO productDTO = SingletonServiceUtil.getProductServiceInstance().findByProductId("productId", dto.getProductId());
+                            if (dto.getImage() == null) {
+                                dto.setImage(productDTO.getImage());
+                            }
+                            dto.setCreatedDate(productDTO.getCreatedDate());
+                            ProductDTO result = SingletonServiceUtil.getProductServiceInstance().updateProduct(dto);
+                            if (result != null) {
+                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&&crudaction=redirect_update");
+                            } else {
+                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&&crudaction=redirect_error");
+                            }
+                        } else {
+                            try {
+                                SingletonServiceUtil.getProductServiceInstance().saveProduct(dto);
+                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&&crudaction=redirect_insert");
+                            } catch (ConstraintViolationException e) {
+                                log.error(e.getMessage(), e);
+                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&crudaction=redirect_error");
+                            }
+                        }
                     }
                 }
-                RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/edit.jsp");
-                rd.forward(request, response);
-            }
-            if (objects != null) {
-                String urlType = null;
-                Map<String, String> mapValue = (Map<String, String>) objects[3];
-                for (Map.Entry<String, String> item: mapValue.entrySet()) {
-                    if (item.getKey().equals("urlType")) {
-                        urlType = item.getValue();
-                    }
-                }
-                if (urlType != null && urlType.equals(READ_EXCEL)) {
-                    String fileLocation = objects[1].toString();
-                    String fileName = objects[2].toString();
-                    List<ProductImportDTO> excelValues = returnValueFromExcel(fileName, fileLocation);
-                    validateData(excelValues);
-                    SessionUtil.getInstance().putValue(request, LIST_PRODUCT_IMPORT, excelValues);
-                    response.sendRedirect("/htv-web/admin-product-import-validate.html?urlType=validate_import");
-                }
-            }
-            if (command.getUrlType() != null && command.getUrlType().equals(IMPORT_DATA)) {
-                List<ProductImportDTO> productImportDTOS = (List<ProductImportDTO>) SessionUtil.getInstance().getValue(request, LIST_PRODUCT_IMPORT);
-                SingletonServiceUtil.getProductServiceInstance().saveProductImport(productImportDTOS);
-                SessionUtil.getInstance().remove(request, LIST_PRODUCT_IMPORT);
-                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list");               
-                request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_IMPORT);
-            }
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_ERROR);
-        }
     }
 
-    private List<ProductImportDTO> returnValueFromExcel(String fileName, String fileLocation) throws IOException{
-        Workbook workbook = ExcelPoiUtil.getWorkBook(fileName, fileLocation);
-        Sheet sheet = workbook.getSheetAt(0);
-        List<ProductImportDTO> excelValues = new ArrayList<ProductImportDTO>();
-                    for (int i=1; i <= sheet.getLastRowNum(); i++) {
-                        Row row = sheet.getRow(i);
-                        ProductImportDTO productImportDTO = readDataFromExcel(row);
-                        excelValues.add(productImportDTO);
-                    }
-        return excelValues;
-    }
-
-    private ProductImportDTO readDataFromExcel(Row row) {
-        ProductImportDTO productImportDTO = new ProductImportDTO();
-        productImportDTO.setProductName(ExcelPoiUtil.getCellValue(row.getCell(0)));
-        productImportDTO.setDescription(ExcelPoiUtil.getCellValue(row.getCell(1)));
-        productImportDTO.setQuantityLeft(ExcelPoiUtil.getCellValue(row.getCell(2)));
-        productImportDTO.setManuFacter(ExcelPoiUtil.getCellValue(row.getCell(3)));
-        productImportDTO.setPrice(ExcelPoiUtil.getCellValue(row.getCell(4)));
-        productImportDTO.setStyle(ExcelPoiUtil.getCellValue(row.getCell(5)));
-        productImportDTO.setRom(ExcelPoiUtil.getCellValue(row.getCell(6)));
-        productImportDTO.setRam(ExcelPoiUtil.getCellValue(row.getCell(7)));
-        productImportDTO.setDiscount(ExcelPoiUtil.getCellValue(row.getCell(8)));
-        return productImportDTO;
-    }
-
-    private void validateData(List<ProductImportDTO> excelValues) {
-        Set<String> stringSet = new HashSet<String>();
-        for (ProductImportDTO item: excelValues) {
-            validateRequireField(item);
-            validateDuplicate(item, stringSet);
-        }
-        SingletonServiceUtil.getProductServiceInstance().validateImportProduct(excelValues);
-    }
-
-    private void validateDuplicate(ProductImportDTO item, Set<String> stringSet) {
-        String message = item.getError();
-        if (!stringSet.contains(item.getProductName())) {
-            stringSet.add(item.getProductName());
-        } else {
-            if (item.isValid()) {
-                message += "<br/>";
-                message = "Product is duplicate";
+    private ProductDTO returnValueOfDTO(ProductDTO dto, Map<String, String> mapValue) {
+        for (Map.Entry<String, String> item: mapValue.entrySet()) {
+            if (item.getKey().equals("pojo.productName")) {
+                dto.setProductName(item.getValue());
+            } else if (item.getKey().equals("pojo.description")) {
+                dto.setDescription(item.getValue());
+            } else if (item.getKey().equals("pojo.quantityLeft")) {
+                dto.setQuantityLeft(item.getValue());
+            } else if (item.getKey().equals("pojo.price")) {
+                dto.setPrice(item.getValue());
+            } else if (item.getKey().equals("pojo.style")) {
+                dto.setStyle(item.getValue());
+            } else if (item.getKey().equals("pojo.rom")) {
+                dto.setRom(item.getValue());
+            } else if (item.getKey().equals("pojo.ram")) {
+                dto.setRam(item.getValue());
+            } else if (item.getKey().equals("discountId")) {
+                DiscountDTO discountDTO = SingletonServiceUtil.getDiscountServiceInstance().findById(Integer.parseInt(item.getValue().toString()));
+                dto.setDiscountDTO(discountDTO);
+            } else if (item.getKey().equals("manufacterId")) {
+                ManuFacterDTO manuFacterDTO = SingletonServiceUtil.getManuFacterServiceInstance().findById(Integer.parseInt(item.getValue().toString()));
+                dto.setManuFacterDTO(manuFacterDTO);
+            } else if (item.getKey().equals("pojo.productId")) {
+                dto.setProductId(Integer.parseInt(item.getValue().toString()));
             }
         }
-        if (StringUtils.isNotBlank(message)) {
-            item.setValid(false);
-            item.setError(message.substring(5));
-        }
+        return dto;
     }
-
-    private void validateRequireField(ProductImportDTO item) {
-        String message = "";
-        if (StringUtils.isBlank(item.getProductName())) {
-            message += "<br/>";
-            message += "Product is not blank.";
-        }
-        if (StringUtils.isBlank(item.getManuFacter())) {
-            message += "<br/>";
-            message += "Manufacter type is not blank.";
-        }
-        if (StringUtils.isBlank(item.getDiscount())) {
-            message += "<br/>";
-            message += "Discount type is not blank.";
-        }
-        if (StringUtils.isNotBlank(message)) {
-            item.setValid(false);
-        }
-        item.setError(message);
-    }
-
-    private Set<String> buildSetValueListenGuideline() {
+    private Set<String> buildSetValueProduct() {
         Set<String> returnValue = new HashSet<String>();
         returnValue.add("pojo.productName");
+        returnValue.add("pojo.description");
+        returnValue.add("pojo.quantityLeft");
+        returnValue.add("pojo.price");
+        returnValue.add("pojo.style");
+        returnValue.add("pojo.rom");
+        returnValue.add("pojo.ram");
+        returnValue.add("discountId");
+        returnValue.add("manufacterId");
+        returnValue.add("pojo.productId");
         return returnValue;
     }
 }

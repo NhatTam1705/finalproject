@@ -27,7 +27,6 @@ public class ProductDTO implements Serializable {
     private Timestamp createdDate;
     private Timestamp modifiedDate;
     private String image;
-    private ProductImportDTO productImportDTO;
 
     public Integer getProductId() {
         return productId;
@@ -123,14 +122,6 @@ public class ProductDTO implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public ProductImportDTO getProductImportDTO() {
-        return productImportDTO;
-    }
-
-    public void setProductImportDTO(ProductImportDTO productImportDTO) {
-        this.productImportDTO = productImportDTO;
     }
     
     public ManuFacterDTO getManuFacterDTO() {

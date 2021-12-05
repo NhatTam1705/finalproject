@@ -1,93 +1,88 @@
-<%-- 
-    Document   : edit
-    Created on : Nov 27, 2021, 7:16:21 PM
-    Author     : 19110
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="/common/taglib.jsp"%>
-<c:url var="editProductUrl" value="/ajax-admin-product-edit.html">
-    <c:param name="urlType" value="url_edit"/>
-</c:url>
-<c:choose>
-    <c:when test="${not empty messageResponse}">
-        ${messageResponse}
-    </c:when>
-    <c:otherwise>
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <c:if test="${not empty item.pojo.productId}">
-                        <h4 class="modal-title">Edit Product</h4>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp"%>
+<c:url var="formUrl" value="/admin-product-edit.html"/>
+<html>
+<head>
+    <title>Edit Product</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <c:if test="${not empty messageResponse}">
+                        <div class="alert alert-block alert-${alert}">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                                ${messageResponse}
+                        </div>
                     </c:if>
-                    <c:if test="${empty item.pojo.productId}">
-                        <h4 class="modal-title">Add Product</h4>
-                    </c:if>
-                </div>
-                <form action="${editProductUrl}" method="POST" id="editProductForm">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="text" placeholder="Product Name" class="form-control" value="${item.pojo.productName}" name="pojo.productName" id="productName" required/>
-                                </div>
+                    <form action="${formUrl}" method="post" enctype="multipart/form-data" id="formEdit">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Product Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.productName" id="productName" value="${item.pojo.productName}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="text" placeholder="Description" class="form-control" value="${item.pojo.description}" name="pojo.description"/>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Description</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.description" id="description" value="${item.pojo.description}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="number" placeholder="Quantity Left" class="form-control" value="${item.pojo.quantityLeft}" name="pojo.quantityLeft"/>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Quantity Left</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.quantityLeft" id="quantityLeft" value="${item.pojo.quantityLeft}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="number" placeholder="Price" class="form-control" value="${item.pojo.price}" name="pojo.price"/>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Price</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.price" id="price" value="${item.pojo.price}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="text" placeholder="Style" class="form-control" value="${item.pojo.style}" name="pojo.style"/>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Style</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.style" id="style" value="${item.pojo.style}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="number" placeholder="ROM" class="form-control" value="${item.pojo.rom}" name="pojo.rom"/>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">ROM</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.rom" id="rom" value="${item.pojo.rom}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="number" placeholder="RAM" class="form-control" value="${item.pojo.ram}" name="pojo.ram"/>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">RAM</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="pojo.ram" id="ram" value="${item.pojo.ram}"/>
                             </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <input type="file" placeholder="Image" class="form-control" value="${item.pojo.image}" name="pojo.image"/>
-                                </div>
-                            </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <c:choose>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <c:choose>
                                         <c:when test="${not empty item.pojo.productId}">
                                             <select id="discount" name="discountId">
                                                 <option value="${item.pojo.discountDTO.discountId}">${item.pojo.discountDTO.discountName}</option>
@@ -107,46 +102,84 @@
                                             </select>
                                         </c:otherwise>
                                     </c:choose>
-                                </div>
-                            </div>
-                            <br/>
-                            <br/>
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <c:choose>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <c:choose>
                                         <c:when test="${not empty item.pojo.productId}">
-                                            <select id="manuFacter" name="manuFacterId">
+                                            <select id="manufacter" name="manufacterId">
                                                 <option value="${item.pojo.manuFacterDTO.manufacterId}">${item.pojo.manuFacterDTO.manufacterName}</option>
-                                                <c:forEach items="${item.manuFacters}" var="itemManuFacter">
-                                                    <c:if test="${itemManuFacter.manufacterId ne item.pojo.manuFacterDTO.manufacterId}">
-                                                        <option value="${itemManuFacter.manufacterId}">${itemManuFacter.manufacterName}</option>
+                                                <c:forEach items="${item.manuFacters}" var="itemManufacter">
+                                                    <c:if test="${itemManufacter.manufacterId ne item.pojo.manuFacterDTO.manufacterId}">
+                                                        <option value="${itemManufacter.manufacterId}">${itemManufacter.manufacterName}</option>
                                                     </c:if>
                                                 </c:forEach>
                                             </select>
                                         </c:when>
                                         <c:otherwise>
-                                            <select id="manuFacter" name="manuFacterId">
+                                            <select id="manufacter" name="manufacterId">
                                                 <option value="-1">Choose Manufacter</option>
-                                                <c:forEach items="${item.manuFacters}" var="itemManuFacter">
-                                                    <option value="${itemManuFacter.manufacterId}">${itemManuFacter.manufacterName}</option>
+                                                <c:forEach items="${item.manuFacters}" var="itemManufacter">
+                                                    <option value="${itemManufacter.manufacterId}">${itemManufacter.manufacterName}</option>
                                                 </c:forEach>
                                             </select>
                                         </c:otherwise>
                                     </c:choose>
-                                </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Image</label>
+                            <div class="col-sm-9">
+                                <input type="file" name="file" id="uploadImage"/>
                             </div>
                         </div>
-                    </div>
-                    <c:if test="${not empty item.pojo.productId}">
-                        <input type="hidden" name="pojo.productId" value="${item.pojo.productId}"/>
-                    </c:if>
-                    <input type="hidden" name="crudaction" id="crudactionEdit"/>
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" id="btnSave" class="btn btn-primary">Save</button>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">View Image</label>
+                            <div class="col-sm-9">
+                                <c:if test="${not empty item.pojo.image}">
+                                    <c:set var="image" value="/htv-web/fileupload/${item.pojo.image}"/>
+                                </c:if>
+                                <img src="${image}" id="viewImage" width="150px" height="150ox">
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="submit" class="btn btn-white btn-warning btn-bold" value="Submit"/>
+                            </div>
+                        </div>
+                        <c:if test="${not empty item.pojo.productId}">
+                            <input type="hidden" name="pojo.productId" value="${item.pojo.productId}"/>
+                        </c:if>
+                    </form>
                 </div>
             </div>
         </div>
-    </c:otherwise>
-</c:choose>
+    </div>
+</div>
+<script>
+    var productId = '';
+    <c:if test="${not empty item.pojo.productId}">
+        productId = ${item.pojo.productId};
+    </c:if>
+    $(document).ready(function () {
+        $('#uploadImage').change(function () {
+            readURL(this, "viewImage");
+        });
+    });
+    function readURL(input, imageId) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#' +imageId).attr('src', reader.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+</body>
+</html>

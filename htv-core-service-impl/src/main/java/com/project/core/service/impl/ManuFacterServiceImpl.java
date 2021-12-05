@@ -28,4 +28,9 @@ public class ManuFacterServiceImpl implements ManuFacterService{
         } 
         return dtos;
     }
+    public ManuFacterDTO findById(Integer manufacterId) {
+        ManuFacterEntity entity = SingletonDaoUtil.getManuFacterDaoInstance().findById(manufacterId);
+        ManuFacterDTO dto = ManuFacterBeanUtil.entityToDto(entity);
+        return dto;
+    }
 }

@@ -28,4 +28,11 @@ public class DiscountServiceImpl implements DiscountService{
         } 
         return dtos;
     }
+
+    public DiscountDTO findById(Integer discountId) {
+        DiscountEntity entity = SingletonDaoUtil.getDiscountDaoInstance().findById(discountId);
+        DiscountDTO dto = DiscountBeanUtil.entityToDto(entity);
+        return dto;
+    }
+
 }

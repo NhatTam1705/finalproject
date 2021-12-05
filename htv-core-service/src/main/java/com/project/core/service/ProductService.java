@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.project.core.dto.ProductDTO;
-import com.project.core.dto.ProductImportDTO;
+
+import org.hibernate.exception.ConstraintViolationException;
 
 /**
  *
@@ -20,7 +21,6 @@ public interface ProductService {
     Object[] findByProperty(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit);
     ProductDTO findById(Integer productId);
     void saveProduct(ProductDTO productDTO);
-    ProductDTO updateProduct(ProductDTO productDTO);
-    void validateImportProduct(List<ProductImportDTO> productImportDTOS);
-    void saveProductImport(List<ProductImportDTO> productImportDTOS);
+    ProductDTO updateProduct(ProductDTO productDTO) throws ConstraintViolationException;
+    ProductDTO findByProductId(String property, Integer productId);
 }

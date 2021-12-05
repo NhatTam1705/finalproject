@@ -15,4 +15,5 @@ import com.project.core.dto.ManuFacterDTO;
  */
 public interface ManuFacterService {
     List<ManuFacterDTO> findAll();
+    ManuFacterDTO findById(Integer manufacterId);
 }
