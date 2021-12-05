@@ -1,49 +1,73 @@
 //Menu bar
-const menu = document.querySelector('.btn-menu')
-var click = 0
-menu.addEventListener('click', () => {
-    const navigation = document.querySelectorAll('.hide-nav')
-        navigation.forEach((nav) => {
-            nav.classList.toggle('height-navbar')
-    })
-});
+$('.btn-menu').click(function () {
+    $('.nav-item').toggleClass('nav-item-show')
+    $('.nav-item').addClass('trans__li')
+    $('.nav-item').show()
+    $('.subnav').removeClass('show-subnav')
+})
 
+$(window).bind("resize", function () {
+    if ($(this).width() > '1024') {
+        $('li').removeClass('nav-item-show')
+        $('.nav-item').show()
+        $('.nav-icon-angle').removeClass('rotate-angle__180')
+        $('.subnav').removeClass('show-subnav')
+    }
+})
 
 var nav = document.getElementById('header')
 let lastScrollY = window.scrollY;
-var hideNavbar = document.querySelectorAll('.hide-nav')
 window.addEventListener("scroll", () => {
     if (lastScrollY < window.scrollY) {
         nav.classList.add('header-hidden');
-        hideNavbar.forEach((hide) => {
-            hide.classList.remove('height-navbar')
-        });
-        click = 0;
     } else {
         nav.classList.remove('header-hidden');
     }
     lastScrollY = window.scrollY;
 });
 
+//nav-product-hide
+$('.nav-item__up').click(function () {
+    if (innerWidth < '1024') {
+        $('.nav-item__hide').slideToggle()
+        $('.subnav').toggleClass('show-subnav')
+        $('.nav-icon-angle').toggleClass('rotate-angle__180')
+        $('li').removeClass('trans__li')
+    }
+})
 
 
-//Search
+const htvNavBar = document.getElementById('htv-navbar')
+const navRight = document.querySelector('.nav-right')
+const showSearchBox = document.querySelector('.icon-search')
+const navSearch = document.querySelector('.nav-search')
+const hideSearchBox = document.querySelector('.nav-search-btn-close')
+var screenWidth = "767"
 
-const navSearch = document.querySelector('.js-nav-search')
-const navRight = document.querySelector('.js-nav-right')
-const htvNavBar = document.querySelector('.js-htv-navbar')
+$(window).bind("resize", function () {
+    if ($(this).width() <= screenWidth) {
+        $('nav').removeClass('htv-navbar__state')
+        $('div').removeClass('nav-search__state')
+        $('div').removeClass('nav-right__state')
+    }
+})
 
-function showSearchBox() {
-    navSearch.classList.add('show-nav-search')
-    navRight.classList.add('hide-nav-right')
-    htvNavBar.classList.add('hide-htv-navbar')
-}
+showSearchBox.addEventListener('click', () => {
+    if (screenWidth < innerWidth) {
+        navRight.classList.add('nav-right__state')
+        navSearch.classList.add('nav-search__state')
+        htvNavBar.classList.add('htv-navbar__state')
+    }
+})
 
-function hideSearchBox() {
-    navSearch.classList.remove('show-nav-search')
-    navRight.classList.remove('hide-nav-right')
-    htvNavBar.classList.remove('hide-htv-navbar')
-}
+
+hideSearchBox.addEventListener('click', () => {
+    if (screenWidth < innerWidth) {
+        navRight.classList.remove('nav-right__state')
+        navSearch.classList.remove('nav-search__state')
+        htvNavBar.classList.remove('htv-navbar__state')
+    }
+})
 
 const slider = document.querySelector(".slider");
 const nextBtn = document.querySelector(".next-btn");
@@ -127,6 +151,7 @@ slider.addEventListener("mouseout", () => {
 
 
 window.addEventListener("scroll", scrollFunction);
+
 function scrollFunction() {
     if (window.pageYOffset > 300) { // Show backToTopButton
         if (!backToTopButton.classList.contains("btnEntrance")) {
@@ -175,23 +200,3 @@ const setTheme = (theme) => (document.documentElement.className = theme);
 const themeLight = document.querySelector('.theme-light')
 const themeDark = document.querySelector('.theme-dark')
 const iconDark = document.querySelectorAll('.icon-font')
-const iconLight = document.querySelectorAll('.icon-font-white')
-
-themeLight.addEventListener('click', () => {
-    iconDark.forEach((iconDarks) => {
-        iconDarks.classList.remove('change-icon-font')
-        console.log(iconDarks)
-    });
-    iconLight.forEach((iconLights) => {
-        iconLights.classList.add('change-icon-font')
-    });
-});
-
-themeDark.addEventListener('click', () => {
-    iconDark.forEach((iconDarks) => {
-        iconDarks.classList.add('change-icon-font')
-    });
-    iconLight.forEach((iconLights) => {
-        iconLights.classList.remove('change-icon-font')
-    });
-});
