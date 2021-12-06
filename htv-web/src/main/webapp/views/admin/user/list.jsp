@@ -138,6 +138,7 @@
                     $('.widget-body').slideToggle()
                     $('.fa-chevron-up').toggleClass('fa-chevron-up__rotate')
                 })
+                
                 $('#btnSearch').click(function () {
                     $('#crudaction').val('redirect_search');
                     $('#urlType').val('url_list');

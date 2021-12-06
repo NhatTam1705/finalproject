@@ -331,9 +331,9 @@
     float: left;
 }
 
-#formEdit{
+/* #formEdit{
     padding-left: 100px;
-}
+} */
 
 #btnSearch {
     outline: none;
@@ -354,6 +354,7 @@ input {
 input#uploadImage {
     outline: none;
     cursor: pointer;
+    height: inherit;
 }
 
 select {
@@ -414,6 +415,62 @@ select {
     transition: 0.25s;
 }
 /* end import css */
+
+/* change form edit */
+.form-center{
+    width: 600px;
+    margin: 80px auto;
+    background-color: #f1f1f1;
+    padding: 10px 20px 40px 20px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+}
+
+.form-edit__left, .form-edit__right{
+    display: inline-block;
+}
+
+.form-edit__right{
+    float: right;
+    padding-top: 30px;
+}
+
+.form-center input{
+    height: 30px;
+    width: 100%;
+}
+
+.box-btn{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.btn-submit{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn-submit .add-product{
+    height: 45px;
+    border-radius: 0;
+    background-color: #f0932b;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.25s;
+}
+
+.btn-submit .add-product:hover{
+    background-color: #fff;
+    border: 1px solid #f0932b;
+    color: #f0932b;
+    transition: 0.25s;
+}
+
+.btn-submit::after{
+    content: '';
+    display: block;
+    clear: both;
+}
 
 @media (max-width: 420px) {
     .sidebar li .tooltip {
