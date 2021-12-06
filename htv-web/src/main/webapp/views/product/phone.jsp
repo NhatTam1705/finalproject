@@ -203,7 +203,7 @@
                 <div class="cards">
                     <c:forEach var="item" items="${items.listResult}">
                         <div class="card">
-                            <c:url value="/home-phone-detail.html" var="detailUrl">
+                            <c:url value="/product-phone-detail.html" var="detailUrl">
                                 <c:param name="productId" value="${item.productId}"/>
                             </c:url>
                             <a href="${detailUrl}" class="c-btnbox">

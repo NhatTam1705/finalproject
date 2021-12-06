@@ -28,7 +28,7 @@ import org.apache.commons.lang.StringUtils;
  *
  * @author 19110
  */
-@WebServlet(urlPatterns = {"/home-phone.html","/home-phone-detail.html"})
+@WebServlet(urlPatterns = {"/home-phone.html","/product-phone-detail.html"})
 public class ProductController extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,12 +38,12 @@ public class ProductController extends HttpServlet{
             ProductDTO exitsProduct = SingletonServiceUtil.getProductServiceInstance().findById(Integer.parseInt(productStr));
             command.setPojo(exitsProduct);
             request.setAttribute(WebConstant.FORM_ITEM, command);
-            RequestDispatcher rd = request.getRequestDispatcher("/views/web/product/detail.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/views/product/detail.jsp");
             rd.forward(request, response);
         } else {
             executeSearchProduct(request, command);
             request.setAttribute(WebConstant.LIST_ITEMS, command);
-            RequestDispatcher rd = request.getRequestDispatcher("/views/web/product/phone.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/views/product/phone.jsp");
             rd.forward(request, response);
         }
     }
