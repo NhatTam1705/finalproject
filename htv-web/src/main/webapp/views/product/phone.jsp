@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
+<c:url var="urlList" value="/home-phone.html"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,6 +17,7 @@
         <section class="banner margin">
             <img src="<c:url value='template/img/bannner/iphone-13.jpg'/>" class="banner-img" alt="">
         </section>
+        <form action="${urlList}" method="get" id="formUrl">
         <section class="filter">
             <div class="filter-box">
                 <div class="filter-beetle margin">
@@ -199,107 +201,35 @@
         <section id="category-page" data-name="phone">
             <div class="container-productbox margin">
                 <div class="cards">
-                    <div class="card">
-                        <a href="" class="c-btnbox">
-                            <div class="card-sale">
-                                <p class=text-sale>Sale 0%</p>
-                            </div>
-                            <div class="card-box">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/248284/samsung-galaxy-z-fold-3-green-1-600x600.jpg"
-                                     alt="" class="card-image" />
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-content-name">Samsung Galaxy Z Fold 5G</h3>
-                                <div class="card-content-price">
-                                    44.990.000₫
+                    <c:forEach var="item" items="${items.listResult}">
+                        <div class="card">
+                            <c:url value="/product-phone-detail.html" var="detailUrl">
+                                <c:param name="productId" value="${item.productId}"/>
+                            </c:url>
+                            <a href="${detailUrl}" class="c-btnbox">
+                                <div class="card-sale">
+                                    <p class=text-sale>${item.discountDTO.discountName}</p>
                                 </div>
-                                <div class="card-content-discount">
-                                    Sale 1.000.000₫
+                                <div class="card-box">
+                                    <img src="<c:url value='/fileupload/${item.image}'/>"
+                                        alt="" class="card-image" />
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="">
-                            <div class="card-sale">
-                                <p class=text-sale>Sale 0%</p>
-                            </div>
-                            <div class="card-box">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-do-new-2-600x600.jpg"
-                                     alt="" class="card-image" />
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-content-name">Iphone 12</h3>
-                                <div class="card-content-price">
-                                    44.990.000₫
+                                <div class="card-content">
+                                    <h3 class="card-content-name">${item.productName}</h3>
+                                    <div class="card-content-price">
+                                        ${item.price}₫
+                                    </div>
+                                    <div class="card-content-discount">
+                                        Sale ${item.discountDTO.discountPercent * item.price / 100}₫
+                                    </div>
                                 </div>
-                                <div class="card-content-discount">
-                                    Sale 1.000.000₫
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="">
-                            <div class="card-sale">
-                                <p class=text-sale>Sale 0%</p>
-                            </div>
-                            <div class="card-box">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/248293/xiaomi-11t-white-1-2-600x600.jpg"
-                                     alt="" class="card-image" />
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-content-name">Xiaomi 11T 5G 128GB</h3>
-                                <div class="card-content-price">
-                                    44.990.000₫
-                                </div>
-                                <div class="card-content-discount">
-                                    Sale 1.000.000₫
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="">
-                            <div class="card-sale">
-                                <p class=text-sale>Sale 0%</p>
-                            </div>
-                            <div class="card-box">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/241049/samsung-galaxy-a03s-black-600x600.jpg"
-                                     alt="" class="card-image" />
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-content-name">Samsung Galaxy A03S</h3>
-                                <div class="card-content-price">
-                                    44.990.000₫
-                                </div>
-                                <div class="card-content-discount">
-                                    Sale 1.000.000₫
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="">
-                            <div class="card-sale">
-                                <p class=text-sale>Sale 0%</p>
-                            </div>
-                            <div class="card-box">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/239747/oppo-reno6-z-5g-aurora-1-600x600.jpg"
-                                     alt="" class="card-image" />
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-content-name">Oppo Reno6 Z 5G</h3>
-                                <div class="card-content-price">
-                                    44.990.000₫
-                                </div>
-                                <div class="card-content-discount">
-                                    Sale 1.000.000₫
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    </c:forEach>
                 </div>
         </section>
+        <ul id="pagination-demo" class="pagination-sm"></ul>
+        <input type="hidden" id="page" name="page"/>
+        </form>
     </body>
 </html>

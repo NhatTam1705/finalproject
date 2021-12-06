@@ -26,6 +26,7 @@ public class AbstractCommand<T> {
     private int page = 1;
     private String urlType;
     private int totalPages;
+    private int discount;
 
     public String getUrlType() {
         return urlType;
@@ -139,5 +140,12 @@ public class AbstractCommand<T> {
         this.listResult = listResult;
     }
     
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
     
 }
