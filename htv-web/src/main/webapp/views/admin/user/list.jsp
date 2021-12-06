@@ -35,7 +35,7 @@
                     </c:if>
                     <form action="${listUserUrl}" method="get" id="formUrl">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="search">
                             <div class="widget-box table-filter">
                                 <div class="widget-header">
                                     <h4 class="widget-title">Search</h4>
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label"></label>
-                                                <div class="col-sm-8">
+                                                <div class="col-sm-8 search-btn">
                                                     <button id="btnSearch" class="btn btn-sm btn-success">
                                                         Search Now
                                                         <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive info">
                             <display:table id="tableList" name="items.listResult" partialList="true" size="${items.totalItems}"
                                             pagesize="${items.maxPageItems}" sort="external" requestURI="${requestUrl}"
                                             class="table table-fcv-ace table-striped table-bordered table-hover dataTable no-footer"
@@ -134,6 +134,10 @@
         <div class="modal fade" id="myModal" role="dialog"></div>
         <script type="text/javascript">
             $(document).ready(function () {
+                $('.fa-chevron-up').click(function(){
+                    $('.widget-body').slideToggle()
+                    $('.fa-chevron-up').toggleClass('fa-chevron-up__rotate')
+                })
                 $('#btnSearch').click(function () {
                     $('#crudaction').val('redirect_search');
                     $('#urlType').val('url_list');

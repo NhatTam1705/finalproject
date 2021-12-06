@@ -259,7 +259,7 @@
 
 .home-section {
     position: absolute;
-    background: #e4e9f7;
+    /* background: #e4e9f7; */
     min-height: 100%;
     top: 0;
     left: 78px;
@@ -281,9 +281,11 @@
     margin: 18px;
 }
 
+/* import */
 .pull-right .border-button {
     border: 1px solid #ccc;
     margin-right: 5px;
+    margin-top: 10px;
 }
 
 .pull-right i {
@@ -297,7 +299,13 @@
 .pull-right .btn-del {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
+    background-color: transparent;
+}
+.pull-right .btn-del:enabled{
     color: #ff0000;
+}
+.pull-right .btn-del:disabled{
+    color: #ccc;
 }
 
 .pull-right .btn-import {
@@ -329,6 +337,7 @@
 
 #btnSearch {
     outline: none;
+    height: 35px;
 }
 
 .padding-right {
@@ -350,6 +359,61 @@ input#uploadImage {
 select {
     outline: none;
 }
+
+.form-group:last-child{
+    margin-bottom: 0;
+}
+
+.widget-header{
+    background: url('../../img/register/header_bg.gif') repeat-x 0 0;
+    padding-bottom: 10px;
+}
+
+.widget-body{
+    padding: 20px 0;
+}
+.widget-header h4{
+    padding-left: 20px;
+    color: #767676;
+    font-size: 20px;    
+    margin-top: 15px;
+}
+
+.widget-toolbar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.widget-toolbar i{
+    font-size: 20px;
+}
+
+.search{
+    margin: 20px 40px 20px 40px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.search-btn{
+    text-align: right;
+}
+
+.info{
+    margin: 0 30px;
+}
+/* icon rotate */
+.fa-chevron-up__rotate{
+    transform: rotate(180deg);
+    transition: 0.25s;
+}
+
+.fa-chevron-up{
+    transition: 0.25s;
+}
+/* end import css */
 
 @media (max-width: 420px) {
     .sidebar li .tooltip {
