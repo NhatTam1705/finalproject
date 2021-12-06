@@ -26,7 +26,7 @@
                     </c:if>
                     <form action="${formUrl}" method="post" enctype="multipart/form-data" id="formEdit">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Product Name</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">Product Name</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.productName" id="productName" value="${item.pojo.productName}"/>
                             </div>
@@ -34,7 +34,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Description</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">Description</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.description" id="description" value="${item.pojo.description}"/>
                             </div>
@@ -42,7 +42,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Quantity Left</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">Quantity Left</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.quantityLeft" id="quantityLeft" value="${item.pojo.quantityLeft}"/>
                             </div>
@@ -50,7 +50,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Price</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">Price</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.price" id="price" value="${item.pojo.price}"/>
                             </div>
@@ -58,7 +58,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Style</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">Style</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.style" id="style" value="${item.pojo.style}"/>
                             </div>
@@ -66,7 +66,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">ROM</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">ROM</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.rom" id="rom" value="${item.pojo.rom}"/>
                             </div>
@@ -74,7 +74,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">RAM</label>
+                            <label class="width-200 float-left control-label no-padding-right text-right padding-right">RAM</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pojo.ram" id="ram" value="${item.pojo.ram}"/>
                             </div>
@@ -130,14 +130,15 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">Image</label>
+                            <label class="width-200 float-left control-label no-padding-right">Image</label>
                             <div class="col-sm-9">
                                 <input type="file" name="file" id="uploadImage"/>
                             </div>
                         </div>
                         <br/>
+                        <br/>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">View Image</label>
+                            <label class="width-200 float-left control-label no-padding-right">View Image</label>
                             <div class="col-sm-9">
                                 <c:if test="${not empty item.pojo.image}">
                                     <c:set var="image" value="/htv-web/fileupload/${item.pojo.image}"/>
@@ -148,7 +149,7 @@
                         <br/>
                         <br/>
                         <div class="form-group">
-                            <div class="col-sm-12">
+                            <div class="col-sm-12" style="padding-bottom: 80px">
                                 <input type="submit" class="btn btn-white btn-warning btn-bold" value="Submit"/>
                             </div>
                         </div>

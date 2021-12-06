@@ -62,20 +62,20 @@
                                 </div>
                                 <div class="table-btn-controls">
                                     <div class="pull-right tableTools-container">
-                                        <div class="dt-buttons btn-overlap btn-group">
+                                        <div class="dt-buttons btn-overlap btn-group border-button">
                                             <c:url var="addUrl" value="/admin-product-edit.html">
                                                 <c:param name="urlType" value="url_edit"/>
                                             </c:url>
-                                            <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" href="${addUrl}"
+                                            <a flag="info" class="dt-button buttons-colvis btn btn-white btn-add btn-bold" href="${addUrl}"
                                                 data-toggle="tooltip" title="Add Product">
                                                     <span>
-                                                        <i class="fa fa-plus-circle bigger-110 purple"></i>
+                                                        <i class="fas fa-plus"></i>
                                                     </span>
                                             </a>
-                                            <button type="button" class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" id="deleteAll" disabled onclick="warningBeforeDelete()"
+                                            <button type="button" class="dt-button buttons-html5 btn btn-white btn-del btn-bold" id="deleteAll" disabled onclick="warningBeforeDelete()"
                                                     data-toggle="tooltip" title="Delete All">
                                                      <span>
-                                                        <i class="fa fa-trash-o bigger-110 pink"></i>
+                                                        <i class="fas fa-trash-alt"></i>
                                                     </span>
                                             </button>
                                         </div>
