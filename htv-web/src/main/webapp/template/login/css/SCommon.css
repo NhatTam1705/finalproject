@@ -184,8 +184,24 @@ a {
   min-height: 14px;
   font-family: PingFangSC-Regular;
   text-decoration: none;
-  padding: 10px 0;
+  margin: 10px 0;
   word-wrap: break-word;
+  cursor: pointer;
+  
+}
+
+#content .login-main .login-box .alert{
+    font-size: 13px;
+    font-family: sans-serif;
+    padding: 5px 0;
+    background-color: rgba(255,0,0,0.2);
+}
+#content .login-main .login-box .btn-close{
+    float: right;
+    border: none;
+    background-color: transparent;
+    color: red;
+    font-size: 16px;
 }
 #content .login-main .login-box .captcha {
   width: 140px;

@@ -42,10 +42,10 @@
                             <div id="errormessage" class="errormessage">
                                 <c:if test="${not empty messageResponse}">
                                     <div class="alert alert-block alert-${alert}">
-                                        <!--                                        <button type="button" class="close" data-dismiss="alert">-->
-                                        <i class="fas fa-times"></i>
-                                        <!--</button>-->
-                                        ${messageResponse}
+                                        <button type="button" class="btn-close" data-dismiss="alert">
+                                            <i class="ace-icon fa fa-times"></i>
+                                        </button>
+                                        &nbsp&nbsp&nbsp&nbsp${messageResponse}
                                     </div>
                                 </c:if>
                             </div>
@@ -78,10 +78,10 @@
                             <div id="errormessage" class="errormessage">
                                 <c:if test="${not empty messageResponse}">
                                     <div class="alert alert-block alert-${alert}">
-                                        <button type="button" class="close" data-dismiss="alert">
-                                            <i class="fas fa-times"></i>
+                                        <button type="button" class="btn-close" data-dismiss="alert">
+                                            <i class="ace-icon fa fa-times"></i>
                                         </button>
-                                        ${messageResponse}
+                                        &nbsp&nbsp&nbsp&nbsp${messageResponse}
                                     </div>
                                 </c:if>
                             </div>
