@@ -25,6 +25,7 @@
         <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <link rel="stylesheet" href="<c:url value='/template/web/css/product.css'/>" type="text/css" />
         <link rel="stylesheet" href="https://livejs.com/live.js"/>
+    <script src="<c:url value='/template/web/jquery.twbsPagination.js'/>" type="text/javascript"></script>
 	<title><dec:title default="TV-Company"/></title>
 </head>
     <body>
@@ -36,12 +37,32 @@
         <%-- begin body --%>
         <dec:body/>
         <%-- end body --%>
-
+        
         <%-- begin footer --%>
         <%@include file="/common/web/footer.jsp"%>
         <%-- end footer --%>    
         </div>
         <script src="<c:url value='/template/web/js/script.js'/>"></script>
         <script src="<c:url value='/template/web/js/product.js'/>"></script>
+        <script type="text/javascript">
+    var totalPages = ${items.totalPages};
+    var startPage = ${items.page};
+    var visiblePages = ${items.maxPageItems};
+    $(document).ready(function () {
+    });
+    $(function () {
+        var obj = $('#pagination-demo').twbsPagination({
+            totalPages: totalPages,
+            startPage: startPage,
+            visiblePages: visiblePages,
+            onPageClick: function (event, page) {
+                if (page != startPage) {
+                    $('#page').val(page);
+                    $('#formUrl').submit();
+                }
+            }
+        });
+    });
+</script>
     </body>
 </html>
