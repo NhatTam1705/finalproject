@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 public class OrderDetailsDTO implements Serializable {
     private Integer orderId;
     private UsersDTO users;
-    private BigDecimal total = BigDecimal.ZERO;
+    private BigDecimal total;
     private Timestamp createdDate;
 
     public Integer getOrderId() {

@@ -42,23 +42,23 @@ public class ProductEntity {
     private String description;
 
     @Column(name = "quantity_left")
-    private String quantityLeft;
+    private Integer quantityLeft;
 
     @ManyToOne
     @JoinColumn(name = "manufacter_id")
     private ManuFacterEntity manufacter;
 
     @Column(name = "price")
-    private String price;
+    private BigDecimal price;
 
     @Column(name = "style")
     private String style;
 
     @Column(name = "rom")
-    private String rom;
+    private Integer rom;
 
     @Column(name = "ram")
-    private String ram;
+    private Integer ram;
 
     @ManyToOne
     @JoinColumn(name = "discount_id")
@@ -100,20 +100,20 @@ public class ProductEntity {
         this.description = description;
     }
 
-    public String getQuantityLeft() {
+    public Integer getQuantityLeft() {
         return quantityLeft;
     }
 
-    public void setQuantityLeft(String quantityLeft) {
+    public void setQuantityLeft(Integer quantityLeft) {
         this.quantityLeft = quantityLeft;
     }
 
-    public String getPrice() {
-        return price;
+    public ManuFacterEntity getManufacter() {
+        return manufacter;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setManufacter(ManuFacterEntity manufacter) {
+        this.manufacter = manufacter;
     }
 
     public DiscountEntity getDiscount() {
@@ -164,28 +164,28 @@ public class ProductEntity {
         this.style = style;
     }
 
-    public String getRom() {
+    public Integer getRom() {
         return rom;
     }
 
-    public void setRom(String rom) {
+    public void setRom(Integer rom) {
         this.rom = rom;
     }
 
-    public String getRam() {
+    public Integer getRam() {
         return ram;
     }
 
-    public void setRam(String ram) {
+    public void setRam(Integer ram) {
         this.ram = ram;
     }
 
-    public ManuFacterEntity getManufacter() {
-        return manufacter;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setManufacter(ManuFacterEntity manufacter) {
-        this.manufacter = manufacter;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
     
 }

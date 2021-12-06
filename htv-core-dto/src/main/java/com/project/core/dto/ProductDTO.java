@@ -17,12 +17,12 @@ public class ProductDTO implements Serializable {
     private Integer productId;
     private String productName;
     private String description;
-    private String quantityLeft;
+    private Integer quantityLeft;
     private ManuFacterDTO manuFacterDTO;
-    private String price;
+    private BigDecimal price;
     private String style;
-    private String rom;
-    private String ram;
+    private Integer rom;
+    private Integer ram;
     private DiscountDTO discountDTO;
     private Timestamp createdDate;
     private Timestamp modifiedDate;
@@ -52,19 +52,19 @@ public class ProductDTO implements Serializable {
         this.description = description;
     }
 
-    public String getQuantityLeft() {
+    public Integer getQuantityLeft() {
         return quantityLeft;
     }
 
-    public void setQuantityLeft(String quantityLeft) {
+    public void setQuantityLeft(Integer quantityLeft) {
         this.quantityLeft = quantityLeft;
     }
 
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -76,19 +76,19 @@ public class ProductDTO implements Serializable {
         this.style = style;
     }
 
-    public String getRom() {
+    public Integer getRom() {
         return rom;
     }
 
-    public void setRom(String rom) {
+    public void setRom(Integer rom) {
         this.rom = rom;
     }
 
-    public String getRam() {
+    public Integer getRam() {
         return ram;
     }
 
-    public void setRam(String ram) {
+    public void setRam(Integer ram) {
         this.ram = ram;
     }
 
