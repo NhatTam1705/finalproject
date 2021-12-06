@@ -71,23 +71,24 @@
                             </div>                     
                             <div class="table-btn-controls">
                                 <div class="pull-right tableTools-container">
-                                    <div class="dt-buttons btn-overlap btn-group">
-                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" onclick="update(this)"
+                                    <div class="dt-buttons btn-overlap btn-group border-button">
+                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-bold btn-add" onclick="update(this)"
                                         data-toggle="tooltip" title="Add User">
                                                 <span>
-                                                    <i class="fa fa-plus-circle bigger-110 purple"></i>
+                                                    <i class="fas fa-plus"></i>
                                                 </span>
                                         </a>
-                                        <button type="button" class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" id="deleteAll" disabled onclick="warningBeforeDelete()"
+                                        <button type="button" class="dt-button buttons-html5 btn btn-white btn-bold btn-del" id="deleteAll" disabled onclick="warningBeforeDelete()"
                                             data-toggle="tooltip" title="Delete All">
                                                 <span>
-                                                    <i class="fa fa-trash-o bigger-110 pink"></i>
+                                                    <i class="fas fa-trash-alt"></i>
                                                 </span>
                                         </button>
-                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" href="${importUrl}"
+                                        <a flag="info" class="dt-button buttons-colvis btn btn-white btn-bold btn-import" href="${importUrl}"
                                         data-toggle="tooltip" title="Import User">
                                                 <span>
-                                                    <i class="fa fa-file" aria-hidden="true"></i>
+                                                    <i class="far fa-file-excel"></i>
+                                                    <%-- <i class="fad fa-file-excel"></i> --%>
                                                 </span>
                                         </a>
                                     </div>
@@ -101,7 +102,7 @@
                                             class="table table-fcv-ace table-striped table-bordered table-hover dataTable no-footer"
                                             style="margin: 3em 0 1.5em;">
                                 <display:column title="<fieldset class='form-group'>
-												            <input type='checkbox' id='checkAll' class='check-box-element'>
+												        <input type='checkbox' id='checkAll' class='check-box-element'>
 												        </fieldset>" class="center select-cell" headerClass="center select-cell">
                                     <fieldset>
                                         <input type="checkbox" name="checkList" id="checkbox_${tableList.userId}" value="${tableList.userId}" class="check-box-element"/>
@@ -117,7 +118,9 @@
                                         <c:param name="urlType" value="url_edit"/>
                                         <c:param name="pojo.userId" value="${tableList.userId}"/>
                                     </c:url>
-                                    <a class="btn btn-sm btn-primary btn-edit" sc-url="${editUrl}" onclick="update(this)" data-toggle="tooltip" title="Edit User"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a class="btn btn-sm btn-edit btn-edit" sc-url="${editUrl}" onclick="update(this)" data-toggle="tooltip" title="Edit User">
+                                        <i class="fas fa-pen" aria-hidden="true"></i>
+                                    </a>
                                 </display:column>
                             </display:table>
                     </div>
