@@ -9,6 +9,13 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tv_test?autoReconnect=true&amp;characterEncoding=utf-8&amp;useUnicode=true&amp;connectionCollation=utf8_unicode_ci&amp;characterSetResults=utf8</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property> -->
+
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">14c4bd20</property>
+        <property name="hibernate.connection.url">jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_d598f10d747228b?autoReconnect=true&amp;characterEncoding=utf-8&amp;useUnicode=true&amp;connectionCollation=utf8_unicode_ci&amp;characterSetResults=utf8</property>
+        <property name="hibernate.connection.username">bc11b4d93b8d9b</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
 
         <mapping class="com.project.core.persistence.entity.RolesEntity" />
