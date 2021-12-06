@@ -65,3 +65,7 @@ buttonHidePassForm2.addEventListener('click', () => {
     buttonHidePassForm2.style.visibility = 'hidden'
     passWord[1].type = "text"
 });
+
+$('.errormessage').click(function(){
+    $('.alert').hide()
+})

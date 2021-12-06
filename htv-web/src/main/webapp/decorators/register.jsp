@@ -16,7 +16,6 @@
         <title><dec:title default="Welcome to our website"/></title>
         <link rel="stylesheet" href="<c:url value='/template/login/css/SRegister.css'/>">
         <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
         <script src="<c:url value='/template/login/js/jQuery.js'/>"></script>
         <script src="<c:url value='/template/login/js/common.js'/>"></script>
 
