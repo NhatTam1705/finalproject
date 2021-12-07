@@ -13,11 +13,13 @@
         <title>TV-Company</title>
     </head>
     <body>
+    <c:url var="urlCart" value="/product-phone-cart.html"/>
+    <form action="${urlCart}" method="get">
         <div class="content">
             <div class="content-header">
                 <ul class="bread-crumbs">
                     <li>
-                        <a href="../../views/product/phones.html">Home</a>
+                        <a href="<c:url value='//home.html'/>">Home</a>
                         <meta>
                     </li>
                     <li>
@@ -37,10 +39,9 @@
                     <div class="details-box">
                         <div class="details-box-left">
                             <div class="details-box-img">
-                                <img src="/htv-web/${item.pojo.image}"
+                                <img src="/htv-web/fileupload/${item.pojo.image}"
                                     alt="" class="procduct-img">
                             </div>
-
                             <div class="delivery">
                                 <span class="delivery-text">
                                     Stocking
@@ -67,8 +68,9 @@
                                 </div>
                             </div>
                             <div class="pay">
+                                <input type="hidden" name="productId" value="${item.pojo.productId}">
                                 <div class="pay-top">
-                                    <button class="pay-btn">ADD TO CARD</button>
+                                    <button type="submit" class="pay-btn">ADD TO CARD</button>
                                 </div>
                                 <%-- <div class="pay-bottom">
                                     <button class="pay-left">installment purchase</button>
@@ -170,6 +172,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     </body>
 </html>

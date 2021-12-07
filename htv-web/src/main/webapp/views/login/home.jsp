@@ -100,7 +100,7 @@
                                 <input class="login-submit-pwd" type="submit" tabindex="3" value="Log In">
                             </div>
                             <div class="modify-url">
-                                <a href="<c:url value='/register-phone.html'/>" class="registr">Register</a>
+                                <a href="<c:url value='/register-email.html'/>" class="registr">Register</a>
                                 <a href="<c:url value='/logincommon-change-phone.html'/>" class="underline">Change Password</a>
                                 <a href="<c:url value='/logincommon-forgot.html'/>l" class="underline">Forgot Password</a>
                             </div>

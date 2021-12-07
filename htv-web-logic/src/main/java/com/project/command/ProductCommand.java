@@ -9,6 +9,8 @@ import java.util.List;
 
 import com.project.core.dto.DiscountDTO;
 import com.project.core.dto.ManuFacterDTO;
+import com.project.core.dto.OrderDetailsDTO;
+import com.project.core.dto.OrderItemDTO;
 import com.project.core.dto.ProductDTO;
 import com.project.core.web.command.AbstractCommand;
 
@@ -25,6 +27,7 @@ public class ProductCommand extends AbstractCommand<ProductDTO>{
     private Integer discountId;
     private List<ManuFacterDTO> manuFacters;
     private Integer manufacterId;
+    private OrderDetailsDTO orderDetails;
 
     public List<DiscountDTO> getDiscounts() {
         return discounts;
@@ -58,4 +61,12 @@ public class ProductCommand extends AbstractCommand<ProductDTO>{
         this.manufacterId = manufacterId;
     }
 
+    public OrderDetailsDTO getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(OrderDetailsDTO orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+    
 }

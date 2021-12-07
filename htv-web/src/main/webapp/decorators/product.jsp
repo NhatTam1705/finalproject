@@ -13,6 +13,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
             id="bootstrap-css" />
         <link rel="stylesheet" href="<c:url value='/template/product/css/details.css'/>">
+        <link rel="stylesheet" href="<c:url value='/template/product/css/shopping.css'/>">
         <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
         <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css" />

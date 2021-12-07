@@ -5,7 +5,7 @@
                 <div class="container-header">
                     <div class="pull-right">
                         <c:if test="${not empty login_name}">
-                            <span class="pull-right-icon-login">Welcome ${login_name}</span>
+                            <span class="pull-right-icon-login">Welcome ${login_name.lastName}</span>
                             <c:url var="logoutUrl" value="/logout.html">
                                 <c:param name="action" value="logout"/>
                             </c:url>
@@ -75,17 +75,22 @@
                         </div>
                     </div>
                 </div>
+                <c:url var="urlList" value="/home-phone.html"/>
+                <form action="${urlList}" method="get" >
                 <div class="nav-search">
                     <div class="nav-search-box">
-                        <input type="text" placeholder="Search tv.com" class="nav-search-box-header">
+                        <input type="text" name="pojo.productName" value="${items.pojo.productName}" placeholder="Search tv.com" class="nav-search-box-header">
                         <a href="#" class="nav-search-box-btn">
-                            <span class="nav-search-box-icon-search ti-search"></span>
+                            <%-- <button> --%>
+                                <span class="nav-search-box-icon-search ti-search"></span>
+                            <%-- </button> --%>
                         </a>
                     </div>
                     <a href="#" class="nav-search-btn-close">
                         <span class="nav-search-icon-close ti-close" onclick="hideSearchBox()"></span>
                     </a>
                 </div>
+                </form>
             </div>
         </div>
     </div>

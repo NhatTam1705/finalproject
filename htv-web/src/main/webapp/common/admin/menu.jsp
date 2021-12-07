@@ -81,7 +81,7 @@
                     <%-- <div class="name">Prem Shahi</div>
                     <div class="job">Web designer</div> --%>
                     <c:if test="${not empty login_name}">
-                        <span class="name">Welcome ${login_name}</span>
+                        <span class="name">Welcome ${login_name.lastName}</span>
                     </c:if>
                     <%-- <c:if test="${empty login_name}">
                         <c:url var="loginUrl" value="/logincommon-home.html">

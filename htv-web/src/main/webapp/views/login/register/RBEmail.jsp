@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
+<c:url var="formUrl" value="/register-email.html" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,12 +23,13 @@
             </div>
             <div id="content">
                 <div id="content-top"></div>
+                <form name="registerForm" action="${formUrl}" method="post">
                 <div class="register">
                     <div class="reset-tab-box">
                         <span class="set-ontab set-tab">Register by Email</span>
-                        <a href="<c:url value='/register-phone.html'/>">
+                        <%-- <a href="<c:url value='/register-phone.html'/>">
                             <span class="set-offtab set-tab">Register by Mobile</span>
-                        </a>
+                        </a> --%>
                     </div>
                     <div class="register-main-box">
                         <div class="register-message">
@@ -75,7 +77,7 @@
                         </div> -->
                         <div class="register-online">
                             <div class="register-text">
-                                Full Name
+                                First Name
                                 <span class="register-red-star">*</span>
                             </div>
                             <input type="text" name="registerVO.name" class="register-input" tabindex="4"
@@ -84,10 +86,19 @@
                         </div>
                         <div class="register-online">
                             <div class="register-text">
+                                Last Name
+                                <span class="register-red-star">*</span>
+                            </div>
+                            <input type="text" name="registerVO.name" class="register-input" tabindex="5"
+                                   id="registerVO.name" onblur="checkName()">
+                            <span class="redtips" id="spannameinfo"></span>
+                        </div>
+                        <div class="register-online">
+                            <div class="register-text">
                                 Phone Number
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="text" name="registerVO.phone" class="register-input" tabindex="5"
+                            <input type="text" name="registerVO.phone" class="register-input" tabindex="6"
                                    id="registerVO.phone" onblur="checkPhone()">
                             <span class="redtips" id="spanphoneinfo"></span>
                         </div>
@@ -108,7 +119,7 @@
                             <input type="text" class="register-input" tabindex="8">
                         </div> -->
 
-                        <div class="register-online">
+                        <%-- <div class="register-online">
                             <div class="register-text">
                                 SMS code
                                 <span class="register-red-star">*</span>
@@ -120,7 +131,7 @@
                                        tabindex="7">
                             </div>
                             <span class="redtips" id="spansmsinfo"></span>
-                        </div>
+                        </div> --%>
                     </div>
                     <div class="register-agree">
                         <div class="register-text" style="width: 0px">
@@ -138,6 +149,7 @@
                            onclick="userRegister()" tabindex="10" id="regbtn" onclick="userRegister()" disabled>
                     <div class="bottom"></div>
                 </div>
+                </form>
                 <div id="content-bottom"></div>
             </div>
         </div>

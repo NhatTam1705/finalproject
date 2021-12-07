@@ -44,6 +44,7 @@ public class LoginController extends HttpServlet {
             rd.forward(request, response);
         } else if(action.equals(WebConstant.LOGOUT)) {
             SessionUtil.getInstance().remove(request, WebConstant.LOGIN_NAME);
+            SessionUtil.getInstance().remove(request, "order");
             response.sendRedirect("/htv-web/home.html");
         }
     }
@@ -64,7 +65,7 @@ public class LoginController extends HttpServlet {
                 {
                     user = SingletonDaoUtil.getUsersDaoInstance().findEqualUnique("telephone", pojo.getTelephone());
                 }
-                SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, user.getLastName());
+                SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, user);
                 if (login.getRoleName().equals(WebConstant.ROLE_ADMIN)) {
                     response.sendRedirect("/htv-web/admin-home.html"); 
                 } else if (login.getRoleName().equals(WebConstant.ROLE_USER)) {

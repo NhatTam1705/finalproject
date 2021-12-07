@@ -8,6 +8,7 @@ package com.project.core.dto;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  *
@@ -18,6 +19,7 @@ public class OrderDetailsDTO implements Serializable {
     private UsersDTO users;
     private BigDecimal total;
     private Timestamp createdDate;
+    private List<OrderItemDTO> orderItemsDTOList;
 
     public Integer getOrderId() {
         return orderId;
@@ -51,5 +53,12 @@ public class OrderDetailsDTO implements Serializable {
         this.createdDate = createdDate;
     }
     
+    public List<OrderItemDTO> getOrderItemsDTOList() {
+        return orderItemsDTOList;
+    }
+
+    public void setOrderItemsDTOList(List<OrderItemDTO> orderItemsDTOList) {
+        this.orderItemsDTOList = orderItemsDTOList;
+    }
     
 } 
