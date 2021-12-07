@@ -185,103 +185,112 @@
             <div class="story">
                 <img src="<c:url value='/template/img/Huawei-P30.jpg'/>" alt="">
             </div>
-            <div class="new-content" style="cursor: pointer">
-                <div class="new-top">
-                    <h2 class="title">News & Events</h2>
-                </div>
-                <div class="event-main">
-                    <div class="col-event col-third pr-15">
-                        <img class="place-img-event" src="<c:url value='/template/img/pictureContent/slider-8.jpg'/>" alt="">
-                        <div class="topic">Event</div>
-                        <div class="event-text-box">
-                            <h4 class="sub-title">
-                                Better World Summit for Green ICT for Green Development 
-                            </h4>
-                            <div class="info">
-                                <div class="info-address">
-                                    <span class="iconfont ti-location-pin"></span>
-                                    <span class="name-location">Viet Nam</span>
-                                </div>
-                                <div class="info-text">
-                                    Huawei and Informa Tech will jointly host the Better World Summit and discuss green development...
-                                </div>
-                            </div>
-                        </div>
+            <section>
+                <div class="new-content" style="cursor: pointer">
+                    <div class="new-top">
+                        <h2 class="title">News & Events</h2>
                     </div>
-                    <div class="col-event col-third pr-15 pl-15">
-                        <img class="place-img-event" src="<c:url value='/template/img/pictureContent/slider-9.jpg'/>" alt="">
-                        <div class="topic">Event</div>
-                        <div class="event-text-box">
-                            <h4 class="sub-title">
-                                Better World Summit for Green ICT for Green Development 
-                            </h4>
-                            <div class="info">
-                                <div class="info-address">
-                                    <span class="iconfont ti-location-pin"></span>
-                                    <span class="name-location">Viet Nam</span>
-                                </div>
-                                <div class="info-text">
-                                    Connect with experts and leaders, explore opportunities and new innovations and solutions.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-event col-third pl-15">
-                        <div class="topic">News</div>
-                        <div class="new-text-box">
-                            <div class="scrool">
-                                <div class="info">
-                                    <div class="info-text">
-                                        <h4 class="sub-title">
-                                            Better World Summit for Green ICT for Green Development
-                                        </h4>
-                                        <div class="time">
-                                            NOV 18, 2021
+                    <div class="event-main">
+                        <div class="event-row">
+                            <div class="col-event col-third pr-15">
+                                <img class="place-img-event" src="<c:url value='/template/img/pictureContent/slider-8.jpg'/>" alt="">
+                                <div class="topic">Event</div>
+                                <div class="event-text-box">
+                                    <h4 class="sub-title">
+                                        Better World Summit for Green ICT for Green Development
+                                    </h4>
+                                    <div class="info">
+                                        <div class="info-address">
+                                            <span class="iconfont ti-location-pin"></span>
+                                            <span class="name-location">Viet Nam</span>
                                         </div>
-                                    </div>
-                                    <div class="info-text">
-                                        <h4 class="sub-title">
-                                            Better World Summit for Green ICT for Green Development
-                                        </h4>
-                                        <div class="time">
-                                            NOV 18, 2021
-                                        </div>
-                                    </div>
-                                    <div class="info-text">
-                                        <h4 class="sub-title">
-                                            Better World Summit for Green ICT for Green Development
-                                        </h4>
-                                        <div class="time">
-                                            NOV 18, 2021
-                                        </div>
-                                    </div>
-                                    <div class="info-text">
-                                        <h4 class="sub-title">
-                                            Better World Summit for Green ICT for Green Development
-                                        </h4>
-                                        <div class="time">
-                                            NOV 18, 2021
-                                        </div>
-                                    </div>
-                                    <div class="info-text">
-                                        <h4 class="sub-title">
-                                            Better World Summit for Green ICT for Green Development
-                                        </h4>
-                                        <div class="time">
-                                            NOV 18, 2021
+                                        <div class="info-text">
+                                            Huawei and Informa Tech will jointly host the Better World Summit and
+                                            discuss green development...
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="event-row">
+                            <div class="col-event col-third pr-15 pl-15">
+                                <img class="place-img-event" src="<c:url value='/template/img/pictureContent/slider-9.jpg'/>" alt="">
+                                <div class="topic">Event</div>
+                                <div class="event-text-box">
+                                    <h4 class="sub-title">
+                                        Better World Summit for Green ICT for Green Development
+                                    </h4>
+                                    <div class="info">
+                                        <div class="info-address">
+                                            <span class="iconfont ti-location-pin"></span>
+                                            <span class="name-location">Viet Nam</span>
+                                        </div>
+                                        <div class="info-text">
+                                            Connect with experts and leaders, explore opportunities and new innovations
+                                            and solutions.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-row">
+                            <div class="col-event col-third pl-15">
+                                <div class="topic">News</div>
+                                <div class="new-text-box">
+                                    <div class="scroll">
+                                        <div class="info">
+                                            <div class="info-text">
+                                                <h4 class="sub-title">
+                                                    Better World Summit for Green ICT for Green Development
+                                                </h4>
+                                                <div class="time">
+                                                    NOV 18, 2021
+                                                </div>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4 class="sub-title">
+                                                    Better World Summit for Green ICT for Green Development
+                                                </h4>
+                                                <div class="time">
+                                                    NOV 18, 2021
+                                                </div>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4 class="sub-title">
+                                                    Better World Summit for Green ICT for Green Development
+                                                </h4>
+                                                <div class="time">
+                                                    NOV 18, 2021
+                                                </div>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4 class="sub-title">
+                                                    Better World Summit for Green ICT for Green Development
+                                                </h4>
+                                                <div class="time">
+                                                    NOV 18, 2021
+                                                </div>
+                                            </div>
+                                            <div class="info-text">
+                                                <h4 class="sub-title">
+                                                    Better World Summit for Green ICT for Green Development
+                                                </h4>
+                                                <div class="time">
+                                                    NOV 18, 2021
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="#" class="btn-more mr-25-15">More Events</a>
+                        <a href="#" class="btn-more ml-15">More News</a>
                     </div>
                 </div>
-                <div class="btn-group">
-                    <a href="#" class="btn-more mr-25-15">More Events</a>
-                    <a href="#" class="btn-more ml-15">More News</a>
-                </div>
-            </div>
-
+            </section>
             <div id="back-to-top" class="back-to-top">
                 <button id="back-to-top-btn" title="Back to top">
                     <i class="fas fa-angle-double-up"></i>

@@ -25,8 +25,9 @@
         <script src="<c:url value='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'/>"></script>
         <link rel="stylesheet" href="<c:url value='/template/web/css/product.css'/>" type="text/css" />
         <link rel="stylesheet" href="https://livejs.com/live.js"/>
-    <script src="<c:url value='/template/web/jquery.twbsPagination.js'/>" type="text/javascript"></script>
-	<title><dec:title default="TV-Company"/></title>
+        <script src="<c:url value='/template/web/jquery.twbsPagination.js'/>" type="text/javascript"></script>
+        <script src="<c:url value='/template/web/jquery.twbsPagination.min.js'/>" type="text/javascript"></script>
+	    <title><dec:title default="TV-Company"/></title>
 </head>
     <body>
         <div id="main">

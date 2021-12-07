@@ -47,7 +47,7 @@
                         </li>
                         <li class="nav-item nav-item__hide">
                             <a href="<c:url value='/home-contact.html'/>">
-                                <span class="text">Contact</span>
+                                <span class="text">About</span>
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">

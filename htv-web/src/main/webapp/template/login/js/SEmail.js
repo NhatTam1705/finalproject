@@ -154,7 +154,7 @@ function checkRegisterForm() {
     }
 
     //Name
-if ((errorMessage = isValidName(form['registerVO.name'].value)) != '') {
+    if ((errorMessage = isValidName(form['registerVO.name'].value)) != '') {
         document.getElementById('spannameinfo').innerHTML = errorMessage
         staticCheckPass = false
     }

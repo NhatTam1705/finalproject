@@ -228,7 +228,7 @@
                     </c:forEach>
                 </div>
         </section>
-        <ul id="pagination-demo" class="pagination-sm"></ul>
+        <ul id="pagination-demo" class="pagination-sm" style="justify-content: center"></ul>
         <input type="hidden" id="page" name="page"/>
         </form>
     </body>
