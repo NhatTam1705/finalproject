@@ -4,6 +4,8 @@
     <excludes>
         <pattern>/404-page.html</pattern>
         <pattern>/ajax*</pattern>
+        <pattern>/about*</pattern>
+        <pattern>/support*</pattern>
         <pattern>/shopping*</pattern>
         <pattern>/ckfinder*</pattern>
     </excludes>

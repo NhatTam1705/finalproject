@@ -192,6 +192,7 @@ a {
 .content {
   width: 1200px;
   margin: 0 auto;
+  height: 1000px;
 }
 .content-header .bread-crumbs {
   height: 34px;

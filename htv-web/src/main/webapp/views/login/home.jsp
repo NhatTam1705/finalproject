@@ -66,7 +66,7 @@
                             <div class="modify-url">
                                 <a href="<c:url value='/register-email.html'/>" class="registr">Register</a>
                                 <a href="<c:url value='/logincommon-change-email.html'/>" class="underline">Change Password</a>
-                                <a href="<c:url value='/logincommon-forgot.html'/>" class="underline">Forgot Password</a>
+                                <%-- <a href="<c:url value='/logincommon-forgot.html'/>" class="underline">Forgot Password</a> --%>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <div class="modify-url">
                                 <a href="<c:url value='/register-email.html'/>" class="registr">Register</a>
                                 <a href="<c:url value='/logincommon-change-phone.html'/>" class="underline">Change Password</a>
-                                <a href="<c:url value='/logincommon-forgot.html'/>l" class="underline">Forgot Password</a>
+                                <%-- <a href="<c:url value='/logincommon-forgot.html'/>l" class="underline">Forgot Password</a> --%>
                             </div>
                         </div>
                     </div>

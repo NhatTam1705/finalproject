@@ -63,13 +63,13 @@
                 <div class="panel-list-img">
                     <div class="list-top-img">
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-1.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">MacBook Pro</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -79,13 +79,13 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-2.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Phone</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -98,13 +98,13 @@
                     </div>
                     <div class="list-center-img">
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-3.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Iphone 12</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -114,13 +114,13 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-7.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Asus ROG 3</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -132,13 +132,13 @@
                     </div>
                     <div class="list-bottom-img">
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-5.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Phone</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -148,13 +148,13 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-6.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Airport</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -164,13 +164,13 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-4.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Xiaomi</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>

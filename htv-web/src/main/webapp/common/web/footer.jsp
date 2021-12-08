@@ -20,8 +20,8 @@
 						<ul class="list-unstyled f_list">
 							<li><a href="<c:url value='/home.html'/>">Home</a></li>
 							<li><a href="<c:url value='/home-phone.html'/>">Product</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Support</a></li>
+							<li><a href="<c:url value='/about.html'/>">About</a></li>
+							<li><a href="<c:url value='/support.html'/>">Support</a></li>
 							<%-- <li><a href="#">Audio</a></li>
 							<li><a href="#">Accessories</a></li> --%>
 						</ul>

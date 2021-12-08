@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/x-icon" href="<c:url value='/template/img/icon-logo.ico'/>" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
               id="bootstrap-css" />
@@ -160,27 +161,26 @@
                             <ul class="card">
                                 <c:forEach var="item" items="${order.orderItemsDTOList}">
                                     <li class="card-item">
-                                        <div class="card-item-left">
-                                            <img src="/htv-web/fileupload/${item.product.image}"
-                                                 alt="" class="card-item-img">
-                                            <button class="btn-close" value="Delete">
-                                                <i class="fad fa-times-circle"></i>
-                                                Delete
-                                            </button>
-                                        </div>
-                                        <div class="card-item-center">
-                                            <div class="card-item-text">${item.product.productName}</div>
-                                        </div>
+                                    <div class="card-item-left">
+                                        <img src="/htv-web/fileupload/${item.product.image}"
+                                            alt="" class="card-item-img">
+                                        <button class="btn-close" value="Delete">
+                                            <%-- <i class="fad fa-times-circle"></i>
+                                            Delete --%>
+                                        </button>
+                                    </div>
+                                    <div class="card-item-center">
+                                        <div class="card-item-text">${item.product.productName}</div>
+                                    </div>
                                         <div class="card-item-right">
                                             <div class="card-item-price">
-                                                <span class="card-item-price-text">${item.product.price}₫</span>
-                                                <strike class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}</strike>
-                                            </div>
-                                            <div class="card-item-chose-number">
-                                                <div class="card-minus">
-                                                    <i></i>
+                                                <span class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}₫</span>
+                                                <strike class="card-item-price-text">${item.product.price}₫</strike>
+                                                <div class="card-item-chose-number">
+                                                    <div class="card-minus">
+                                                        <i></i>
                                                 </div>
-                                                <input class="card-number" min="0" value="0" type="number">
+                                                <input class="card-number" value="${item.quantity}" type="number">
                                                 <div class="card-plus">
                                                     <i></i>
                                                     <i></i>
@@ -194,10 +194,12 @@
                         <div class="pay">
                             <div class="pay-top">
                                 <span class="pay-top-text">Total money:</span>
-                                <span class="pay-top-price">222000</span>
+                                <span class="pay-top-price">${order.total}₫</span>
                             </div>
                             <div class="pay-bottom">
-                                <button class="pay-bottom-btn" value="Pay">Pay</button>
+                            <form action="<c:url value='/check-out'/>" method="get">
+                                <button type="submit" class="pay-bottom-btn" value="Pay">Pay</button>
+                            </form>
                                 <span class="pay-bottom-text">Choose a payment method when placing an order</span>
                             </div>
                         </div>
@@ -207,6 +209,6 @@
             <span class="primary" style="display: none">By placing an order you agree to the terms of HV phone</span>
         </div>
         <script src="<c:url value='/template/web/js/script.js'/>"></script>
-        <script src="<c:url value='/template/product/js/script.js'/>"></script>
+        <%-- <script src="<c:url value='/template/product/js/script.js'/>"></script> --%>
     </body>
 </html>
