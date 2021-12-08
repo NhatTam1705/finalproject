@@ -1492,7 +1492,8 @@ h6 {
 }
 
 .new_footer_top .footer_bg .footer_bg_two {
-	background: url("/htv-web/template/img/product/Cycle.gif") no-repeat center center;
+	/*background: url("/htv-web/template/img/product/Cycle.gif") no-repeat center center;*/
+        background: no-repeat center center;
 	width: 140px;
 	height: 100px;
 	background-size: 100%;
