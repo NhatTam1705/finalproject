@@ -107,7 +107,7 @@
                                     <span class="price-text-discount">0% installment</span>
                                 </div>
                                 <br/>
-                                <input name='quantity' min="1" value="1" type="number">
+                                <input name='quantity' min="1" value="1" type="number" style="width: 50px; boder: 1px solid #ccc; background: transparent">
                                 <br/>
                                 <br/>
                                 <div class="price-box">
