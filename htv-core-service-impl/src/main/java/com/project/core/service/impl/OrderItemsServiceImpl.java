@@ -5,6 +5,7 @@
  */
 package com.project.core.service.impl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,5 +35,12 @@ public class OrderItemsServiceImpl implements OrderItemsService{
         }
         objects[1] = orderItemDTOs;
         return objects;
+    }
+
+    public void saveOrderItem(OrderItemDTO orderItemDTO) {
+        Timestamp createdDate = new Timestamp(System.currentTimeMillis());
+        orderItemDTO.setCreatedDate(createdDate);
+        OrderItemsEntity entity = OrderItemsBeanUtil.dtoToEntity(orderItemDTO);
+        SingletonDaoUtil.getOrderItemsDaoInstance().save(entity);
     }
 }

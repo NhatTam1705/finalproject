@@ -174,7 +174,7 @@
                                         <div class="card-item-right">
                                             <div class="card-item-price">
                                                 <span class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}₫</span>
-                                                <strike class="card-item-price-text">${item.product.price}</strike>
+                                                <strike class="card-item-price-text">${item.product.price}₫</strike>
                                                 <div class="card-item-chose-number">
                                                     <div class="card-minus">
                                                         <i></i>
@@ -193,10 +193,12 @@
                         <div class="pay">
                             <div class="pay-top">
                                 <span class="pay-top-text">Total money:</span>
-                                <span class="pay-top-price">${order.total}</span>
+                                <span class="pay-top-price">${order.total}₫</span>
                             </div>
                             <div class="pay-bottom">
-                                <button class="pay-bottom-btn" value="Pay">Pay</button>
+                            <form action="<c:url value='/check-out'/>" method="get">
+                                <button type="submit" class="pay-bottom-btn" value="Pay">Pay</button>
+                            </form>
                                 <span class="pay-bottom-text">Choose a payment method when placing an order</span>
                             </div>
                         </div>

@@ -56,14 +56,14 @@ public class LoginController extends HttpServlet {
         if (pojo != null) {
             CheckLogin login = SingletonServiceUtil.getUsersServiceInstance().checkLogin(pojo.getEmail(), pojo.getTelephone(), pojo.getPassword());
             if (login.isUserExist()) {
-                UsersEntity user = new UsersEntity();
+                UsersDTO user = new UsersDTO();
                 if(pojo.getEmail() != null)
                 {
-                    user = SingletonDaoUtil.getUsersDaoInstance().findEqualUnique("email", pojo.getEmail());
+                    user = SingletonServiceUtil.getUsersServiceInstance().findUser("email", pojo.getEmail());
                 }
                 if(pojo.getTelephone() != null)
                 {
-                    user = SingletonDaoUtil.getUsersDaoInstance().findEqualUnique("telephone", pojo.getTelephone());
+                    user = SingletonServiceUtil.getUsersServiceInstance().findUser("telephone", pojo.getTelephone());
                 }
                 SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, user);
                 if (login.getRoleName().equals(WebConstant.ROLE_ADMIN)) {

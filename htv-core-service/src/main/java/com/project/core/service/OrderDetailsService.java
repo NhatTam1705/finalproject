@@ -5,10 +5,15 @@
  */
 package com.project.core.service;
 
+import java.util.List;
+
+import com.project.core.dto.OrderDetailsDTO;
+
 /**
  *
  * @author 19110
  */
 public interface OrderDetailsService {
-    
+    Integer save(OrderDetailsDTO orderDetailsDTO);
+    Integer delete(List<Integer> ids);
 }

@@ -40,10 +40,10 @@
                                         <div class="widget-main">
                                             <div class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label class="col-sm-2 control-label">Create Date</label>
+                                                    <label class="col-sm-2 control-label">Quantity</label>
                                                     <div class="col-sm-8">
                                                         <div class="fg-line">
-                                                            <input type="text" value="${items.pojo.createdDate}" class="form-control input-sm" name="pojo.createdDate"/>
+                                                            <input type="text" value="${items.pojo.quantity}" class="form-control input-sm" name="pojo.quantity"/>
                                                         </div>
                                                     </div>
                                                 </div>

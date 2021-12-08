@@ -45,6 +45,7 @@ public class OrderController extends HttpServlet {
                     ids.add(Integer.parseInt(item));
                 }
                 Integer result = SingletonServiceUtil.getOrderItemsServiceInstance().delete(ids);
+                // SingletonServiceUtil.getOrderDetailsServiceInstance().delete(ids);
                 if (result != ids.size()) {
                     command.setCrudaction(WebConstant.REDIRECT_ERROR);
                 }
@@ -80,8 +81,11 @@ public class OrderController extends HttpServlet {
 
     private Map<String,Object> buildMapProperties(OrderCommand command) {
         Map<String, Object> properties = new HashMap<String, Object>();
-        if (StringUtils.isNotBlank(command.getPojo().getCreatedDate().toString())) {
-            properties.put("createdDate", command.getPojo().getCreatedDate().toString());
+        if (command.getPojo().getQuantity() != null) {
+            properties.put("quantity", command.getPojo().getQuantity());
+        }
+        else {
+            properties.put("quantity", "");
         }
         return properties;
     }

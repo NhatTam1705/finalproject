@@ -69,7 +69,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">MacBook Pro</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -85,7 +85,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Phone</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -104,7 +104,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Iphone 12</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -120,7 +120,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Asus ROG 3</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -138,7 +138,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Phone</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -154,7 +154,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Airport</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>
@@ -170,7 +170,7 @@
                                     <div class="text-box">
                                         <div class="category">PRODUCT</div>
                                         <div class="name js-text-dot-en">Xiaomi</div>
-                                        <div class="text-in-img">Undeveloped Feature</div>
+                                        <div class="text-in-img">TV-Company's companion</div>
                                         <div class="more">
                                             <span>Learn More</span>
                                             <i class="iconfont ti-angle-right"></i>

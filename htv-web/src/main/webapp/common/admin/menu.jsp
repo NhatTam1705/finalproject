@@ -4,6 +4,10 @@
 <c:url value="/admin-product-list.html" var="productListUrl">
     <c:param name="urlType" value="url_list"/>
 </c:url>
+<c:url value="/admin-order-list.html" var="orderListUrl">
+    <c:param name="urlType" value="url_list"/>
+</c:url>
+
 <div class="sidebar">
     <div class="logo-details">
         <i class='icon'>
@@ -54,7 +58,7 @@
             <span class="tooltip">Files</span>
         </li> --%>
         <li>
-            <a href="#">
+            <a href="${orderListUrl}">
                 <i class='bx bx-cart-alt' ></i>
                 <span class="links_name">Order</span>
             </a>
