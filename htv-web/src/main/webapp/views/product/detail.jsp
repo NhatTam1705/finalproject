@@ -14,7 +14,7 @@
     </head>
     <body>
     <c:url var="urlCart" value="/product-phone-cart.html"/>
-    <form action="${urlCart}" method="get">
+    <form action="${urlCart}" method="get" style="margin-top:108px">
         <div class="content">
             <div class="content-header">
                 <ul class="bread-crumbs">
