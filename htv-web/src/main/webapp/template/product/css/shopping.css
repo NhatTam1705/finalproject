@@ -283,6 +283,8 @@
   display: block;
 }
 .content-bottom .cards .card-item-chose-number {
+  display: flex;
+  border: 1px solid #dfdfdf;
   border-radius: 2px;
 }
 .content-bottom .cards .card-item-chose-number i {
@@ -292,17 +294,42 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.content-bottom .cards .card-item-chose-number .card-number {
+.content-bottom .cards .card-item-chose-number .card-minus, .content-bottom .cards .card-item-chose-number .card-number, .content-bottom .cards .card-item-chose-number .card-plus {
   width: 30px;
   height: 30px;
   position: relative;
 }
+.content-bottom .cards .card-item-chose-number .card-minus {
+  cursor: pointer;
+}
+.content-bottom .cards .card-item-chose-number .card-minus i {
+  background-color: #ccc;
+  width: 12px;
+  height: 2px;
+}
 .content-bottom .cards .card-item-chose-number .card-number {
   border: none;
-  border: 1px solid #dfdfdf;
-  width: 60px;
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
   text-align: center;
   line-height: 30px;
+}
+.content-bottom .cards .card-item-chose-number .card-number::-webkit-outer-spin-button, .content-bottom .cards .card-item-chose-number .card-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.content-bottom .cards .card-item-chose-number .card-plus {
+  cursor: pointer;
+}
+.content-bottom .cards .card-item-chose-number .card-plus i {
+  background-color: #288AD6;
+}
+.content-bottom .cards .card-item-chose-number .card-plus i:first-child {
+  width: 12px;
+  height: 2px;
+}
+.content-bottom .cards .card-item-chose-number .card-plus i:last-child {
+  width: 2px;
+  height: 12px;
 }
 .content-bottom .cards .card-item-text {
   font-weight: bold;
@@ -499,4 +526,3 @@
   }
 }
 
-/*# sourceMappingURL=shopping.css.map */

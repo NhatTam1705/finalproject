@@ -177,7 +177,14 @@
                                                 <strike class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}</strike>
                                             </div>
                                             <div class="card-item-chose-number">
+                                                <div class="card-minus">
+                                                    <i></i>
+                                                </div>
                                                 <input class="card-number" min="0" value="0" type="number">
+                                                <div class="card-plus">
+                                                    <i></i>
+                                                    <i></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
