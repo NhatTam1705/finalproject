@@ -161,29 +161,23 @@
                             <ul class="card">
                                 <c:forEach var="item" items="${order.orderItemsDTOList}">
                                     <li class="card-item">
-                                    <div class="card-item-left">
-                                        <img src="/htv-web/fileupload/${item.product.image}"
-                                            alt="" class="card-item-img">
-                                        <button class="btn-close" value="Delete">
-                                            <%-- <i class="fad fa-times-circle"></i>
-                                            Delete --%>
-                                        </button>
-                                    </div>
-                                    <div class="card-item-center">
-                                        <div class="card-item-text">${item.product.productName}</div>
-                                    </div>
+                                        <div class="card-item-left">
+                                            <img src="/htv-web/fileupload/${item.product.image}"
+                                                 alt="" class="card-item-img">
+                                            <button class="btn-close" value="Delete">
+                                                <%-- <i class="fad fa-times-circle"></i>
+                                                Delete --%>
+                                            </button>
+                                        </div>
+                                        <div class="card-item-center">
+                                            <div class="card-item-text">${item.product.productName}</div>
+                                        </div>
                                         <div class="card-item-right">
                                             <div class="card-item-price">
                                                 <span class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}₫</span>
                                                 <strike class="card-item-price-text">${item.product.price}₫</strike>
                                                 <div class="card-item-chose-number">
-                                                    <div class="card-minus">
-                                                        <i></i>
-                                                </div>
-                                                <input class="card-number" value="${item.quantity}" type="number">
-                                                <div class="card-plus">
-                                                    <i></i>
-                                                    <i></i>
+                                                    <input class="card-number" value="${item.quantity}" type="number">
                                                 </div>
                                             </div>
                                         </div>
@@ -197,9 +191,9 @@
                                 <span class="pay-top-price">${order.total}₫</span>
                             </div>
                             <div class="pay-bottom">
-                            <form action="<c:url value='/check-out'/>" method="get">
-                                <button type="submit" class="pay-bottom-btn" value="Pay">Pay</button>
-                            </form>
+                                <form action="<c:url value='/check-out'/>" method="get">
+                                    <button type="submit" class="pay-bottom-btn" value="Pay">Pay</button>
+                                </form>
                                 <span class="pay-bottom-text">Choose a payment method when placing an order</span>
                             </div>
                         </div>
