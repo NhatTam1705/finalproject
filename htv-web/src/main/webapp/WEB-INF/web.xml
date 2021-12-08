@@ -31,4 +31,18 @@
         <filter-name>servletFilter</filter-name>
         <url-pattern>/htv-web/*</url-pattern>
     </filter-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/views/web/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/views/web/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/views/web/error.jsp</location>
+    </error-page>
 </web-app>

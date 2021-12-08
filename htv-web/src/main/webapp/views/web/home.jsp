@@ -63,7 +63,7 @@
                 <div class="panel-list-img">
                     <div class="list-top-img">
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-1.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
@@ -79,7 +79,7 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-2.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
@@ -98,7 +98,7 @@
                     </div>
                     <div class="list-center-img">
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-3.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
@@ -114,7 +114,7 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-7.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
@@ -132,7 +132,7 @@
                     </div>
                     <div class="list-bottom-img">
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-5.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
@@ -148,7 +148,7 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-6.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">
@@ -164,7 +164,7 @@
                             </a>
                         </div>
                         <div class="img-box">
-                            <a href="">
+                            <a href="<c:url value='/home-phone.html'/>">
                                 <img src="<c:url value='/template/img/pictureContent/slider-4.jpg'/>" alt="" class="img-click">
                                 <div class="mask">
                                     <div class="text-box">

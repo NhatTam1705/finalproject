@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/x-icon" href="<c:url value='/template/img/icon-logo.ico'/>" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
               id="bootstrap-css" />
@@ -164,8 +165,8 @@
                                         <img src="/htv-web/fileupload/${item.product.image}"
                                             alt="" class="card-item-img">
                                         <button class="btn-close" value="Delete">
-                                            <i class="fad fa-times-circle"></i>
-                                            Delete
+                                            <%-- <i class="fad fa-times-circle"></i>
+                                            Delete --%>
                                         </button>
                                     </div>
                                     <div class="card-item-center">
@@ -208,6 +209,6 @@
             <span class="primary" style="display: none">By placing an order you agree to the terms of HV phone</span>
         </div>
         <script src="<c:url value='/template/web/js/script.js'/>"></script>
-        <script src="<c:url value='/template/product/js/script.js'/>"></script>
+        <%-- <script src="<c:url value='/template/product/js/script.js'/>"></script> --%>
     </body>
 </html>

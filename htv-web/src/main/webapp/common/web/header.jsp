@@ -46,12 +46,12 @@
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">
-                            <a href="<c:url value='/home-about.html'/>">
+                            <a href="<c:url value='/about.html'/>">
                                 <span class="text">About</span>
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">
-                            <a href="<c:url value='/home-support.html'/>">
+                            <a href="<c:url value='/support.html'/>">
                                 <span class="text">Support</span>
                             </a>
                         </li>

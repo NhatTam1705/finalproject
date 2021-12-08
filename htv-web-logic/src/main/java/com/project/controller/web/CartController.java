@@ -83,7 +83,7 @@ public class CartController extends HttpServlet{
                     }
                     response.sendRedirect("/htv-web/shopping-cart.html");
                 } else {
-                    response.sendRedirect("/htv-web/home.html");
+                    response.sendRedirect("/htv-web/shopping-cart.html");
                 }
     }
 
