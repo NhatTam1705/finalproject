@@ -16,7 +16,7 @@ import javax.servlet.http.*;
  *
  * @author 19110
  */
-@WebServlet(urlPatterns = {"/product-shopping.html"})
+@WebServlet(urlPatterns = {"/shopping-cart.html"})
 public class ShoppingController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {

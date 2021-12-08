@@ -70,7 +70,7 @@ public class CartController extends HttpServlet{
                             session.setAttribute("order", order);
                         }
                     }
-                    response.sendRedirect("/htv-web/product-shopping.html");
+                    response.sendRedirect("/htv-web/shopping-cart.html");
                 } else {
                     response.sendRedirect("/htv-web/home.html");
                 }

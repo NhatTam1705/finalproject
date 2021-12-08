@@ -19,7 +19,7 @@
             <div class="content-header">
                 <ul class="bread-crumbs">
                     <li>
-                        <a href="<c:url value='//home.html'/>">Home</a>
+                        <a href="<c:url value='/home.html'/>">Home</a>
                         <meta>
                     </li>
                     <li>
