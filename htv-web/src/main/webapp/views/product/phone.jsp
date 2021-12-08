@@ -18,7 +18,7 @@
             <img src="<c:url value='template/img/bannner/iphone-13.jpg'/>" class="banner-img" alt="">
         </section>
         <form action="${urlList}" method="get" id="formUrl">
-        <section class="filter">
+        <%-- <section class="filter">
             <div class="filter-box">
                 <div class="filter-beetle margin">
                     <div class="filter-title filter-all-items">
@@ -173,7 +173,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --%>
         <section class="brands margin">
             <div class="brand">
                 <div class="brand-lst">

@@ -33,6 +33,9 @@ public class CartController extends HttpServlet{
                     String productIdStr = request.getParameter("productId");
                     ProductDTO productDTO = SingletonServiceUtil.getProductServiceInstance().findById(Integer.parseInt(productIdStr));
                     if (productDTO != null) {
+                        if (request.getParameter("quantity") != null) {
+                            quantity = Integer.parseInt(request.getParameter("quantity"));
+                        }
                         HttpSession session = request.getSession();
                         if (session.getAttribute("order") == null) {
                             BigDecimal total = new BigDecimal("0");
@@ -44,7 +47,10 @@ public class CartController extends HttpServlet{
                             listItems.add(item);
                             order.setOrderItemsDTOList(listItems);
                             BigDecimal j = new BigDecimal(quantity);
-                            order.setTotal((total.add(productDTO.getPrice())).multiply(j));
+                            BigDecimal percent = productDTO.getDiscountDTO().getDiscountPercent();
+                            BigDecimal b = new BigDecimal(100);
+                            // order.setTotal((total.add(productDTO.getPrice())).multiply(j));
+                            order.setTotal((total.add(productDTO.getPrice().subtract(productDTO.getPrice().multiply(percent).divide(b)))).multiply(j));
                             session.setAttribute("order", order);
                         } else {
                             OrderDetailsDTO order = (OrderDetailsDTO) session.getAttribute("order");
@@ -55,7 +61,10 @@ public class CartController extends HttpServlet{
                                     BigDecimal total = new BigDecimal("0");
                                     BigDecimal j = new BigDecimal(quantity);
                                     item.setQuantity(item.getQuantity() + quantity);
-                                    order.setTotal(order.getTotal().add(productDTO.getPrice().multiply(j)));
+                                    BigDecimal percent = productDTO.getDiscountDTO().getDiscountPercent();
+                                    BigDecimal b = new BigDecimal(100);
+                                    // order.setTotal((total.add(productDTO.getPrice())).multiply(j));
+                                    order.setTotal(order.getTotal().add((productDTO.getPrice().subtract(productDTO.getPrice().multiply(percent).divide(b))).multiply(j)));
                                     check = true;
                                 }
                             }
@@ -65,7 +74,9 @@ public class CartController extends HttpServlet{
                                 item1.setProduct(productDTO);
                                 listItems.add(item1);
                                 BigDecimal j = new BigDecimal(quantity);
-                                order.setTotal(order.getTotal().add(productDTO.getPrice().multiply(j)));
+                                BigDecimal percent = productDTO.getDiscountDTO().getDiscountPercent();
+                                BigDecimal b = new BigDecimal(100);
+                                order.setTotal(order.getTotal().add((productDTO.getPrice().subtract(productDTO.getPrice().multiply(percent).divide(b))).multiply(j)));
                             }
                             session.setAttribute("order", order);
                         }

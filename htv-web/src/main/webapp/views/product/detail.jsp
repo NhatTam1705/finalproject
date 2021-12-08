@@ -106,6 +106,10 @@
                                     <span class="price-text-cost">${item.pojo.price}₫</span>
                                     <span class="price-text-discount">0% installment</span>
                                 </div>
+                                <br/>
+                                <input name='quantity' min="1" value="1" type="number">
+                                <br/>
+                                <br/>
                                 <div class="price-box">
                                     <div class="price-box-top">
                                         <div class="price-promotion">

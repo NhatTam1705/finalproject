@@ -173,14 +173,14 @@
                                     </div>
                                     <div class="card-item-right">
                                         <div class="card-item-price">
-                                            <span class="card-item-price-text">${item.product.price}₫</span>
-                                            <strike class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}</strike>
+                                            <span class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}₫</span>
+                                            <strike class="card-item-price-text">${item.product.price}</strike>
                                         </div>
                                         <div class="card-item-chose-number">
                                             <div class="card-minus">
                                                 <i></i>
                                             </div>
-                                            <input class="card-number" min="0" value="0" type="number">
+                                            <input class="card-number" value="${item.quantity}" type="number">
                                             <div class="card-plus">
                                                 <i></i>
                                                 <i></i>
@@ -194,7 +194,7 @@
                         <div class="pay">
                             <div class="pay-top">
                                 <span class="pay-top-text">Total money:</span>
-                                <span class="pay-top-price">222000</span>
+                                <span class="pay-top-price">${order.total}</span>
                             </div>
                             <div class="pay-bottom">
                                 <button class="pay-bottom-btn" value="Pay">Pay</button>
@@ -206,7 +206,7 @@
             </c:if>
             <span class="primary" style="display: none">By placing an order you agree to the terms of HV phone</span>
         </div>
-        <script src="../../scripts/product/SCommon.js"></script>
-        <script src="../../scripts/shopping/script.js"></script>
+        <script src="<c:url value='/template/web/js/script.js'/>"></script>
+        <script src="<c:url value='/template/product/js/script.js'/>"></script>
     </body>
 </html>
