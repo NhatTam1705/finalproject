@@ -32,7 +32,7 @@ public class AuthorizationFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String url = request.getRequestURI();
-        if (url.startsWith("/admin")) {
+        if (url.startsWith("/htv-web/admin")) {
             UsersDTO user = (UsersDTO) SessionUtil.getInstance().getValue(request, WebConstant.LOGIN_NAME);
             if (user != null) {
                 if (user.getRolesDTO().getRoleName().equals(WebConstant.ROLE_ADMIN)) {
@@ -40,12 +40,17 @@ public class AuthorizationFilter implements Filter {
                 } else if (user.getRolesDTO().getRoleName().equals(WebConstant.ROLE_USER)) {
 //                    response.sendRedirect(request.getContextPath()
 //                            + "/dang-nhap?action=login&message=not_permission&alert=warning");
+                request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_ERROR);
+                request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Not permission.");
                     response.sendRedirect(request.getContextPath()
-                            + "/logincommon-home.html?action=login&messageResponse=not_permission&alert=danger");
+                            + "/logincommon-home.html?action=login");
                 }
             } else {
+                request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_ERROR);
+                request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Not login.");
                 response.sendRedirect(
-                        request.getContextPath() + "/logincommon-home.html?action=login&messageResponse=not_login&alert=danger");
+                        request.getContextPath() + "/logincommon-home.html?action=login");
+                        
             }
         } else {
             filterChain.doFilter(servletRequest, servletResponse);

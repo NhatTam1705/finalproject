@@ -29,7 +29,7 @@
     </filter>
     <filter-mapping>
         <filter-name>servletFilter</filter-name>
-        <url-pattern>/htv-web/*</url-pattern>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
     <error-page>
         <error-code>404</error-code>
