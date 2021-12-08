@@ -42,9 +42,9 @@ public class ChangeEmailController extends HttpServlet {
                 if (command.getNewPassword().equals(command.getConfirmPassword())) {
                     user.setPassword(command.getNewPassword());
                     SingletonServiceUtil.getUsersServiceInstance().updateUser(user);
-                    response.sendRedirect("/htv-web/logincommon-home.html?action=login");
+                    response.sendRedirect(request.getContextPath()+"/logincommon-home.html?action=login");
                 } else {
-                    response.sendRedirect("/htv-web/logincommon-change-email.html");
+                    response.sendRedirect(request.getContextPath()+"/logincommon-change-email.html");
                 }
             }
         }

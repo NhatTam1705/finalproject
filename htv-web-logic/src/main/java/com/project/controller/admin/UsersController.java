@@ -182,14 +182,14 @@ public class UsersController extends HttpServlet {
                     List<UserImportDTO> excelValues = returnValueFromExcel(fileName, fileLocation);
                     validateData(excelValues);
                     SessionUtil.getInstance().putValue(request, LIST_USER_IMPORT, excelValues);
-                    response.sendRedirect("/htv-web/admin-user-import-validate.html?urlType=validate_import");
+                    response.sendRedirect(request.getContextPath()+"/admin-user-import-validate.html?urlType=validate_import");
                 }
             }
             if (command.getUrlType() != null && command.getUrlType().equals(IMPORT_DATA)) {
                 List<UserImportDTO> userImportDTOS = (List<UserImportDTO>) SessionUtil.getInstance().getValue(request, LIST_USER_IMPORT);
                 SingletonServiceUtil.getUsersServiceInstance().saveUserImport(userImportDTOS);
                 SessionUtil.getInstance().remove(request, LIST_USER_IMPORT);
-                response.sendRedirect("/htv-web/admin-user-list.html?urlType=url_list");               
+                response.sendRedirect(request.getContextPath()+"/admin-user-list.html?urlType=url_list");               
                 request.setAttribute(WebConstant.MESSAGE_RESPONSE, WebConstant.REDIRECT_IMPORT);
             }
         } catch (Exception e) {

@@ -32,7 +32,7 @@ public class AuthorizationFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String url = request.getRequestURI();
-        if (url.startsWith("/htv-web/admin")) {
+        if (url.startsWith(request.getContextPath()+"/admin")) {
             UsersDTO user = (UsersDTO) SessionUtil.getInstance().getValue(request, WebConstant.LOGIN_NAME);
             if (user != null) {
                 if (user.getRolesDTO().getRoleName().equals(WebConstant.ROLE_ADMIN)) {

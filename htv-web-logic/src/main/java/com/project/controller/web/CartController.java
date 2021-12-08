@@ -81,9 +81,9 @@ public class CartController extends HttpServlet{
                             session.setAttribute("order", order);
                         }
                     }
-                    response.sendRedirect("/htv-web/shopping-cart.html");
+                    response.sendRedirect(request.getContextPath()+"/shopping-cart.html");
                 } else {
-                    response.sendRedirect("/htv-web/shopping-cart.html");
+                    response.sendRedirect(request.getContextPath()+"/shopping-cart.html");
                 }
     }
 
