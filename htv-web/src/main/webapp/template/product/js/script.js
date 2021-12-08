@@ -37,5 +37,5 @@ $('.card-number').each(function (e) {
 })
 
 $('.btn-close').click(function () {
-    $('.card-item').slideToggle()
+    $(this).parent().parent().remove()
 })

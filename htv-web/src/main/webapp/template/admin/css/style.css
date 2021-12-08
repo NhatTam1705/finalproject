@@ -334,6 +334,14 @@
 /* #formEdit{
     padding-left: 100px;
 } */
+a.btn{
+    border: none;
+    outline: none;
+}
+
+a.btn::active{
+    background-color: transparent;
+}
 
 #btnSearch {
     outline: none;

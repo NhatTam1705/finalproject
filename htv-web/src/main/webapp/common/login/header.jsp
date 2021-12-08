@@ -6,11 +6,11 @@
         <div class="head-contact">
             <span id="help-l" style="direction: 1tr">
                 &nbsp;
-                <a href="" style="padding: 0px 5px 0px 5px">Help</a>
+                <a href="" style="padding: 0px 5px 0px 5px">Support</a>
             </span>
             <span style="direction: 1tr">
                 &nbsp;
-                <a href="" style="padding: 0px 24px 0px 25px"> Contact Us</a>
+                <a href="" style="padding: 0px 24px 0px 25px">About</a>
             </span>
             <div class="clearBoth"></div>
         </div>
