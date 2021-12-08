@@ -46,7 +46,7 @@
                             </a>
                         </li>
                         <li class="nav-item nav-item__hide">
-                            <a href="<c:url value='/home-contact.html'/>">
+                            <a href="<c:url value='/home-about.html'/>">
                                 <span class="text">About</span>
                             </a>
                         </li>
@@ -68,11 +68,13 @@
                               style="margin-top: 2px; margin-left: 2px"></span>
                         <input type="text" class="input-search" placeholder="Search htv.com">
                         <span class="btn-menu icon-menu ti-menu"></span>
+                        <a href="<c:url value='/product-phone-cart.html'/>">
                         <div class="shopping">
                             <!-- <span class="shopping-icon fal fal-shopping-cart"></span> -->
                             <span class="shopping-icon fal fa-shopping-cart"></span>
                             <span class="shopping-text">HV cloud</span>
                         </div>
+                        </a>
                     </div>
                 </div>
                 <c:url var="urlList" value="/home-phone.html"/>

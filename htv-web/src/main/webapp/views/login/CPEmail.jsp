@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp" %>
+<c:url var="changeEmailForm" value="/logincommon-change-email.html" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,22 +35,27 @@
                         </div>
                     </div>
                 </div>
-                <form name="loginForm" id="form-id-email" action="">
+                <form name="changeEmailForm" id="form-id-email" action="${changeEmailForm}">
                     <div id="login-main-content" class="reset-pw ">
                         <div class="login-main">
                             <div class="login-box">
                                 <p></p>
                                 <div id="errormessage" class="errormessage"></div>
                                 <div class="pt-24">
-                                    <input id="textbox-user" type="email" required name="uid" size="20" tabindex="1"
+                                    <input id="textbox-user" type="email" required name="pojo.email" size="20" tabindex="1"
                                            class="user textbox-input " placeholder="Email">
                                 </div>
                                 <div class="pt-24 pwd-input">
-                                    <input type="text" name="uid" size="20" tabindex="1" class="pass textbox-input"
+                                    <input type="password" name="pojo.password" size="20" tabindex="1" class="pass textbox-input"
                                            placeholder="Old Password">
+                                    <img class="new-psw-show"
+                                         src="<c:url value='/template/img/pictureContent/icon-show-pass.png'/>"
+                                         style="visibility: hidden;">
+                                    <img class="new-psw-hide"
+                                        src="<c:url value='/template/img/pictureContent/icon-hide-pass.png'/>">
                                 </div>
                                 <div class="pt-24 pwd-input">
-                                    <input type="password" name="uid" size="20" tabindex="1"
+                                    <input type="password" name="newPassword" size="20" tabindex="1"
                                            class="pass textbox-input" placeholder="New Password">
                                     <img class="new-psw-show"
                                          src="<c:url value='/template/img/pictureContent/icon-show-pass.png'/>"
@@ -58,7 +64,7 @@
                                          src="<c:url value='/template/img/pictureContent/icon-hide-pass.png'/>">
                                 </div>
                                 <div class="pt-24 pwd-input">
-                                    <input type="password" name="uid" size="20" tabindex="1"
+                                    <input type="password" name="confirmPassword" size="20" tabindex="1"
                                            class="pass textbox-input" placeholder="Confirm Password">
                                     <img class="confirm-psw-show"
                                          src="<c:url value='/template/img/pictureContent/icon-show-pass.png'/>"
@@ -66,7 +72,7 @@
                                     <img class="confirm-psw-hide"
                                          src="<c:url value='/template/img/pictureContent/icon-hide-pass.png'/>">
                                 </div>
-                                <div class="pt-24 row">
+                                <%-- <div class="pt-24 row">
                                     <a href="#" onclick="createCaptcha()">
                                         <div id="create-captcha" class="captcha textbox-input">
                                             <script>createCaptcha();</script>
@@ -76,15 +82,15 @@
                                         <input type="text" name="uid" tabindex="1" class="captcha textbox-input"
                                                placeholder="Captcha">
                                     </div>
-                                </div>
+                                </div> --%>
                                 <div class="row">
                                     <div class="col col-half">
-                                        <a href="../../views/login/home.html">
+                                        <a href="<c:url value='/logincommon-home.html?action=login'/>">
                                             <input class="btn-controll btn-cancel" type="button" value="Cancel">
                                         </a>
                                     </div>
                                     <div class="col col-half">
-                                        <a href="../../views/login/home.html">
+                                        <a href="${changeEmailForm}">
                                             <input class="btn-controll btn-submit" type="submit" value="Submit">
                                         </a>
                                     </div>

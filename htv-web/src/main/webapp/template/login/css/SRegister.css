@@ -55,7 +55,7 @@ html, a {
 #header-box {
   height: 63px;
   text-align: left;
-  background: url("../../img/register/header_bg.gif") repeat-x 0 0;
+  background: url("/htv-web/template/img/register/header_bg.gif") repeat-x 0 0;
 }
 #header-box #header {
   width: 950px;
@@ -67,7 +67,7 @@ html, a {
 }
 
 #mainbox {
-  background: url("../../img/register/mainbox_bg1.gif") repeat-x left top;
+  background: url("/htv-web/template/img/register/mainbox_bg1.gif") repeat-x left top;
   text-align: center;
   padding-bottom: 30px;
 }
@@ -91,7 +91,7 @@ html, a {
 }
 #mainbox #content #content-top {
   margin: 0 auto;
-  background: url("../../img/register/boxTop_Bg.png") no-repeat center top;
+  background: url("/htv-web/template/img/register/boxTop_Bg.png") no-repeat center top;
   height: 6px;
 }
 #mainbox #content .register {
@@ -105,7 +105,7 @@ html, a {
   width: 933px;
   padding-left: 28px;
   margin: 0 3px;
-  background: url("../../img/register/tab_bg.gif") repeat-x 0 0;
+  background: url("/htv-web/template/img/register/tab_bg.gif") repeat-x 0 0;
 }
 #mainbox #content .register .reset-tab-box .set-ontab {
   border-top: 1px solid var(--color-border-reset-tab-box);
@@ -198,7 +198,7 @@ html, a {
   margin: 15px 0 0 184px;
 }
 #mainbox #content .sub-bottom {
-  background: url("../../img/register/bt_bg.gif") no-repeat left top;
+  background: url("/htv-web/template/img/register/bt_bg.gif") no-repeat left top;
   text-align: center;
   line-height: 29px;
   width: 95px;
@@ -213,7 +213,7 @@ html, a {
   border-radius: 0 0 3px 3px;
 }
 #mainbox #content #content-bottom {
-  background: url("../../img/register/boxBottom_Bg.gif") no-repeat center bottom;
+  background: url("/htv-web/template/img/register/boxBottom_Bg.gif") no-repeat center bottom;
   height: 8px;
 }
 #mainbox #content .phone-vercode-input {

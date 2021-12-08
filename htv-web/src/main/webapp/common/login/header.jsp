@@ -1,7 +1,6 @@
-<%@include file='/common/taglib.jsp'%>
 <div id="header">
     <div id="header-box">
-        <a href="../../views/home/index.html">
+        <a href="<c:url value='/home.html'/>">
             <img src="<c:url value='/template/img/logo.png'/>" alt="logo" border="0">
         </a>
         <div class="head-contact">

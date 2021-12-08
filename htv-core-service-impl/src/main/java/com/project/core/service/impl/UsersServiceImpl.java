@@ -168,4 +168,10 @@ public class UsersServiceImpl implements UsersService {
         Integer result = SingletonDaoUtil.getUsersDaoInstance().delete(ids);
         return result;
     }
+
+    public UsersDTO findUser(String property, String value) {
+        UsersEntity entity = SingletonDaoUtil.getUsersDaoInstance().findEqualUnique(property, value);
+        UsersDTO dto = UsersBeanUtil.entityToDto(entity);
+        return dto;
+    }
 }

@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
-<c:url var="formUrl" value="/register-email.html" />
+<c:url var="registerUrl" value="/register-email.html" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +23,7 @@
             </div>
             <div id="content">
                 <div id="content-top"></div>
-                <form name="registerForm" action="${formUrl}" method="post">
+                <form name="registerForm" action="${registerUrl}" method="post" id="registerForm">
                 <div class="register">
                     <div class="reset-tab-box">
                         <span class="set-ontab set-tab">Register by Email</span>
@@ -51,7 +51,7 @@
                                 Email
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="text" name="registerVO.email" class="register-input" tabindex="2"
+                            <input type="text" name="pojo.email" class="register-input" tabindex="2"
                                    id="registerVO.email" onblur="checkEmail()">
                             <span class="redtips" id="spanmailinfo"></span>
                         </div>
@@ -60,7 +60,7 @@
                                 Password
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="password" name="registerVO.password" class="register-input" tabindex="3"
+                            <input type="password" name="pojo.password" class="register-input" tabindex="3"
                                    id="registerVO.password" onblur="checkPassword()" style="padding-right: 30px">
                             <img class="psw-show" src="<c:url value='/template/img/pictureContent/icon-show-pass.png'/>"
                                  style="visibility: hidden;">
@@ -80,8 +80,8 @@
                                 First Name
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="text" name="registerVO.name" class="register-input" tabindex="4"
-                                   id="registerVO.name" onblur="checkName()">
+                            <input type="text" name="pojo.firstName" class="register-input" tabindex="4">
+                                   <%-- id="registerVO.name" onblur="checkName()"> --%>
                             <span class="redtips" id="spannameinfo"></span>
                         </div>
                         <div class="register-online">
@@ -89,7 +89,7 @@
                                 Last Name
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="text" name="registerVO.name" class="register-input" tabindex="5"
+                            <input type="text" name="pojo.lastName" class="register-input" tabindex="5"
                                    id="registerVO.name" onblur="checkName()">
                             <span class="redtips" id="spannameinfo"></span>
                         </div>
@@ -98,7 +98,7 @@
                                 Phone Number
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="text" name="registerVO.phone" class="register-input" tabindex="6"
+                            <input type="text" name="pojo.telephone" class="register-input" tabindex="6"
                                    id="registerVO.phone" onblur="checkPhone()">
                             <span class="redtips" id="spanphoneinfo"></span>
                         </div>
@@ -145,7 +145,7 @@
                     <div class="tip">
                         <span class="redtip1"></span>
                     </div>
-                    <input type="button" class="sub-bottom register-submit" name="regbtn" value="Register"
+                    <input type="submit" class="sub-bottom register-submit" name="regbtn" value="Register"
                            onclick="userRegister()" tabindex="10" id="regbtn" onclick="userRegister()" disabled>
                     <div class="bottom"></div>
                 </div>
@@ -153,6 +153,41 @@
                 <div id="content-bottom"></div>
             </div>
         </div>
-        <script src="<c:url value='/template/login/js/SEmail.js'/>"></script>F
+        <script src="<c:url value='/template/login/js/SEmail.js'/>"></script>
+        <script>
+        $(document).ready(function {
+
+        });
+        // $('#regbtn').click(function () {
+        //     $('#registerForm').submit();
+        // });
+        // $('#registerForm').submit(function (e) {
+        //     e.preventDefault();
+        //     $.ajax({
+        //         type: $(this).attr('method'),
+        //         url: $(this).attr('action'),
+        //         data: $(this).serialize(),
+        //         dataType: 'html',
+        //         success: function(res){
+        //             if (res.trim() == "redirect_insert") {
+        //                 $('#crudaction').val('redirect_insert');
+        //                 $('#urlType').val('url_list');
+        //                 $('#formUrl').submit();
+        //             } else if (res.trim() == "redirect_update") {
+        //                 $('#crudaction').val('redirect_update');
+        //                 $('#urlType').val('url_list');
+        //                 $('#formUrl').submit();
+        //             } else if (res.trim() == "redirect_error") {
+        //                 $('#crudaction').val('redirect_error');
+        //                 $('#urlType').val('url_list');
+        //                 $('#formUrl').submit();
+        //             }
+        //         },
+        //         error: function (res) {
+        //             console.log(res);
+        //         }
+        //     });
+        // });
+        </script>
     </body>
 </html>

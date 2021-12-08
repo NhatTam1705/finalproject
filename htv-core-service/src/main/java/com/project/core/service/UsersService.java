@@ -25,4 +25,5 @@ public interface UsersService {
     void validateImportUser(List<UserImportDTO> userImportDTOS);
     void saveUserImport(List<UserImportDTO> userImportDTOS);
     Integer delete(List<Integer> ids);
+    UsersDTO findUser(String property, String value);
 }

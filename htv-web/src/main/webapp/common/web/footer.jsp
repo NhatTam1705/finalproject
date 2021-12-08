@@ -16,27 +16,27 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
-						<h3 class="f-title f_600 t_color f_size_18">Products</h3>
+						<h3 class="f-title f_600 t_color f_size_18">Link</h3>
 						<ul class="list-unstyled f_list">
-							<li><a href="../../views/product/phones.html">Phone</a></li>
-							<li><a href="#">Laptop App</a></li>
-							<li><a href="#">Tablet</a></li>
-							<li><a href="#">Wearables</a></li>
-							<li><a href="#">Audio</a></li>
-							<li><a href="#">Accessories</a></li>
+							<li><a href="<c:url value='/home.html'/>">Home</a></li>
+							<li><a href="<c:url value='/home-phone.html'/>">Product</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Support</a></li>
+							<%-- <li><a href="#">Audio</a></li>
+							<li><a href="#">Accessories</a></li> --%>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
-						<h3 class="f-title f_600 t_color f_size_18">Help</h3>
+						<h3 class="f-title f_600 t_color f_size_18">When you need help please call&nbsp</h3>
 						<ul class="list-unstyled f_list">
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Term &amp; conditions</a></li>
-							<li><a href="#">Reporting</a></li>
-							<li><a href="#">Documentation</a></li>
-							<li><a href="#">Support Policy</a></li>
-							<li><a href="#">Privacy</a></li>
+							<%-- <li><a href="#">0334193816</a></li> --%>
+							<%-- <li><a href="#">Term &amp; conditions</a></li> --%>
+							<li><a href="tel:0782883871">0782888371</a></li>
+							<li><a href="tel:0334193816">0334193816</a></li>
+							<%-- <li><a href="#">Support Policy</a></li>
+							<li><a href="#">Privacy</a></li> --%>
 						</ul>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6 col-sm-7">
-					<p class="mb-0 f_400">© TV 2021 All rights reserved.</p>
+					<p class="mb-0 f_400">TV-Company.</p>
 				</div>
 			</div>
 		</div>

@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="<c:url value='/template/product/css/details.css'/>">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>TV-Company</title>
     </head>

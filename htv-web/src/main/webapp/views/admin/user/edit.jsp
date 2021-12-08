@@ -45,7 +45,7 @@
                             <br/>
                             <div class="col-md-12">
                                 <div class="md-form">
-                                    <input type="password" placeholder="Password" class="form-control" value="${item.pojo.password}" id="password" required name="pojo.password"/>
+                                    <input type="text" placeholder="Password" class="form-control" value="${item.pojo.password}" id="password" required name="pojo.password"/>
                                 </div>
                             </div>
                             <br/>
