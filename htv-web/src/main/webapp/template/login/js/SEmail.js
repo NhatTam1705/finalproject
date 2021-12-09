@@ -1,4 +1,4 @@
-var passIMG = '<img id="correctips" src="/htv-web/template/img/register/icons_right.png" border="0" align="absmiddle"/>'
+var passIMG = '<img id="correctips" src="/template/img/register/icons_right.png" border="0" align="absmiddle"/>'
 
 //Check User
 function isValidUid(uid) {
