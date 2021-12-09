@@ -123,7 +123,7 @@
                                             <label class="width-200 control-label no-padding-right">View Image</label>
                                             <div class="">
                                                 <c:if test="${not empty item.pojo.image}">
-                                                    <c:set var="image" value="<c:url value='/fileupload/${item.pojo.image}'/>"/>
+                                                    <c:set var="image" value="/fileupload/${item.pojo.image}"/>
                                                 </c:if>
                                                 <img src="${image}" id="viewImage" width="150px" height="150ox">
                                             </div>
