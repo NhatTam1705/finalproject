@@ -109,14 +109,24 @@ function isValidName(name) {
     return ''
 }
 
-function checkName() {
-    document.getElementById('spannameinfo').innerHTML = ''
-    var name = document.getElementById('registerVO.name').value
+function checkFirstName() {
+    document.getElementById('spanfirstnameinfo').innerHTML = ''
+    var name = document.getElementById('registerVO.firstname').value
     var errorMessage = isValidName(name)
     if (errorMessage != '')
-        document.getElementById('spannameinfo').innerHTML = errorMessage
+        document.getElementById('spanfirstnameinfo').innerHTML = errorMessage
     else
-        document.getElementById('spannameinfo').innerHTML = passIMG
+        document.getElementById('spanfirstnameinfo').innerHTML = passIMG
+}
+
+function checkLastName() {
+    document.getElementById('spanlastnameinfo').innerHTML = ''
+    var name = document.getElementById('registerVO.lastname').value
+    var errorMessage = isValidName(name)
+    if (errorMessage != '')
+        document.getElementById('spanlastnameinfo').innerHTML = errorMessage
+    else
+        document.getElementById('spanlastnameinfo').innerHTML = passIMG
 }
 
 function toAgree(obj) {
@@ -153,11 +163,18 @@ function checkRegisterForm() {
         staticCheckPass = false;
     }
 
-    //Name
-    if ((errorMessage = isValidName(form['registerVO.name'].value)) != '') {
-        document.getElementById('spannameinfo').innerHTML = errorMessage
+    //First Name
+    if ((errorMessage = isValidName(form['registerVO.firstname'].value)) != '') {
+        document.getElementById('spanfirstnameinfo').innerHTML = errorMessage
         staticCheckPass = false
     }
+
+    //Last Name
+    if ((errorMessage = isValidName(form['registerVO.lastname'].value)) != '') {
+        document.getElementById('spanlastnameinfo').innerHTML = errorMessage
+        staticCheckPass = false
+    }
+
 
     //phone
     if ((errorMessage = isValidPhone(form['registerVO.phone'].value)) != '') {

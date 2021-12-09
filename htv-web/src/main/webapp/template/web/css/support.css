@@ -90,4 +90,8 @@ html {
   transition: 0.25s;
 }
 
+input{
+    border: none;
+}
+
 /*# sourceMappingURL=support.css.map */

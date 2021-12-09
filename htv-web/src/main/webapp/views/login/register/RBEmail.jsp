@@ -81,9 +81,9 @@
                                 First Name
                                 <span class="register-red-star">*</span>
                             </div>
-                            <input type="text" name="pojo.firstName" class="register-input" tabindex="4">
-                                   <%-- id="registerVO.name" onblur="checkName()"> --%>
-                            <span class="redtips" id="spannameinfo"></span>
+                            <input type="text" name="pojo.firstName" class="register-input" tabindex="4"
+                                   id="registerVO.firstname" onblur="checkFirstName()">
+                            <span class="redtips" id="spanfirstnameinfo"></span>
                         </div>
                         <div class="register-online">
                             <div class="register-text">
@@ -91,8 +91,8 @@
                                 <span class="register-red-star">*</span>
                             </div>
                             <input type="text" name="pojo.lastName" class="register-input" tabindex="5"
-                                   id="registerVO.name" onblur="checkName()">
-                            <span class="redtips" id="spannameinfo"></span>
+                                   id="registerVO.lastname" onblur="checkLastName()">
+                            <span class="redtips" id="spanlastnameinfo"></span>
                         </div>
                         <div class="register-online">
                             <div class="register-text">
