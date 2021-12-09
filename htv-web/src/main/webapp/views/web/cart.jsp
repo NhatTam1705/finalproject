@@ -4,6 +4,7 @@
     Author     : 19110
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
@@ -174,8 +175,8 @@
                                         </div>
                                         <div class="card-item-right">
                                             <div class="card-item-price">
-                                                <span class="card-item-price-text">${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}₫</span>
-                                                <strike class="card-item-price-text">${item.product.price}₫</strike>
+                                                <span class="card-item-price-text"><fmt:formatNumber type="number" value="${item.product.price - item.product.price * item.product.discountDTO.discountPercent / 100}"/>₫</span>
+                                                <strike class="card-item-price-text"><fmt:formatNumber type="number" value="${item.product.price}"/>₫</strike>
                                                 <div class="card-item-chose-number">
                                                     <input class="card-number" value="${item.quantity}" type="number">
                                                 </div>
@@ -188,7 +189,7 @@
                         <div class="pay">
                             <div class="pay-top">
                                 <span class="pay-top-text">Total money:</span>
-                                <span class="pay-top-price">${order.total}₫</span>
+                                <span class="pay-top-price"><fmt:formatNumber type="number" value="${order.total}"/>₫</span>
                             </div>
                             <div class="pay-bottom">
                                 <form action="<c:url value='/check-out'/>" method="get">

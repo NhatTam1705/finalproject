@@ -4,6 +4,7 @@
     Author     : 19110
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
@@ -217,10 +218,10 @@
                                 <div class="card-content">
                                     <h3 class="card-content-name">${item.productName}</h3>
                                     <div class="card-content-price">
-                                        ${item.price}₫
+                                        <fmt:formatNumber type="number" value="${item.price}"/>₫
                                     </div>
                                     <div class="card-content-discount">
-                                        Sale ${item.discountDTO.discountPercent * item.price / 100}₫
+                                        Sale <fmt:formatNumber type="number" value="${item.discountDTO.discountPercent * item.price / 100}"/>₫
                                     </div>
                                 </div>
                             </a>

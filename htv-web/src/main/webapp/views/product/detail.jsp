@@ -4,6 +4,7 @@
     Author     : 19110
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
@@ -103,7 +104,7 @@
                                     Price at Viet Nam
                                 </div>
                                 <div class="price-text">
-                                    <span class="price-text-cost">${item.pojo.price}₫</span>
+                                    <span class="price-text-cost"><fmt:formatNumber type="number" value="${item.pojo.price}"/>₫</span>
                                     <span class="price-text-discount">0% installment</span>
                                 </div>
                                 <br/>
@@ -125,7 +126,7 @@
                                         <div class="price-info">
                                             <div class="price-info-number">1</div>
                                             <div class="price-info-text">
-                                                Discount ${item.pojo.price * item.pojo.discountDTO.discountPercent / 100} VND (Not applicable with old and new collection)
+                                                Discount <fmt:formatNumber type="number" value="${item.pojo.price * item.pojo.discountDTO.discountPercent / 100}"/> VND (Not applicable with old and new collection)
                                             </div>
                                         </div>
                                         <div class="price-info">
