@@ -43,4 +43,10 @@ public class OrderItemsServiceImpl implements OrderItemsService{
         OrderItemsEntity entity = OrderItemsBeanUtil.dtoToEntity(orderItemDTO);
         SingletonDaoUtil.getOrderItemsDaoInstance().save(entity);
     }
+
+    public OrderItemDTO findById(Integer orderItemId) {
+        OrderItemsEntity entity = SingletonDaoUtil.getOrderItemsDaoInstance().findById(orderItemId);
+        OrderItemDTO dto = OrderItemsBeanUtil.entityToDto(entity);
+        return dto;
+    }
 }

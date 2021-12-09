@@ -16,6 +16,7 @@ import javax.servlet.http.*;
 import com.project.core.common.utils.SessionUtil;
 import com.project.core.dto.OrderDetailsDTO;
 import com.project.core.dto.OrderItemDTO;
+import com.project.core.dto.ProductDTO;
 import com.project.core.dto.UsersDTO;
 import com.project.core.web.common.WebConstant;
 import com.project.core.web.utils.SingletonServiceUtil;
@@ -40,6 +41,9 @@ public class CheckOutController extends HttpServlet {
                 for (OrderItemDTO item : listItems) {
                     item.setOrderDetails(order);
                     SingletonServiceUtil.getOrderItemsServiceInstance().saveOrderItem(item);
+                    ProductDTO product = SingletonServiceUtil.getProductServiceInstance().findById(item.getProduct().getProductId());
+                    product.setQuantityLeft(product.getQuantityLeft() - item.getQuantity());
+                    SingletonServiceUtil.getProductServiceInstance().updateProduct(product);
                 }
                 // try {
                 //     JavaMailUtil.sendMail(user.getEmail(), MailTemplateUtil.templateMailCongratulation(), "Conratulation!");
