@@ -22,10 +22,11 @@
                 </h1>
             </div>
             <div id="content">
-                <div id="content-top"></div>
+                <img src="<c:url value='/template/img/register/boxTop_Bg.png'/>" id="content-top">
                 <form name="registerForm" action="${registerUrl}" method="post" id="registerForm">
                 <div class="register">
                     <div class="reset-tab-box">
+                        <%-- <img src="<c:url value='/template/img/register/tab_bg.gif'/>"> --%>
                         <span class="set-ontab set-tab">Register by Email</span>
                         <%-- <a href="<c:url value='/register-phone.html'/>">
                             <span class="set-offtab set-tab">Register by Mobile</span>
@@ -150,7 +151,7 @@
                     <div class="bottom"></div>
                 </div>
                 </form>
-                <div id="content-bottom"></div>
+                <img src="<c:url value='/template/img/register/boxBottom_Bg.gif'/>" id="content-bottom">
             </div>
         </div>
         <script src="<c:url value='/template/login/js/SEmail.js'/>"></script>
