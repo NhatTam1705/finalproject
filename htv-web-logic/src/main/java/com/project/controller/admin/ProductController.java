@@ -115,7 +115,7 @@ public class ProductController extends HttpServlet {
                 Object[] objects = uploadUtil.writeOrUpdateFile(request, valueTitle, "img");
                 boolean checkStatusUploadImage = (Boolean) objects[0];
                 if (!checkStatusUploadImage) {
-                    response.sendRedirect("/htv-web/admin-admin-list.html?urlType=url_list&&crudaction=redirect_error");
+                    response.sendRedirect(request.getContextPath()+"/admin-admin-list.html?urlType=url_list&&crudaction=redirect_error");
                 } else {
                     ProductDTO dto = command.getPojo();
                     if (StringUtils.isNotBlank(objects[2].toString())) {
@@ -132,17 +132,17 @@ public class ProductController extends HttpServlet {
                             dto.setCreatedDate(productDTO.getCreatedDate());
                             ProductDTO result = SingletonServiceUtil.getProductServiceInstance().updateProduct(dto);
                             if (result != null) {
-                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&&crudaction=redirect_update");
+                                response.sendRedirect(request.getContextPath()+"/admin-product-list.html?urlType=url_list&&crudaction=redirect_update");
                             } else {
-                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&&crudaction=redirect_error");
+                                response.sendRedirect(request.getContextPath()+"/admin-product-list.html?urlType=url_list&&crudaction=redirect_error");
                             }
                         } else {
                             try {
                                 SingletonServiceUtil.getProductServiceInstance().saveProduct(dto);
-                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&&crudaction=redirect_insert");
+                                response.sendRedirect(request.getContextPath()+"/admin-product-list.html?urlType=url_list&&crudaction=redirect_insert");
                             } catch (ConstraintViolationException e) {
                                 log.error(e.getMessage(), e);
-                                response.sendRedirect("/htv-web/admin-product-list.html?urlType=url_list&crudaction=redirect_error");
+                                response.sendRedirect(request.getContextPath()+"/admin-product-list.html?urlType=url_list&crudaction=redirect_error");
                             }
                         }
                     }

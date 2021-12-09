@@ -42,7 +42,7 @@ public class RegisterEmailController extends HttpServlet {
         roles.setRoleId(2);
         pojo.setRolesDTO(roles);
         SingletonServiceUtil.getUsersServiceInstance().saveUser(pojo);
-        response.sendRedirect("/htv-web/logincommon-home.html?action=login");
+        response.sendRedirect(request.getContextPath()+"/logincommon-home.html?action=login");
         
     }
 }

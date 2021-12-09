@@ -39,7 +39,7 @@
                     <div class="details-box">
                         <div class="details-box-left">
                             <div class="details-box-img">
-                                <img src="/htv-web/fileupload/${item.pojo.image}"
+                                <img src="<c:url value='/fileupload/${item.pojo.image}'/>"
                                     alt="" class="procduct-img">
                             </div>
                             <div class="delivery">

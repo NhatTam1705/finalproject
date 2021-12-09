@@ -30,7 +30,7 @@ public class CheckOutController extends HttpServlet {
             throws ServletException, IOException {
         UsersDTO user = (UsersDTO) SessionUtil.getInstance().getValue(request, WebConstant.LOGIN_NAME);
         if (user == null) {
-            response.sendRedirect("/htv-web/logincommon-home.html?action=login");                  
+            response.sendRedirect(request.getContextPath()+"/logincommon-home.html?action=login");                  
         } else {
                 OrderDetailsDTO order = (OrderDetailsDTO) SessionUtil.getInstance().getValue(request, "order");
                 order.setUsers(user);
@@ -49,7 +49,7 @@ public class CheckOutController extends HttpServlet {
                 SessionUtil.getInstance().remove(request, "order");
                 // request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_SUCCESS);
                 // request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Check Out successfully an email will send to your mail!");
-                response.sendRedirect("/htv-web/product-phone-cart.html");
+                response.sendRedirect(request.getContextPath()+"/product-phone-cart.html");
         }
     }
 

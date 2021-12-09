@@ -42,9 +42,9 @@ public class ChangePhoneController extends HttpServlet {
                 if (command.getNewPassword().equals(command.getConfirmPassword())) {
                     user.setPassword(command.getNewPassword());
                     SingletonServiceUtil.getUsersServiceInstance().updateUser(user);
-                    response.sendRedirect("/htv-web/logincommon-home.html?action=login");
+                    response.sendRedirect(request.getContextPath()+"/logincommon-home.html?action=login");
                 } else {
-                    response.sendRedirect("/htv-web/logincommon-change-phone.html");
+                    response.sendRedirect(request.getContextPath()+"/logincommon-change-phone.html");
                 }
             }
         }

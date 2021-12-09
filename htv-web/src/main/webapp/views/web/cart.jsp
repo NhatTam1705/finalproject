@@ -162,7 +162,7 @@
                                 <c:forEach var="item" items="${order.orderItemsDTOList}">
                                     <li class="card-item">
                                         <div class="card-item-left">
-                                            <img src="/htv-web/fileupload/${item.product.image}"
+                                            <img src="<c:url value='/fileupload/${item.product.image}'/>"
                                                  alt="" class="card-item-img">
                                             <button class="btn-close" value="Delete">
                                                 <%-- <i class="fad fa-times-circle"></i>

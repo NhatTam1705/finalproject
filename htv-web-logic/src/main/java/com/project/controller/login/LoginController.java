@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet {
         } else if(action.equals(WebConstant.LOGOUT)) {
             SessionUtil.getInstance().remove(request, WebConstant.LOGIN_NAME);
             SessionUtil.getInstance().remove(request, "order");
-            response.sendRedirect("/htv-web/home.html");
+            response.sendRedirect(request.getContextPath()+"/home.html");
         }
     }
 
@@ -67,9 +67,9 @@ public class LoginController extends HttpServlet {
                 }
                 SessionUtil.getInstance().putValue(request, WebConstant.LOGIN_NAME, user);
                 if (login.getRoleName().equals(WebConstant.ROLE_ADMIN)) {
-                    response.sendRedirect("/htv-web/admin-home.html"); 
+                    response.sendRedirect(request.getContextPath()+"/admin-home.html"); 
                 } else if (login.getRoleName().equals(WebConstant.ROLE_USER)) {
-                    response.sendRedirect("/htv-web/home.html");
+                    response.sendRedirect(request.getContextPath()+"/home.html");
                 }
             } else {
                 request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_ERROR);
