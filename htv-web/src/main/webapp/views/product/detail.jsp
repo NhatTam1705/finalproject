@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="details-box-right">
-                            <div class="ram">
+                            <%-- <div class="ram">
                                 <div class="ram-select">
                                     <span>256GB</span>
                                 </div>
@@ -97,7 +97,7 @@
                                 <div class="color-select">
                                     <span>Blue</span>
                                 </div>
-                            </div>
+                            </div> --%>
                             <div class="price">
                                 <div class="price-location">
                                     Price at Viet Nam
