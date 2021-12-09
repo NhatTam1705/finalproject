@@ -18,4 +18,5 @@ public interface OrderItemsService {
     Integer delete(List<Integer> ids);
     Object[] findByProperty(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit);
     void saveOrderItem(OrderItemDTO orderItemDTO);
+    OrderItemDTO findById(Integer orderItemId);
 }

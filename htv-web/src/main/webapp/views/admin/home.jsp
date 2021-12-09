@@ -13,6 +13,6 @@
         <title>Admin TV-Company</title>
     </head>
     <body>
-        <h1>Hellu</h1>
+        <h1>TV-Company's companion</h1>
     </body>
 </html>
